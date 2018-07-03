@@ -41,7 +41,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, '../Trikon-App/dist')));
+app.use(express.static(path.join(__dirname, '../TRIKONCMS/dist')));
 app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Content');
@@ -55,7 +55,7 @@ app.use('/', index);
 app.use('/users', users);
 /* ALWAYS AT THE BOTTOM OF THE ROUTES */
 app.get('/*', function(req, res) {
-    res.sendFile(path.join(__dirname + '../Trikon-App/dist/index.html'));
+    res.sendFile(path.join(__dirname + '../TRIKONCMS/dist/index.html'));
 });
 
 // catch 404 and forward to error handler
