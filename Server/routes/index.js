@@ -37,14 +37,25 @@ router.get('/script', function(req, res, next) {
       day: Day,
       name: Name,
       type: Type,
-      fullname: FullName,
-      BTS: BTS,
-      Livework: Livework
+      fullname: FullName
     });
 
-    // TODO EXTRACT BTS
+    // EXTRACT BTS
     var BTS = fs.readdirSync(Archive + projects[i] + "/BTS");
-    // TODO LOAD DATA INTO BTS OBJECT(S)
+
+    // CREATE EMPTY LIST
+    var BTSFiles = [];
+
+    // FOR EACH OBJECT
+    for (var i = 0; i < BTS.length; i++)  {
+
+      // TODO LOAD DATA INTO BTS OBJECT(S)
+      BTSFiles.push({
+        name: BTS[i],
+        size: fs.statSync(Archive + projects[i] + "/BTS" + '/' + BTS[i])
+      });
+
+    }
     // TODO SEARCH FOR MATCHING BTS OBJECTS UNDER THIS PROJECT
     // TODO VERIFY USING SIZE
     // TODO IF NO MATCH FOUND UPLOAD CURRENT TO DB
