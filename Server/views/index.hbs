@@ -1,1 +1,21 @@
-<h1>{{title}}</h1>
+{{#each Project}}
+  <div class="row">
+    NAME: {{this.name}}
+      <br>
+    YEAR : 20{{this.year}}
+    <br>
+    MONTH: {{this.month}}
+    <br>
+    DAY: {{this.day}}
+    <br>
+    TYPE: {{this.type}}
+    <br>
+    FULLNAME: {{this.fullname}}
+    <br>
+    {{#each this.BTS}}
+      BTS NAME: {{this}}
+      <br>
+    {{/each}}
+    </div>
+  <hr>
+{{/each}}

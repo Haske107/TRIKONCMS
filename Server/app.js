@@ -15,20 +15,24 @@ var users = require('./routes/users');
 
 
 // CONNECT TO DATABASE
-// Connection URL
+
+// Connection URL for CLOUD DB
 const url = 'mongodb+srv://JHaskell:7R1K0N12345!@maincluster-etp3a.gcp.mongodb.net/test?retryWrites=true';
+
+// Connect URL for local db
+const localurl = "mongodb://localhost:27017/exampleDb";
+
 // Database Name
 const dbName = 'TRIKON-DB';
 
 // Use connect method to connect to the server
-MongoClient.connect(url, function(err, client) {
+MongoClient.connect(localurl, function(err, client) {
   console.log("Connected successfully to server");
   assert.equal(null, err);
-
   const db = client.db(dbName);
-
   client.close();
 });
+
 var app = express();
 
 // If an incoming request uses
