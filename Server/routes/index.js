@@ -3,6 +3,7 @@ var router = express.Router();
 var ncp = require('ncp').ncp;
 var project = require('../Models/Project');
 const fs = require('fs');
+var CronJob = require('cron').CronJob;
 
 
 router.get('/', function(req, res, next) {
@@ -14,10 +15,22 @@ router.get('/script', function(req, res, next) {
   // var Archive = '../Archives/';
   // // GET PROJECTS FROM ARCHIVE
   // var Projects = readProjectsFromArchive(Archive);
+  var job = new CronJob('*/10 * * * * 1-5', function() {
+      /*
+       * Runs every weekday (Monday through Friday)
+       * at 11:30:00 AM. It does not run on Saturday
+       * or Sunday.
+       */
+      backUpDB();
+      console.log("Running");
+      // SEND DATA TO BROWSER
+      res.render('index');
+    }, function () {
+      /* This function is executed when the job stops */
+    },
+    true/* Time zone of this job. */
+  );
 
-  backUpDB();
-  // SEND DATA TO BROWSER
-  res.render('index');
 });
 
 
