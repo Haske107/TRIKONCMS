@@ -1,21 +1,30 @@
-{{#each Project}}
+{{#each BTS}}
+  <!--<div class="row">-->
+    <!--NAME: {{this.name}}-->
+      <!--<br>-->
+    <!--YEAR : 20{{this.year}}-->
+    <!--<br>-->
+    <!--MONTH: {{this.month}}-->
+    <!--<br>-->
+    <!--DAY: {{this.day}}-->
+    <!--<br>-->
+    <!--TYPE: {{this.type}}-->
+    <!--<br>-->
+    <!--FULLNAME: {{this.fullname}}-->
+    <!--<br>-->
+    <!--{{#each this.BTS}}-->
+      <!--BTS NAME: {{this}}-->
+      <!--<br>-->
+    <!--{{/each}}-->
+    <!--</div>-->
+
   <div class="row">
-    NAME: {{this.name}}
-      <br>
-    YEAR : 20{{this.year}}
+    {{this.Filename}}
     <br>
-    MONTH: {{this.month}}
+    {{this.Size}}
     <br>
-    DAY: {{this.day}}
-    <br>
-    TYPE: {{this.type}}
-    <br>
-    FULLNAME: {{this.fullname}}
-    <br>
-    {{#each this.BTS}}
-      BTS NAME: {{this}}
-      <br>
-    {{/each}}
-    </div>
+    {{this.Created}}
+    <hr>
+  </div>
   <hr>
 {{/each}}
