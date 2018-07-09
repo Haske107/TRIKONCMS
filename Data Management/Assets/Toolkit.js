@@ -1,6 +1,5 @@
 const fs = require('fs');
 
-// ARCHIVE READ FUNCTIONS
 exports.readProjectFromArchive = function (folder)  {
   var Fullpath = '../Archives/' + folder;
   var Project = {};
@@ -28,6 +27,20 @@ exports.readProjectsFromArchive = function(path)  {
   }
   return Projects;
 };
+exports.readProjectsFromEditingDrive = function(path) {
+  // RETURN FOLDER NAMES
+  var projects = scanForProjects(path);
+  // CREATE EMPTY PROJECTS LIST
+  var Projects = [];
+  // ITERATE THROUGH EACH PROJECT
+  for (var i = 0; i < projects.length; i++) {
+    // READ PROJECT FROM DRIVE, STORE INTO PROJECTS LIST
+    Projects.push(readProjectFromEditingDrive(projects[i], path));
+  }
+  return Projects;
+};
+
+// ARCHIVE READ FUNCTIONS
 readBTSFromArchive = function(ProjectPath)  {
 
   // SET USE-ABLE PATH
@@ -205,6 +218,21 @@ function calcContentSize(Project) {
 }
 function readProjectFromArchive(folder)  {
   var Fullpath = '../Archives/' + folder;
+  var Project = {};
+  Project.Name = folder.substr(10);
+  Project.Type = folder.substr(7, 2);
+  Project.Date = new Date(fs.statSync(Fullpath).birthtime).getTime();
+  Project.Fullname = folder;
+  Project.BTS = readBTSFromArchive(Fullpath);
+  Project.Stills = readStillsFromArchive(Fullpath);
+  Project.Dailies = readDailiesFromArchive(Fullpath);
+  Project.RoughCuts = readRoughCutsFromArchive(Fullpath);
+  Project.FinalCuts = readFinalCutsFromArchive(Fullpath);
+  Project.Size = calcContentSize(Project);
+  return Project;
+}
+function readProjectFromEditingDrive(folder, FullPath)  {
+  var Fullpath = FullPath + folder;
   var Project = {};
   Project.Name = folder.substr(10);
   Project.Type = folder.substr(7, 2);

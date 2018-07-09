@@ -1,26 +1,16 @@
-var ncp = require('ncp').ncp;
+const ncp = require('ncp').ncp;
 const fs = require('fs');
-var CronJob = require('cron').CronJob;
-
+const CronJob = require('cron').CronJob;
 
 // DEFINE CRON JOB
-var job = new CronJob('*/10 * * * * *', function() {
+const job = new CronJob('*/10 * * * * *', () => {
     console.log("Starting Back Up Sequence: " + new Date);
     backUpDB(new Date);
     console.log("Back Up Sequence Complete");
-  }, function () {},
-  true
+  }, function () {}, true
 );
 
-// BEGIN PROCESS
-job.start();
-
-
-
-
-
-
-// BACK UP
+// DEFINE BACK UP
 function backUpDB(date) {
   var DB = '../../../../../data/db';
   var Destination = '../BackUp';
@@ -44,3 +34,7 @@ function backUpDB(date) {
     console.log("Can't Find the DB")
   }
 }
+
+// BEGIN PROCESS
+job.start();
+
