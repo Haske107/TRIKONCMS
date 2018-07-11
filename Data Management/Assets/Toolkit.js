@@ -1,5 +1,5 @@
 const fs = require('fs');
-
+const path = require('path');
 exports.readProjectFromArchive = function (folder)  {
   var Fullpath = '../Archives/' + folder;
   var Project = {};
@@ -232,7 +232,7 @@ function readProjectFromArchive(folder)  {
   return Project;
 }
 function readProjectFromEditingDrive(folder, FullPath)  {
-  var Fullpath = FullPath + folder;
+  var Fullpath = path.join(FullPath, folder);
   var Project = {};
   Project.Name = folder.substr(10);
   Project.Type = folder.substr(7, 2);

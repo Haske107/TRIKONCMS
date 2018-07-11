@@ -3,113 +3,156 @@ const ncp = require('ncp').ncp;
 const walkSync = require('walk-sync');
 const FSTree = require('fs-tree-diff');
 const fs = require('fs-extra');
+const path = require('path');
 const CronJob = require('cron').CronJob;
-const EditingDriveA = '/Users/Jeff/Desktop/Editing-A';
-const EditingDriveB = '/Users/Jeff/Desktop/Editing-B';
+const EditingDrives = ['/Users/Jeff/Desktop/Editing-A','/Users/Jeff/Desktop/Editing-B'];
 
 
 // DEFINE CRON JOB
-const job = new CronJob('*/10 * * * * *', () => {
+const job = new CronJob('*/4 * * * * *', () => {
   console.log("Starting Back Up Sequence: " + new Date);
-  Toolkit.readProjectsFromEditingDrive(EditingDriveA).forEach(Project =>  {
-    backUpEditingDriveA(EditingDriveA, Project.Fullname);
-  });
-  Toolkit.readProjectsFromEditingDrive(EditingDriveB).forEach(Project =>  {
-    // backUpEditingDrive(EditingDriveB, Project.Fullname);
-  });
+  backUpEditingDrive();
   console.log("Back Up Sequence Complete");
   }, function () {}, false
 );
 
 // DEFINE BACK UP
-function backUpEditingDriveA(Fullpath, Projectpath) {}
-function findActiveProjects() {
-  let Projects = [];
-  let ActiveProjects = [];
-  Toolkit.readProjectsFromEditingDrive('/Users/Jeff/Desktop/Editing-A/').forEach(Project =>  {
-    Projects.push(Project);
-  });
-  Toolkit.readProjectsFromEditingDrive('/Users/Jeff/Desktop/Editing-B/').forEach(Project =>  {
-    Projects.push(Project);
-  });
-  Projects.forEach(Project => {
-    if (Project.Fullname.substr(Project.Fullname.length - 4) !== 'Done'
-      && Project.Fullname.substr(Project.Fullname.length - 4) !== 'done' )  {
-      ActiveProjects.push(Project);
-    }
-  });
-  return ActiveProjects;
-} //DONE
-function getActiveProjectPatches()  {
-  let Archive = new FSTree({
-    entries: walkSync.entries('../Archives')
-  });
-  let EditingDrives = new FSTree({
-    entries: walkSync.entries(EditingDriveA)
-  });
-
-  EditingDrives.addEntries(walkSync.entries(EditingDriveB));
-  let ValidPatches = [];
-
-  Archive.calculatePatch(EditingDrives).forEach( Patch => {
-    let ProjectName = Patch[2].relativePath.split('/', 1)[0];
-    if (  ProjectName.substring(ProjectName.length - 6) === 'Active'
-       && ProjectName.substr(ProjectName.length - 6) === 'active'
-       && Patch[1] !== "/Users/Jeff/Desktop/Editing-A/"
-       && Patch[1] !== "/Users/Jeff/Desktop/Editing-B/"
-       && Patch[1] !== '.DS_Store'
-    )  {
-      ValidPatches.push(Patch);
-    }
-  });
-  return ValidPatches;
-}
-function performPatch( Patch ) {
-  const FullPath = Patch[2].basePath + '/' + Patch[2].relativePath;
-  const DestPath = '../Archives/' + Patch[2].relativePath;
-  switch (Patch[0]) {
-    case 'mkdir': fs.mkdirSync(DestPath); break;
-    case 'create' : fs.copyFileSync(FullPath, DestPath);  break;
-    case 'unlink' : fs.unlinkSync(DestPath); break;
-    case 'rmdir' :  fs.removeSync(DestPath); break;
+function backUpEditingDrive() {
+  //add active tags to active projects on editing drive
+  addActiveTag();
+  // compare active projects
+  for (let patch of getActiveProjectPatches()) {
+    // apply patches to archive
+    performPatch(patch);
   }
-}
-function findDoneProjects() {
+  removeDoneProjectFromEditingDrive();
+  removeDoneTag();
+  removeActiveTag();
+  console.log("CODE END------------");
 
 }
-function removeDoneTag()  {
 
-}
-function addActiveTag() {
-  fs.readdirSync(EditingDriveB).forEach( Project => {
+  function getActiveProjectPatches() {
+    let Archive = new FSTree({
+      entries: walkSync.entries('../Archives')
+    });
 
-    if  (Project.substr(Project.length - 4) !== 'Done'
-      || Project.substr(0,1) !== '.') {
-      fs.renameSync(Project, Project + ' - Active');
+    let EditingDrivesTree = new FSTree();
+
+    for (let Drive of EditingDrives) {
+      EditingDrivesTree.addEntries(walkSync.entries(Drive));
     }
-  });
-}
-function removeActiveTag() {
-  fs.readdirSync(EditingDriveB).forEach( Project => {
-    if  (Project.substr(Project.length - 9) !== '- Active') {
-      fs.renameSync(Project, Project.substr(0, Project.length - 6));
+
+    let ValidPatches = [];
+
+    for (let Patch of Archive.calculatePatch(EditingDrivesTree)) {
+      let ProjectName = Patch[2].relativePath.split('/', 1)[0];
+      if (Patch[1] !== "/Users/Jeff/Desktop/Editing-A/"
+        && Patch[1] !== "/Users/Jeff/Desktop/Editing-B/"
+        && Patch[1].split('/')[1] !== '.DS_Store'
+        && !(Patch[0] === 'rmdir'
+          && Patch[2].basePath === '../Archives'
+          && Patch[1].split('/')[0].substr(Patch[1].split('/')[0].length - 6) !== 'Active')
+      ) {
+        console.log(Patch);
+
+        ValidPatches.push(Patch);
+      }
     }
-  });
-}
+    ;
+    return ValidPatches;
+  }
+  function getDoneProjectPatches() {
+    let Archive = new FSTree({
+      entries: walkSync.entries('../Archives')
+    });
+    let EditingDrivesTree = new FSTree();
+    for (let Drive of EditingDrives) {
+      EditingDrivesTree.addEntries(walkSync.entries(Drive));
+    }
+    ;
 
-function removeDoneProjectFromEditingDrive()  {
+    let ValidPatches = [];
+    for (let Patch of Archive.calculatePatch(EditingDrivesTree)) {
+      let ProjectName = Patch[2].relativePath.split('/', 1)[0];
+      if (ProjectName.substring(ProjectName.length - 4) === 'Done'
+        || ProjectName.substr(ProjectName.length - 4) === 'done'
+        || Patch[1] !== "/Users/Jeff/Desktop/Editing-A/"
+        || Patch[1] !== "/Users/Jeff/Desktop/Editing-B/"
+        || Patch[1] !== '.DS_Store'
+      ) {
+        console.log(Patch);
+        ValidPatches.push(Patch);
+      }
+    }
+    ;
+    return ValidPatches;
+  }
+  function performPatch(Patch) {
+    const FullPath = Patch[2].basePath + '/' + Patch[2].relativePath;
+    const DestPath = '../Archives/' + Patch[2].relativePath;
+    switch (Patch[0]) {
+      case 'mkdir':
+        fs.mkdirSync(DestPath);
+        break;
+      case 'create' :
+        fs.copyFileSync(FullPath, DestPath);
+        break;
+      case 'unlink' :
+        fs.unlinkSync(DestPath);
+        break;
+      case 'rmdir' :
+        fs.removeSync(DestPath);
+        break;
+    }
+  }
+  function addActiveTag() {
+    for (let Drive of EditingDrives) {
+      for (let Project of fs.readdirSync(Drive)) {
+        if (Project.substr(Project.length - 4) !== 'Done'
+          && Project.substr(0, 1) !== '.') {
+          fs.renameSync(path.join(Drive, Project), path.join(Drive, Project) + '-Active');
+        }
+      }
+    }
+  } //
+  function removeActiveTag() {
+    for (let Drive of EditingDrives) {
+      for (let Project of fs.readdirSync(Drive)) {
+        if (Project.substr(Project.length - 6) === 'Active') {
+          fs.renameSync(path.join(Drive, Project), path.join(Drive, Project.substr(0, Project.length - 7)));
+        }
+      }
+    }
+  } //
+  function validateTransfer() {
 
-}
-function checkIfProjectLanded() {
+  }
+  function removeDoneProjectFromEditingDrive() {
+    for (let Drive of EditingDrives) {
+      for (let Project of fs.readdirSync(Drive)) {
+        if (Project.substr(Project.length - 4) === 'Done'
+          || Project.substr(Project.length - 4) === 'done') {
+          fs.remove(path.join(Drive, Project), err => {});
+        }
+      }
+    }
+  } //
+  function removeDoneTag()  {
+      for (let Project of fs.readdirSync('../Archives')) {
+        if (Project.substr(Project.length - 4) === 'Done'
+          ||Project.substr(Project.length - 4) === 'done') {
+          fs.renameSync(path.join('../Archives', Project), path.join('../Archives', Project.substr(0,Project.length - 5)));
+          if (Project.substr(Project.length - 6) === 'Active')  {
+            fs.renameSync(path.join('../Archives', Project), path.join('../Archives', Project.substr(0,Project.length - 7)));
+          }
+        }
 
-}
+      }
+  }
 
 // BEGIN PROCESS
-// job.start();
+job.start();
 
 //UNIT TESTING
-addActiveTag();
-
-
-
-
+//removeActiveTag();

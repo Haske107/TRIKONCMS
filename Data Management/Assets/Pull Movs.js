@@ -1,13 +1,11 @@
 const fs = require('fs');
 const path = require('path');
-//get folder name
-//recursively scan folder
-// copy transcodes to new transcodes folder
-//open folder in finder
-
-const FolderName = process.argv[2] ;
-
+const FolderName = '/Volumes/Onset - B/070918-BC-Lorenza/Footage/Transcodes/';
+const Source = '/Volumes/Onset - B/070918-BC-Lorenza/Footage/Raw/';
 const walkSync = function(dir) {
+  if (!fs.existsSync(FolderName)) {
+    fs.mkdirSync('/Volumes/Onset - B/Transcodes/');
+  }
   let files = fs.readdirSync(dir);
   files.forEach(function(file) {
     if (fs.statSync(dir + '/' + file).isDirectory()) {
@@ -17,19 +15,10 @@ const walkSync = function(dir) {
       if (path.extname(file) === '.mov'
         || path.extname(file) === '.Mov'
         || path.extname(file) === '.MOV') {
-        fs.copyFile(dir  + file, '/Users/Jeff/Desktop/Transcodes/' + file, err =>  {
-          if (!err) {
-            console.log("Copied over .mov File");
-          } else {
-            console.log("There was a problem copying file");
-          }
-        });
+        fs.renameSync(dir  + file, FolderName + file);
       } else {
       }
     }
   });
 };
-if (!fs.existsSync('/Users/Jeff/Desktop/Transcodes')) {
-  fs.mkdirSync('/Users/Jeff/Desktop/Transcodes');
-}
-walkSync(FolderName);
+walkSync(Source);
