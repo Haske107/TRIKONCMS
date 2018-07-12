@@ -11,45 +11,7 @@ router.get('/', function(req, res, next) {
 });
 // SCRIPT CONTAINER
 router.get('/script', function(req, res, next) {
-  // // SET ARCHIVE PATH
-  // var Archive = '../Archives/';
-  // // GET PROJECTS FROM ARCHIVE
-  // var Projects = readProjectsFromArchive(Archive);
-  var job = new CronJob('*/10 * * * * 1-5', function() {
-      /*
-       * Runs every weekday (Monday through Friday)
-       * at 11:30:00 AM. It does not run on Saturday
-       * or Sunday.
-       */
-      backUpDB();
-      console.log("Running");
-      // SEND DATA TO BROWSER
-      res.render('index');
-    }, function () {
-      /* This function is executed when the job stops */
-    },
-    true/* Time zone of this job. */
-  );
-
-});
-
-
-
-// ARCHIVE READ FUNCTIONS
-function readProjectFromArchive(folder)  {
-  var Fullpath = '../Archives/' + folder;
-  var Project = new project();
-  Project.Name = folder.substr(10);
-  Project.Type = folder.substr(7, 2);
-  Project.Date = fs.statSync(Fullpath).birthtime;
-  Project.Fullname = folder;
-  Project.BTS = readBTSFromArchive(Fullpath);
-  Project.Stills = readStillsFromArchive(Fullpath);
-  Project.Dailies = readDailiesFromArchive(Fullpath);
-  Project.RoughCuts = readRoughCutsFromArchive(Fullpath);
-  Project.FinalCuts = readFinalCutsFromArchive(Fullpath);
-  Project.Size = calcContentSize(Project);
-
+  var Project = readProjectFromArchive('070418-BC-Lorenza');
   project.findOne({Name: Project.Name}, function(err, result) {
     if (!err) {
       if (!result)  {
@@ -73,7 +35,25 @@ function readProjectFromArchive(folder)  {
       }
     }
   });
+});
 
+
+
+// ARCHIVE READ FUNCTIONS
+function readProjectFromArchive(folder)  {
+  var Fullpath = '../Archives/' + folder;
+  var Project = new project();
+  Project.Name = folder.substr(10);
+  Project.Type = folder.substr(7, 2);
+  Project.Date = fs.statSync(Fullpath).birthtime;
+  Project.Fullname = folder;
+  Project.BTS = readBTSFromArchive(Fullpath);
+  Project.Stills = readStillsFromArchive(Fullpath);
+  Project.Dailies = readDailiesFromArchive(Fullpath);
+  Project.RoughCuts = readRoughCutsFromArchive(Fullpath);
+  Project.FinalCuts = readFinalCutsFromArchive(Fullpath);
+  Project.Size = calcContentSize(Project);
+  return Project;
 }
 function readProjectsFromArchive(path)  {
   // RETURN FOLDER NAMES

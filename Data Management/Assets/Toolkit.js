@@ -1,7 +1,9 @@
 const fs = require('fs');
 const path = require('path');
+const _Archive = '/Users/Jeff/Desktop/Archive/';
+
 exports.readProjectFromArchive = function (folder)  {
-  var Fullpath = '../Archives/' + folder;
+  var Fullpath = _Archive + folder;
   var Project = {};
   Project.Name = folder.substr(10);
   Project.Type = folder.substr(7, 2);
@@ -217,7 +219,7 @@ function calcContentSize(Project) {
   return Size;
 }
 function readProjectFromArchive(folder)  {
-  var Fullpath = '../Archives/' + folder;
+  var Fullpath = _Archive + folder;
   var Project = {};
   Project.Name = folder.substr(10);
   Project.Type = folder.substr(7, 2);
@@ -246,3 +248,8 @@ function readProjectFromEditingDrive(folder, FullPath)  {
   Project.Size = calcContentSize(Project);
   return Project;
 }
+
+// todo don't change folder names
+// todo remove active tag fom Back up
+// todo fix db uploader
+

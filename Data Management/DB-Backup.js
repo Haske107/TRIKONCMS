@@ -12,8 +12,8 @@ const job = new CronJob('*/10 * * * * *', () => {
 
 // DEFINE BACK UP
 function backUpDB(date) {
-  var DB = '../../../../../data/db';
-  var Destination = '../BackUp';
+  const DB = '../../../../../data/db';
+  const Destination = '/Users/Jeff/Desktop/BackUp/DB-Backup';
   if (fs.existsSync(DB))  {
     console.log("Found the DB");
     if (fs.existsSync(Destination))  {
