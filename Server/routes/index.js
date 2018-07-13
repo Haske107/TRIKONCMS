@@ -41,7 +41,7 @@ router.get('/script', function(req, res, next) {
 
 // ARCHIVE READ FUNCTIONS
 function readProjectFromArchive(folder)  {
-  var Fullpath = '../Archives/' + folder;
+  var Fullpath = _Archive + folder;
   var Project = new project();
   Project.Name = folder.substr(10);
   Project.Type = folder.substr(7, 2);

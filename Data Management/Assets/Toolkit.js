@@ -49,7 +49,7 @@ readBTSFromArchive = function(ProjectPath)  {
   var BTSPath = ProjectPath + '/BTS';
 
   // EXTRACT BTS
-  var BTS = fs.readdirSync(BTSPath);
+  var BTS = fs.existsSync(BTSPath) ? fs.readdirSync(BTSPath) : [];
 
   // CREATE EMPTY LIST FOR FUTURE STORAGE
   var BTSFiles = [];
@@ -89,7 +89,7 @@ readStillsFromArchive = function(ProjectPath)  {
   var StillsPath = ProjectPath + '/Exports/Stills';
 
   // EXTRACT STILLS
-  var Stills = fs.readdirSync(StillsPath);
+  var Stills = fs.existsSync(StillsPath) ? fs.readdirSync(StillsPath) : [];
 
   // CREATE EMPTY LIST FOR FUTURE STORAGE
   var _Stills = [];
@@ -114,7 +114,7 @@ readRoughCutsFromArchive = function(ProjectPath)  {
   var Path = ProjectPath + '/Exports/Drafts';
 
   // EXTRACT VIDEO
-  var RoughCuts = fs.readdirSync(Path);
+  var RoughCuts =  fs.existsSync(Path) ? fs.readdirSync(Path) : [];
 
   // CREATE EMPTY LIST FOR FUTURE STORAGE
   var RoughCutContainer = [];
@@ -137,7 +137,7 @@ readFinalCutsFromArchive = function(ProjectPath)  {
   var FinalCutsPath = ProjectPath + '/Exports/Final Cut';
 
   // EXTRACT VIDEO
-  var FinalCuts = fs.readdirSync(FinalCutsPath);
+  var FinalCuts =  fs.existsSync(FinalCutsPath) ? fs.readdirSync(FinalCutsPath) : [];
 
   // CREATE EMPTY LIST FOR FUTURE STORAGE
   var FinalCutsContainer = [];
@@ -160,7 +160,7 @@ readDailiesFromArchive = function(ProjectPath)  {
   var DailiesPath = ProjectPath + '/Documents';
 
   // EXTRACT DAILIES
-  var Dailies = fs.readdirSync(DailiesPath);
+  var Dailies =  fs.existsSync(DailiesPath) ? fs.readdirSync(DailiesPath) : [];
 
   // CREATE EMPTY LIST FOR FUTURE STORAGE
   var DailiesContainer = [];
@@ -249,7 +249,6 @@ function readProjectFromEditingDrive(folder, FullPath)  {
   return Project;
 }
 
-// todo don't change folder names
-// todo remove active tag fom Back up
-// todo fix db uploader
+// todo slack integration
+// todo mitigate user / process blocking
 

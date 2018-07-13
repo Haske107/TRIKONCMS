@@ -70,6 +70,7 @@ function backUpEditingDrive() {
   }
 }
   function getProjectPatches() {
+  try {
     let Archive = new FSTree({
       entries: walkSync.entries(_Archive)
     });
@@ -86,7 +87,8 @@ function backUpEditingDrive() {
       let ProjectName = Patch[2].relativePath.split('/', 1)[0];
       if (Patch[1] !== "/Users/Jeff/Desktop/Editing-A/"
         && Patch[1] !== "/Users/Jeff/Desktop/Editing-B/"
-        && Patch[1].split('/')[1] !== '.DS_Store'
+        && Patch[1] !== '.DS_Store'
+        && Patch[1].split('/')[Patch[1].split('/').length - 1] !== '.DS_Store'
         && !(Patch[0] === 'rmdir'
           && Patch[2].basePath === _Archive
           && Patch[1].split('/')[0].substr(Patch[1].split('/')[0].length - 6) !== 'Active')
@@ -96,8 +98,13 @@ function backUpEditingDrive() {
       }
     }
     return ValidPatches;
+  } catch (error) {
+    console.log("Error!", error);
+    return [];
+  }
   }
   function performPatch(Patch) {
+  try {
     const FullPath = Patch[2].basePath + '/' + Patch[2].relativePath;
     const DestPath = _Archive + Patch[2].relativePath;
     switch (Patch[0]) {
@@ -113,7 +120,14 @@ function backUpEditingDrive() {
       case 'rmdir' :
         fs.removeSync(DestPath);
         break;
+      case 'change' :
+        console.log("test");
+        break;
     }
+  } catch (error) {
+    console.log("Error Patching", error);
+
+  }
   }
 
 // BEGIN PROCESS
