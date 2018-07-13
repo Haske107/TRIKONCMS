@@ -1,51 +1,13 @@
-var express = require('express');
-var router = express.Router();
-var ncp = require('ncp').ncp;
-var project = require('../Models/Project');
 const fs = require('fs');
-var CronJob = require('cron').CronJob;
+const path = require('path');
+const _Archive = '/Users/Jeff/Desktop/Archive/';
 
-
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
-// SCRIPT CONTAINER
-router.get('/script', function(req, res, next) {
-  var Project = readProjectFromArchive('070418-BC-Lorenza');
-  project.findOne({Name: Project.Name}, function(err, result) {
-    if (!err) {
-      if (!result)  {
-        console.log('New Project!');
-        Project.save(function(err, result)  {
-          if (!err) {
-            console.log("Succesfully Saved to Database!")
-          }
-        });
-      } else {
-        console.log('Project Exists');
-        project.deleteOne({Name: Project.Name}, function (err)  {
-          if (!err)  {
-            Project.save(function(err, result)  {
-              if (!err) {
-                console.log("Succesfully Saved to Database!")
-              }
-            });
-          }
-        });
-      }
-    }
-  });
-});
-
-
-
-// ARCHIVE READ FUNCTIONS
-function readProjectFromArchive(folder)  {
+exports.readProjectFromArchive = function (folder)  {
   var Fullpath = _Archive + folder;
-  var Project = new project();
+  var Project = {};
   Project.Name = folder.substr(10);
   Project.Type = folder.substr(7, 2);
-  Project.Date = fs.statSync(Fullpath).birthtime;
+  Project.Date = new Date(fs.statSync(Fullpath).birthtime).getTime();
   Project.Fullname = folder;
   Project.BTS = readBTSFromArchive(Fullpath);
   Project.Stills = readStillsFromArchive(Fullpath);
@@ -54,8 +16,8 @@ function readProjectFromArchive(folder)  {
   Project.FinalCuts = readFinalCutsFromArchive(Fullpath);
   Project.Size = calcContentSize(Project);
   return Project;
-}
-function readProjectsFromArchive(path)  {
+};
+exports.readProjectsFromArchive = function(path)  {
   // RETURN FOLDER NAMES
   var projects = scanForProjects(path);
   // CREATE EMPTY PROJECTS LIST
@@ -66,14 +28,28 @@ function readProjectsFromArchive(path)  {
     Projects.push(readProjectFromArchive(projects[i]));
   }
   return Projects;
-}
-function readBTSFromArchive(ProjectPath)  {
+};
+exports.readProjectsFromEditingDrive = function(path) {
+  // RETURN FOLDER NAMES
+  var projects = scanForProjects(path);
+  // CREATE EMPTY PROJECTS LIST
+  var Projects = [];
+  // ITERATE THROUGH EACH PROJECT
+  for (var i = 0; i < projects.length; i++) {
+    // READ PROJECT FROM DRIVE, STORE INTO PROJECTS LIST
+    Projects.push(readProjectFromEditingDrive(projects[i], path));
+  }
+  return Projects;
+};
+
+// ARCHIVE READ FUNCTIONS
+readBTSFromArchive = function(ProjectPath)  {
 
   // SET USE-ABLE PATH
   var BTSPath = ProjectPath + '/BTS';
 
   // EXTRACT BTS
-  var BTS = fs.readdirSync(BTSPath);
+  var BTS = fs.existsSync(BTSPath) ? fs.readdirSync(BTSPath) : [];
 
   // CREATE EMPTY LIST FOR FUTURE STORAGE
   var BTSFiles = [];
@@ -93,7 +69,7 @@ function readBTSFromArchive(ProjectPath)  {
       // STORE SIZE
       Size = stats.size;
       // STORE CREATED DATE
-      Birthdate = stats.birthtime;
+      Birthdate = new Date(stats.birthtime).getTime();
     } else {
       console.log("File not found");
     }
@@ -104,16 +80,16 @@ function readBTSFromArchive(ProjectPath)  {
       Size: Size,
       Created: Birthdate
     });
-   }
-    return BTSFiles;
-}
-function readStillsFromArchive(ProjectPath)  {
+  }
+  return BTSFiles;
+};
+readStillsFromArchive = function(ProjectPath)  {
 
   // SET USE-ABLE PATH
   var StillsPath = ProjectPath + '/Exports/Stills';
 
   // EXTRACT STILLS
-  var Stills = fs.readdirSync(StillsPath);
+  var Stills = fs.existsSync(StillsPath) ? fs.readdirSync(StillsPath) : [];
 
   // CREATE EMPTY LIST FOR FUTURE STORAGE
   var _Stills = [];
@@ -126,19 +102,19 @@ function readStillsFromArchive(ProjectPath)  {
     _Stills.push({
       Filename: Stills[j],
       Size: fs.statSync(StillsPath + "/" + Stills[j]).size,
-      Created: fs.statSync(StillsPath + '/' + Stills[j]).birthtime
+      Created: new Date(fs.statSync(StillsPath + '/' + Stills[j]).birthtime)
     });
   }
   return _Stills;
 
-}
-function readRoughCutsFromArchive(ProjectPath)  {
+};
+readRoughCutsFromArchive = function(ProjectPath)  {
 
   // SET USE-ABLE PATH
   var Path = ProjectPath + '/Exports/Drafts';
 
   // EXTRACT VIDEO
-  var RoughCuts = fs.readdirSync(Path);
+  var RoughCuts =  fs.existsSync(Path) ? fs.readdirSync(Path) : [];
 
   // CREATE EMPTY LIST FOR FUTURE STORAGE
   var RoughCutContainer = [];
@@ -150,18 +126,18 @@ function readRoughCutsFromArchive(ProjectPath)  {
     RoughCutContainer.push({
       Filename: RoughCuts[j],
       Size: fs.statSync(Path + '/' + RoughCuts[j]).size,
-      Created: fs.statSync(Path + '/' + RoughCuts[j]).birthtime
+      Created: new Date(fs.statSync(Path + '/' + RoughCuts[j]).birthtime).getTime()
     });
   }
   return RoughCutContainer;
 
-}
-function readFinalCutsFromArchive(ProjectPath)  {
+};
+readFinalCutsFromArchive = function(ProjectPath)  {
   // SET USE-ABLE PATH
   var FinalCutsPath = ProjectPath + '/Exports/Final Cut';
 
   // EXTRACT VIDEO
-  var FinalCuts = fs.readdirSync(FinalCutsPath);
+  var FinalCuts =  fs.existsSync(FinalCutsPath) ? fs.readdirSync(FinalCutsPath) : [];
 
   // CREATE EMPTY LIST FOR FUTURE STORAGE
   var FinalCutsContainer = [];
@@ -173,18 +149,18 @@ function readFinalCutsFromArchive(ProjectPath)  {
     FinalCutsContainer.push({
       Filename: FinalCuts[j],
       Size: fs.statSync(FinalCutsPath + '/' + FinalCuts[j]).size,
-      Created: fs.statSync(FinalCutsPath + '/' + FinalCuts[j]).birthtime
+      Created: new Date(fs.statSync(FinalCutsPath + '/' + FinalCuts[j]).birthtime).getTime()
     });
   }
   return FinalCutsContainer;
-}
-function readDailiesFromArchive(ProjectPath)  {
+};
+readDailiesFromArchive = function(ProjectPath)  {
 
   // SET USE-ABLE PATH
   var DailiesPath = ProjectPath + '/Documents';
 
   // EXTRACT DAILIES
-  var Dailies = fs.readdirSync(DailiesPath);
+  var Dailies =  fs.existsSync(DailiesPath) ? fs.readdirSync(DailiesPath) : [];
 
   // CREATE EMPTY LIST FOR FUTURE STORAGE
   var DailiesContainer = [];
@@ -195,38 +171,13 @@ function readDailiesFromArchive(ProjectPath)  {
     // LOAD DATA INTO VIDEO OBJECT(S)
     DailiesContainer.push({
       Filename: Dailies[j],
-      Created: fs.statSync(Dailies[j]).birthtime,
+      Created: new Date(fs.statSync(Dailies[j]).birthtime).getTime(),
       Size: fs.statSync(Dailies[j]).size,
       Productiondate: Dailies[j].substr(0,6)
     });
   }
   return DailiesContainer;
-}
-function calcContentSize(Project) {
-  var Size = 0;
-  Project.BTS.forEach(function(File) {
-    Size += File.Size;
-  });
-  Project.Stills.forEach(function(File) {
-    Size += File.Size;
-  });
-  Project.RoughCuts.forEach(function(File) {
-    Size += File.Size;
-  });
-  Project.FinalCuts.forEach(function(File) {
-    Size += File.Size;
-  });
-  Project.Dailies.forEach(function(File) {
-    Size += File.Size;
-  });
-  return Size;
-}
-// ARCHIVE CREATE FUNCTIONS
-// DB READ FUNCTIONS
-// DB CREATE FUNCTIONS
-// DB UPDATE FUNCTIONS
-// DB DELETE FUNCTIONS
-
+};
 
 // HELPER FUNCTIONS
 function scanForProjects(path) {
@@ -247,35 +198,57 @@ function scanForProjects(path) {
     }
   }
   return list;
-};
-
-
-// BACK UP
-function backUpDB() {
-  var DB = '../../../../../data/db';
-  var Destination = '../BackUp';
-  ncp(DB, Destination, function (err) {
-    if (err) {
-      console.error(err);
-    } else {
-      console.log('Successfully Backed Up DB');
-    }
+}
+function calcContentSize(Project) {
+  var Size = 0;
+  Project.BTS.forEach(function(File) {
+    Size += File.Size;
   });
+  Project.Stills.forEach(function(File) {
+    Size += File.Size;
+  });
+  Project.RoughCuts.forEach(function(File) {
+    Size += File.Size;
+  });
+  Project.FinalCuts.forEach(function(File) {
+    Size += File.Size;
+  });
+  Project.Dailies.forEach(function(File) {
+    Size += File.Size;
+  });
+  return Size;
+}
+function readProjectFromArchive(folder)  {
+  var Fullpath = _Archive + folder;
+  var Project = {};
+  Project.Name = folder.substr(10);
+  Project.Type = folder.substr(7, 2);
+  Project.Date = new Date(fs.statSync(Fullpath).birthtime).getTime();
+  Project.Fullname = folder;
+  Project.BTS = readBTSFromArchive(Fullpath);
+  Project.Stills = readStillsFromArchive(Fullpath);
+  Project.Dailies = readDailiesFromArchive(Fullpath);
+  Project.RoughCuts = readRoughCutsFromArchive(Fullpath);
+  Project.FinalCuts = readFinalCutsFromArchive(Fullpath);
+  Project.Size = calcContentSize(Project);
+  return Project;
+}
+function readProjectFromEditingDrive(folder, FullPath)  {
+  var Fullpath = path.join(FullPath, folder);
+  var Project = {};
+  Project.Name = folder.substr(10);
+  Project.Type = folder.substr(7, 2);
+  Project.Date = new Date(fs.statSync(Fullpath).birthtime).getTime();
+  Project.Fullname = folder;
+  Project.BTS = readBTSFromArchive(Fullpath);
+  Project.Stills = readStillsFromArchive(Fullpath);
+  Project.Dailies = readDailiesFromArchive(Fullpath);
+  Project.RoughCuts = readRoughCutsFromArchive(Fullpath);
+  Project.FinalCuts = readFinalCutsFromArchive(Fullpath);
+  Project.Size = calcContentSize(Project);
+  return Project;
 }
 
+// todo slack integration
+// todo mitigate user / process blocking
 
-
-// ---- 1 MINUTE CYCLE ---
-// READ ARCHIVE
-// CHECK FOR MISSING FILES AND PROJECTS IN DB
-// UPLOAD MISSING FILES
-// CHECK FOR FILES IN DB NOT IN ARCHIVE
-// REMOVE FILES FROM DB
-// CHECK DROPBOX
-// DOWNLOAD DROPBOX TO ARCHIVE
-
-
-
-
-
-module.exports = router;
