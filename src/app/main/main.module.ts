@@ -9,11 +9,15 @@ import {ClientService} from "./client/client.service";
 import {MainComponent} from "./main.component";
 import {Routing} from "./main.router";
 import {LandingPageComponent} from "./landing-page/landing-page.component";
+import {NavigatorComponent} from "./landing-page/navigator/navigator.component";
+import {SignInComponent} from "./landing-page/sign-in/sign-in.component";
 
 @NgModule({
   declarations: [
     MainComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    NavigatorComponent,
+    SignInComponent
   ],
   imports: [
     Routing,
