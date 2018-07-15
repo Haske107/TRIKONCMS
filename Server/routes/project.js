@@ -47,11 +47,7 @@ router.post('/', function(req, res) {
 
 
 
-//EXTERNAL ROUTER
-// /* ALWAYS AT THE BOTTOM OF THE ROUTES */
-  router.get('/*', function(req, res) {
-    res.sendFile(path.join(__dirname + '../dist/index.html'));
-  });
+
 });
 
 module.exports = router;

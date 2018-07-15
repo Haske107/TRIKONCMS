@@ -17,6 +17,8 @@ export class ProjectSearchPageComponent implements OnInit {
     this.projectService.getProjects().subscribe(
       _Projects => {
          this.Projects = _Projects;
+
+         console.log(_Projects[1].BTS[0].Filename);
       });
   }
 }

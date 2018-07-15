@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpEvent, HttpEventType, HttpRequest} from "@angular/common/http";
 import {last, map} from "rxjs/internal/operators";
+import {Project} from "../../TS Models/Project"
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProjectService {
 
-  BaseURL = 'http://localhost:3000/api/project';
+  BaseURL = 'http://172.20.21.235:3000/api/project';
 
   constructor(private http : HttpClient) { }
 
@@ -28,7 +29,7 @@ export class ProjectService {
 
   formatProjectArray(event: HttpEvent<any>) {
     if (event.type === HttpEventType.Response) {
-      let Projects = [];
+      let Projects : Project[] = [];
       event.body.obj.forEach(project => {
         Projects.push(project);
       });
