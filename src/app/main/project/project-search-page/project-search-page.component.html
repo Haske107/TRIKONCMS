@@ -1,3 +1,8 @@
-<p>
-  project-search-page works!
-</p>
+<h1>PROJECTS</h1>
+
+<div class="row" *ngFor="let Project of Projects">
+  {{Project.Name}}
+  <br>
+  {{Project.Size}} Bytes
+  <hr>
+</div>

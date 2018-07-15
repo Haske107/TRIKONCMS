@@ -1,4 +1,3 @@
-
 var mongoose = require('mongoose');
 var schema = mongoose.Schema;
 
@@ -80,7 +79,8 @@ var ProjectSchema = new schema({
       ID: {type: String},
       Time: {type: String}
     }]
-  }]
+  }],
+  Delete: {type: String}
 });
 
 module.exports = mongoose.model('Project', ProjectSchema);

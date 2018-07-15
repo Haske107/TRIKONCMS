@@ -5,7 +5,8 @@ import {ClientProfilePageComponent} from "./client-search-page/client-profile-pa
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+
   ],
   declarations: [
     ClientProfilePageComponent,

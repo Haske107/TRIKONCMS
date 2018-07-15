@@ -11,6 +11,8 @@ import {Routing} from "./main.router";
 import {LandingPageComponent} from "./landing-page/landing-page.component";
 import {NavigatorComponent} from "./landing-page/navigator/navigator.component";
 import {SignInComponent} from "./landing-page/sign-in/sign-in.component";
+import {ContactModule} from "./contact/contact.module";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -21,10 +23,12 @@ import {SignInComponent} from "./landing-page/sign-in/sign-in.component";
   ],
   imports: [
     Routing,
+    HttpClientModule,
     CommonModule,
     ProjectModule,
     ArtistModule,
-    ClientModule
+    ClientModule,
+    ContactModule
   ],
   exports:  [
     MainComponent

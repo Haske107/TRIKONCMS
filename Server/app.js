@@ -5,8 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-var MongoClient = require('mongodb').MongoClient;
-var assert = require('assert');
+const project = require('./routes/project');
 
 
 // IMPORT API ROUTES
@@ -77,11 +76,9 @@ app.use(function (req, res, next) {
 
 
 app.use('/', index);
+app.use('/api/project', project);
 app.use('/users', users);
-// /* ALWAYS AT THE BOTTOM OF THE ROUTES */
-// app.get('/*', function(req, res) {
-//     res.sendFile(path.join(__dirname + '../dist/index.html'));
-// });
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
