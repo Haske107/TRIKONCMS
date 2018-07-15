@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpRequest} from "@angular/common/http";
+import {HttpClient, HttpEvent, HttpEventType, HttpRequest} from "@angular/common/http";
 import {last, map} from "rxjs/internal/operators";
 
 @Injectable({
@@ -21,7 +21,19 @@ export class ProjectService {
   getProjects() {
     const req = new HttpRequest('GET', this.BaseURL + '/all');
     return this.http.request(req).pipe(
+      map(response => this.formatProjectArray(response)),
       last()
     );
   }
+
+  formatProjectArray(event: HttpEvent<any>) {
+    if (event.type === HttpEventType.Response) {
+      let Projects = [];
+      event.body.obj.forEach(project => {
+        Projects.push(project);
+      });
+      return Projects;
+    }
+  }
+
 }

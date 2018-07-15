@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ProjectService} from "../project.service";
+import {HttpEvent} from "@angular/common/http";
 
 @Component({
   selector: 'app-project-search-page',
@@ -14,11 +15,8 @@ export class ProjectSearchPageComponent implements OnInit {
 
   ngOnInit() {
     this.projectService.getProjects().subscribe(
-      data => {
-       data.body.obj.forEach(Project =>  {
-          this.Projects.push(Project);
-        });
-      }
-    );
+      _Projects => {
+         this.Projects = _Projects;
+      });
   }
 }
