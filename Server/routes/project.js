@@ -43,14 +43,40 @@ router.get('/:Name', function (req, res, next) {
         // Attribute
         // value
         // user
-router.post('/', function(req, res) {
+router.post('/change', function(req, res) {
 
+  //  EXTRACT VALUES FROM BODY
+  const Attribute = req.body.Attribute;
+  const NewValue = req.body.Value;
+  const User = req.body.User;
+  const _Name = req.body.Name;
 
-
-//EXTERNAL ROUTER
-// /* ALWAYS AT THE BOTTOM OF THE ROUTES */
-  router.get('/*', function(req, res) {
-    res.sendFile(path.join(__dirname + '../dist/index.html'));
+  // FIND THE PROJECT IN THE DATABASE USING THE NAME IN THE BODY
+  Project.findOne({Name : _Name}).exec(function(err, _Project) {
+    if (err) return handleError(err);
+    if(!_Project) {
+      return res.status(500).json({
+        title: 'No Project Found Under the Name ' + _Name,
+      });
+    }
+    // IF A PROJECT IS FOUND
+    if(_Project)  {
+      // UPDATE THE ATTRIBUTE FROM THE DATA IN THE BODY
+      _Project.set({ Attribute: NewValue });
+      // UPDATE THE LEDGER WITH NEW STAMP
+      let NewStamp = {
+        ID: req.body.User,
+        Time: now()
+      };
+      let OldLedger = _Project.Ledger;
+      let newLedger = OldLedger.push(NewStamp);
+      _Project.set({ Ledger: newLedger });
+      // SAVE THE PROJECT
+      _Project.save(function (err, UpdatedProject) {
+        if (err) return handleError(err);
+        res.send(UpdatedProject);
+      });
+    }
   });
 });
 

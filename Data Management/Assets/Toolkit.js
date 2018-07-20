@@ -223,7 +223,12 @@ function readProjectFromArchive(folder)  {
   var Project = {};
   Project.Name = folder.substr(10);
   Project.Type = folder.substr(7, 2);
-  Project.Date = new Date(fs.statSync(Fullpath).birthtime).getTime();
+  try {
+    Project.Date = new Date(fs.statSync(Fullpath).birthtime).getTime();
+  } catch (err) {
+    console.log("-");
+    Project.Date = new Date(fs.statSync(Fullpath + '-Archive').birthtime).getTime();
+  }
   Project.Fullname = folder;
   Project.BTS = readBTSFromArchive(Fullpath);
   Project.Stills = readStillsFromArchive(Fullpath);
@@ -249,6 +254,4 @@ function readProjectFromEditingDrive(folder, FullPath)  {
   return Project;
 }
 
-// todo slack integration
-// todo mitigate user / process blocking
 

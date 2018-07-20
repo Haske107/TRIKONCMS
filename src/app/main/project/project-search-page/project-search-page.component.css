@@ -1,0 +1,10 @@
+.Photo  {
+  height: 100px;
+  width: 100px;
+
+}
+
+.Container  {
+  display: flex;
+  flex-wrap: wrap;
+}

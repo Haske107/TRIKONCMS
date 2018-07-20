@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ProjectService} from "../project/project.service";
+import {Project} from "../../TS Models/Project";
 
 @Component({
   selector: 'app-landing-page',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingPageComponent implements OnInit {
 
-  constructor() { }
+  Projects: Project[];
+
+  constructor(private projectService: ProjectService) { }
 
   ngOnInit() {
+    this.Projects = this.projectService.getProjects().subscribe(
+      Projects => this.Projects = Projects
+    );
   }
 
 }

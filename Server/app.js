@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 const project = require('./routes/project');
+const content = require('./routes/content');
 
 
 // IMPORT API ROUTES
@@ -73,9 +74,10 @@ app.use(function (req, res, next) {
     next();
 });
 
-app.use('/', index);
 app.use('/api/project', project);
+app.use('/content', content);
 app.use('/users', users);
+app.use('/', index);
 
 
 // catch 404 and forward to error handler
