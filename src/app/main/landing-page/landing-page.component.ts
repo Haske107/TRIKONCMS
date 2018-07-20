@@ -11,7 +11,6 @@ export class LandingPageComponent implements OnInit {
 
   Projects: Project[];
 
-
   constructor(private projectService: ProjectService) { }
 
   ngOnInit() {

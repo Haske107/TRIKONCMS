@@ -2,18 +2,42 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8bc14cfd-3335-4622-86bf-7c7721255b0a" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/070118-MV-La Distancia/BTS/Ally1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/070118-MV-La Distancia/BTS/COS_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/070118-MV-La Distancia/BTS/Carmensita_1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/070118-MV-La Distancia/BTS/Faceless_God_1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/070118-MV-La Distancia/BTS/La_Gata_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/070118-MV-La Distancia/BTS/My_Girlfriend_Is_A_Shovel_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/070118-MV-La Distancia/BTS/Pasajeros_En_Trance_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/070118-MV-La Distancia/BTS/Screen Shot 2018-07-12 at 10.34.05 AM.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/070118-MV-La Distancia/BTS/Sekhem_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/070118-MV-La Distancia/BTS/The_Night_Bell_1.JPG" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/070118-MV-La Distancia/Exports/Drafts/My_Girlfriend_Is_A_Shovel_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/070118-MV-La Distancia/Exports/Drafts/Pasajeros_En_Trance_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/070118-MV-La Distancia/Exports/Drafts/Screen Shot 2018-07-12 at 10.34.05 AM.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/070118-MV-La Distancia/Exports/Drafts/Sekhem_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/070118-MV-La Distancia/Exports/Final Cut/My_Girlfriend_Is_A_Shovel_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/070118-MV-La Distancia/Exports/Final Cut/Pasajeros_En_Trance_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/070118-MV-La Distancia/Exports/Final Cut/Screen Shot 2018-07-12 at 10.34.05 AM.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/070118-MV-La Distancia/Exports/Final Cut/Sekhem_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/070118-MV-La Distancia/Exports/Stills/12188165_923256044427944_5472182172110551049_o.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/070118-MV-La Distancia/Exports/Stills/17991329_1333655160054695_8362242197977258156_o.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/070118-MV-La Distancia/Exports/Stills/18056237_1333655750054636_5700241696304322541_o.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/070118-MV-La Distancia/Exports/Stills/18155796_1333654820054729_2383458369498437887_o.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/070118-MV-La Distancia/Exports/Stills/18402327_1658465380833494_1159215422918157875_o.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/070118-MV-La Distancia/Exports/Stills/18527805_192074961320571_5358400266746396876_n.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/070118-MV-La Distancia/Exports/Stills/19023402_10213637278265511_3287715009585593979_o.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/070118-MV-La Distancia/Exports/Stills/19264502_1168342486603265_1055934398480056284_o.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/070118-MV-La Distancia/Exports/Stills/19667513_1178174495620064_5058612802563875169_o.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/070118-MV-La Distancia/Exports/Stills/20280304_10159120608795486_3352455585714303658_o.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/070118-MV-La Distancia/Exports/Stills/20476354_1204079989696181_4724651209641441425_n.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/070118-MV-La Distancia/Exports/Stills/22017057_10155741229539299_1216430271_o (1).jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/070118-MV-La Distancia/Livework/Untitled-2.xd" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/070118-MV-La Distancia/Livework/stickersheet-components (2).xd" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/routes/content.js" afterPath="$PROJECT_DIR$/Server/routes/content.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/TS Models/Project.ts" afterPath="$PROJECT_DIR$/src/app/TS Models/Project.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/content.service.ts" afterPath="$PROJECT_DIR$/src/app/main/content.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/landing-page/landing-page.component.html" afterPath="$PROJECT_DIR$/src/app/main/landing-page/landing-page.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/routes/project.js" afterPath="$PROJECT_DIR$/Server/routes/project.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/landing-page/landing-page.component.ts" afterPath="$PROJECT_DIR$/src/app/main/landing-page/landing-page.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/project/project-search-page/project-profile-page/project-profile-page.component.html" afterPath="$PROJECT_DIR$/src/app/main/project/project-search-page/project-profile-page/project-profile-page.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/project/project-search-page/project-profile-page/project-profile-page.component.ts" afterPath="$PROJECT_DIR$/src/app/main/project/project-search-page/project-profile-page/project-profile-page.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/project/project-search-page/project-search-page.component.css" afterPath="$PROJECT_DIR$/src/app/main/project/project-search-page/project-search-page.component.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/project/project-search-page/project-search-page.component.html" afterPath="$PROJECT_DIR$/src/app/main/project/project-search-page/project-search-page.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/project/project-search-page/project-search-page.component.ts" afterPath="$PROJECT_DIR$/src/app/main/project/project-search-page/project-search-page.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/project/project.service.ts" afterPath="$PROJECT_DIR$/src/app/main/project/project.service.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -37,11 +61,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="project-search-page.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/main/project/project-search-page/project-search-page.component.html">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="286">
+                <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Project.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Server/models/Project.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="8" column="11" lean-forward="true" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+            <state relative-caret-position="912">
+              <caret line="77" column="14" lean-forward="false" selection-start-line="77" selection-start-column="14" selection-end-line="77" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -57,38 +94,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="project-profile-page.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/main/project/project-search-page/project-profile-page/project-profile-page.component.ts">
+      <file leaf-file-name="project.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Server/routes/project.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#50#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="173">
+              <caret line="50" column="11" lean-forward="false" selection-start-line="50" selection-start-column="11" selection-end-line="50" selection-end-column="11" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="project-search-page.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/main/project/project-search-page/project-search-page.component.ts">
+      <file leaf-file-name="users.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Server/routes/users.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="17" column="20" lean-forward="true" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
-              <folding>
-                <element signature="e#0#50#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="project.service.spec.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/main/project/project.service.spec.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#56#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="184">
+              <caret line="8" column="15" lean-forward="false" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -97,7 +118,7 @@
         <entry file="file://$PROJECT_DIR$/src/app/TS Models/Project.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="511">
-              <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+              <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -107,17 +128,17 @@
         <entry file="file://$PROJECT_DIR$/src/app/main/landing-page/landing-page.component.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="115">
-              <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="landing-page.component.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="landing-page.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/main/landing-page/landing-page.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="19" column="6" lean-forward="true" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
+            <state relative-caret-position="38">
+              <caret line="7" column="45" lean-forward="false" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
               </folding>
@@ -129,7 +150,7 @@
         <entry file="file://$PROJECT_DIR$/src/app/main/project/project.service.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-106">
-              <caret line="7" column="2" lean-forward="true" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
+              <caret line="7" column="2" lean-forward="false" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
               </folding>
@@ -246,7 +267,6 @@
         <option value="$PROJECT_DIR$/Data Management/Assets/Project.js" />
         <option value="$PROJECT_DIR$/Server/models/Project.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/Server/routes/project.js" />
         <option value="$PROJECT_DIR$/Server/routes/index.js" />
         <option value="$PROJECT_DIR$/Data Management/Assets/Toolkit.js" />
         <option value="$PROJECT_DIR$/Data Management/Assets/Pull Movs.js" />
@@ -263,6 +283,8 @@
         <option value="$PROJECT_DIR$/src/app/TS Models/Project.ts" />
         <option value="$PROJECT_DIR$/src/app/main/landing-page/landing-page.component.html" />
         <option value="$PROJECT_DIR$/src/app/main/landing-page/landing-page.component.ts" />
+        <option value="$PROJECT_DIR$/Server/routes/project.js" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -325,40 +347,6 @@
               <item name="TRIKONCMS" type="b2602c69:ProjectViewProjectNode" />
               <item name="TRIKONCMS" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="TRIKONCMS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TRIKONCMS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TRIKONCMS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TRIKONCMS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TRIKONCMS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TRIKONCMS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TRIKONCMS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TRIKONCMS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="landing-page" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TRIKONCMS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TRIKONCMS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -382,11 +370,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/app/main/client" />
       <recent name="$PROJECT_DIR$/Data Management/Assets" />
       <recent name="$PROJECT_DIR$/Archives/070418-FA-Acapella/BTS" />
       <recent name="$PROJECT_DIR$/Archives" />
-      <recent name="$PROJECT_DIR$/Archives/012618-MV-Acapella/BTS" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/app/main/client/client-search-page" />
@@ -434,12 +422,12 @@
       <workItem from="1531440075899" duration="60000" />
       <workItem from="1531440262377" duration="274000" />
       <workItem from="1531508079663" duration="3183000" />
-      <workItem from="1532079866692" duration="1205000" />
+      <workItem from="1532079866692" duration="3734000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="167940000" />
+    <option name="totallyTimeSpent" value="170469000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -505,13 +493,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dist/Trikon-App/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -692,24 +673,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Server/routes/users.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="10" lean-forward="true" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Server/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server/routes/project.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-224">
-          <caret line="30" column="7" lean-forward="false" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -748,14 +715,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Server/models/Project.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1771">
-          <caret line="77" column="14" lean-forward="false" selection-start-line="77" selection-start-column="14" selection-end-line="77" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/main/project/project-search-page/project-search-page.component.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
@@ -785,7 +744,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#56#0" expanded="true" />
+            <element signature="e#0#56#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -795,7 +754,7 @@
         <state relative-caret-position="391">
           <caret line="17" column="20" lean-forward="true" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
           <folding>
-            <element signature="e#0#50#0" expanded="true" />
+            <element signature="e#0#50#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -803,9 +762,9 @@
     <entry file="file://$PROJECT_DIR$/src/app/main/project/project-search-page/project-profile-page/project-profile-page.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="437">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding>
-            <element signature="e#0#50#0" expanded="true" />
+            <element signature="e#0#50#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -818,18 +777,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Server/routes/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/TS Models/Project.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="511">
-          <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -837,7 +788,7 @@
     <entry file="file://$PROJECT_DIR$/src/app/main/landing-page/landing-page.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -845,7 +796,7 @@
     <entry file="file://$PROJECT_DIR$/src/app/main/project/project.service.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-106">
-          <caret line="7" column="2" lean-forward="true" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
+          <caret line="7" column="2" lean-forward="false" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
           </folding>
@@ -854,11 +805,54 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/main/landing-page/landing-page.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="19" column="6" lean-forward="true" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
+        <state relative-caret-position="38">
+          <caret line="7" column="45" lean-forward="false" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/models/Project.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="912">
+          <caret line="77" column="14" lean-forward="false" selection-start-line="77" selection-start-column="14" selection-end-line="77" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/routes/project.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="50" column="11" lean-forward="false" selection-start-line="50" selection-start-column="11" selection-end-line="50" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/routes/users.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" column="15" lean-forward="false" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="286">
+            <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
