@@ -30,6 +30,9 @@ export class Project       {
     End: string
   };
   Delivery: string;
+  Budget: number;
+  revenue: number;
+
 
   // ATTACHED FILES
   BTS: [{

@@ -7,7 +7,7 @@ import {last, map} from "rxjs/internal/operators";
 })
 export class ContentService {
 
-  BaseURL = 'http://172.20.21.235:3000/content/';
+  BaseURL = 'http://192.168.0.25:3000/content/';
 
 
   constructor( private http: HttpClient) { }

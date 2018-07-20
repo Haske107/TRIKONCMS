@@ -8,7 +8,8 @@ import {Project} from "../../TS Models/Project"
 })
 export class ProjectService {
 
-  BaseURL = 'http://172.20.21.235:3000/api/project';
+  BaseURL = 'http://localhost:3000/api/project';
+  CurrentProject: Project;
 
   constructor(private http : HttpClient) { }
 

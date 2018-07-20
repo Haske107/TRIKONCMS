@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ProjectService} from "../../project.service";
+import {Project} from "../../../../TS Models/Project";
 
 @Component({
   selector: 'app-project-profile-page',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectProfilePageComponent implements OnInit {
 
-  constructor() { }
+  Project: Project;
+
+  constructor(private projectService : ProjectService) { }
 
   ngOnInit() {
+    this.Project = projectService.CurrentProject;
   }
+
+
 
 }
