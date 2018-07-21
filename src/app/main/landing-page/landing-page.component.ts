@@ -14,7 +14,7 @@ export class LandingPageComponent implements OnInit {
   constructor(private projectService: ProjectService) { }
 
   ngOnInit() {
-    this.Projects = this.projectService.getProjects().subscribe(
+    this.projectService.getProjects().subscribe(
       Projects => this.Projects = Projects
     );
   }

@@ -1,6 +1,6 @@
 <h1>PROJECTS</h1>
 
-<div class="row" *ngFor="let Project of Projects; let i = index">
+<div class="row" *ngFor="let Project of Projects">
   {{Project.Name}}
   <br>
   {{Project.Size}} Bytes
@@ -8,8 +8,8 @@
   <div class="row Container">
     <h3>BTS</h3>
     <br>
-    <div class="row Photo-Wrapper" *ngFor="let Photo of Project.BTS">
-      <img class="Photo" src="http://localhost:3000/content/BTS/{{Project.Fullname}}/{{Photo.Filename}}">
+    <div class="row Photo-Wrapper" *ngFor="let Photo of Project.BTS; let i = index">
+      <img class="Photo" *ngIf="i<10" src="http://www.trikon.xyz/content/BTS/{{Project.Fullname}}/{{Photo.Filename}}">
     </div>
   </div>
   <!--<div class="row Container">-->
@@ -21,21 +21,21 @@
     <h3>Stills</h3>
     <br>
     <div class="col-sm-2 Photo-Wrapper" *ngFor="let Still of Project.Stills">
-      <img class="Photo" src="http://localhost:3000/content/Stills/{{Project.Fullname}}/{{Still.Filename}}">
+      <img class="Photo" src="http://www.trikon.xyz/content/Stills/{{Project.Fullname}}/{{Still.Filename}}">
     </div>
   </div>
   <div class="row Container">
     <h3>Rough Cuts</h3>
     <br>
     <div class="col-sm-2 Photo-Wrapper" *ngFor="let RoughCut of Project.RoughCuts">
-      <img class="Photo" src="http://localhost:3000/content/RoughCuts/{{Project.Fullname}}/{{RoughCut.Filename}}">
+      <img class="Photo" src="http://www.trikon.xyz/content/RoughCuts/{{Project.Fullname}}/{{RoughCut.Filename}}">
     </div>
   </div>
   <div class="row Container">
     <h3>Finals</h3>
     <br>
     <div class="col-sm-2 Photo-Wrapper" *ngFor="let FinalCut of Project.FinalCuts">
-      <img class="Photo" src="http://localhost:3000/content/FinalCuts/{{Project.Fullname}}/{{FinalCut.Filename}}">
+      <img class="Photo" src="http://www.trikon.xyz/content/FinalCuts/{{Project.Fullname}}/{{FinalCut.Filename}}">
     </div>
   </div>
 </div>

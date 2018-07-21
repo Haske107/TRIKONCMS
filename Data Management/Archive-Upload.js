@@ -4,13 +4,13 @@ var Toolkit = require('./Assets/Toolkit');
 var observableDiff = require('deep-diff').observableDiff;
 var applyChange = require('deep-diff').applyChange;
 var CronJob = require('cron').CronJob;
-const _Archive = '/Users/Jeff/Desktop/Archive';
+const _Archive = 'Z:';
 
 // DEFINE CRON JOB
 var Job = new CronJob('*/10 * * * * *', function() {
     console.log("Starting Archive Upload Sequence: " + new Date);
     Toolkit.readProjectsFromArchive(_Archive).forEach( Project =>  {
-      uploadProjectToDB(Project);
+      if (Project.Name) uploadProjectToDB(Project);
     });
     console.log("Archive Upload Sequence Complete");
 }, function () {}, true);
@@ -29,7 +29,7 @@ mongoose.connect(localurl + dbName, function(err, result) {
 
 // PROJECT UPLOADER
 function uploadProjectToDB(Project)  {
-  if (Project.Name.substr(Project.Name.length - 6) === 'Active')  {
+  if (Project.Name.substr(Project.Name.length - 6) === 'Active' )  {
     Project.Name = Project.Name.substr(0, Project.Name.length - 7);
     console.log(Project.Name);
   }

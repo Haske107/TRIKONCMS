@@ -11,10 +11,9 @@ export class ProjectProfilePageComponent implements OnInit {
 
   Project: Project;
 
-  constructor(private projectService : ProjectService) { }
+  constructor(public projectService : ProjectService) { }
 
   ngOnInit() {
-    this.Project = projectService.CurrentProject;
   }
 
 

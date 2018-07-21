@@ -8,7 +8,7 @@ import {Project} from "../../TS Models/Project"
 })
 export class ProjectService {
 
-  BaseURL = 'http://localhost:3000/api/project';
+  BaseURL = 'http://trikon.xyz/api/project';
   CurrentProject: Project;
 
   constructor(private http : HttpClient) { }

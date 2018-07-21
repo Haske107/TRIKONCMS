@@ -1,22 +1,8 @@
 const fs = require('fs');
 const path = require('path');
-const _Archive = '/Users/Jeff/Desktop/Archive/';
+const _Archive = 'Z:';
 
-exports.readProjectFromArchive = function (folder)  {
-  var Fullpath = _Archive + folder;
-  var Project = {};
-  Project.Name = folder.substr(10);
-  Project.Type = folder.substr(7, 2);
-  Project.Date = new Date(fs.statSync(Fullpath).birthtime).getTime();
-  Project.Fullname = folder;
-  Project.BTS = readBTSFromArchive(Fullpath);
-  Project.Stills = readStillsFromArchive(Fullpath);
-  Project.Dailies = readDailiesFromArchive(Fullpath);
-  Project.RoughCuts = readRoughCutsFromArchive(Fullpath);
-  Project.FinalCuts = readFinalCutsFromArchive(Fullpath);
-  Project.Size = calcContentSize(Project);
-  return Project;
-};
+exports.readProjectFromArchive =  readProjectFromArchive;
 exports.readProjectsFromArchive = function(path)  {
   // RETURN FOLDER NAMES
   var projects = scanForProjects(path);
@@ -46,7 +32,7 @@ exports.readProjectsFromEditingDrive = function(path) {
 readBTSFromArchive = function(ProjectPath)  {
 
   // SET USE-ABLE PATH
-  var BTSPath = ProjectPath + '/BTS';
+  var BTSPath = ProjectPath + '/BTS/Done';
 
   // EXTRACT BTS
   var BTS = fs.existsSync(BTSPath) ? fs.readdirSync(BTSPath) : [];
@@ -56,30 +42,31 @@ readBTSFromArchive = function(ProjectPath)  {
 
   // FOR EACH OBJECT
   for (var j = 0; j < BTS.length; j++) {
+    if (!BTS[j] === '.DS_Store') {
+      // DECLARE ATTRIBUTES
+      var Size = 0;
+      var stats;
+      var Birthdate;
 
-    // DECLARE ATTRIBUTES
-    var Size = 0;
-    var stats;
-    var Birthdate;
+      // CHECK IF FILE EXISTS
+      if (fs.existsSync(BTSPath + '/' + BTS[j])) {
+        // PULL FILE STATS
+        stats = fs.statSync(BTSPath + '/' + BTS[j]);
+        // STORE SIZE
+        Size = stats.size;
+        // STORE CREATED DATE
+        Birthdate = new Date(stats.birthtime).getTime();
+      } else {
+        console.log("File not found");
+      }
 
-    // CHECK IF FILE EXISTS
-    if (fs.existsSync(BTSPath + '/' + BTS[j])) {
-      // PULL FILE STATS
-      stats = fs.statSync(BTSPath + '/' + BTS[j]);
-      // STORE SIZE
-      Size = stats.size;
-      // STORE CREATED DATE
-      Birthdate = new Date(stats.birthtime).getTime();
-    } else {
-      console.log("File not found");
+      // LOAD DATA INTO BTS OBJECT(S)
+      BTSFiles.push({
+        Filename: BTS[j],
+        Size: Size,
+        Created: Birthdate
+      });
     }
-
-    // LOAD DATA INTO BTS OBJECT(S)
-    BTSFiles.push({
-      Filename: BTS[j],
-      Size: Size,
-      Created: Birthdate
-    });
   }
   return BTSFiles;
 };
@@ -221,8 +208,8 @@ function calcContentSize(Project) {
 function readProjectFromArchive(folder)  {
   var Fullpath = _Archive + folder;
   var Project = {};
-  Project.Name = folder.substr(10);
-  Project.Type = folder.substr(7, 2);
+  Project.Name = folder.split('-')[2];
+  Project.Type = folder.split('-')[1];
   try {
     Project.Date = new Date(fs.statSync(Fullpath).birthtime).getTime();
   } catch (err) {
