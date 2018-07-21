@@ -47,7 +47,7 @@ router.post('/change', function(req, res) {
 
   //  EXTRACT VALUES FROM BODY
   const Attribute = req.body.Attribute;
-  const NewValue = req.body.Value;
+  const NewValue = req.body.NewValue;
   const User = req.body.User;
   const _Name = req.body.Name;
 
@@ -61,20 +61,25 @@ router.post('/change', function(req, res) {
     }
     // IF A PROJECT IS FOUND
     if(_Project)  {
+
+      // MAKE CHANGE OBJECT
+      _Project[Attribute] = NewValue;
+
       // UPDATE THE ATTRIBUTE FROM THE DATA IN THE BODY
-      _Project.set({ Attribute: NewValue });
       // UPDATE THE LEDGER WITH NEW STAMP
       let NewStamp = {
         ID: req.body.User,
-        Time: now()
+        Time: new Date().getTime()
       };
-      let OldLedger = _Project.Ledger;
-      let newLedger = OldLedger.push(NewStamp);
-      _Project.set({ Ledger: newLedger });
+      console.log( _Project[Attribute]);
+      _Project.Ledger.push(NewStamp);
       // SAVE THE PROJECT
       _Project.save(function (err, UpdatedProject) {
-        if (err) return handleError(err);
-        res.send(UpdatedProject);
+          return res.status(200).json({
+            title: "Saved",
+            obj: UpdatedProject
+          });
+
       });
     }
   });

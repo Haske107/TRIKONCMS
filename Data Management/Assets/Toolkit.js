@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const _Archive = 'Z:';
+const _Archive = 'Y:';
 
 exports.readProjectFromArchive =  readProjectFromArchive;
 exports.readProjectsFromArchive = function(path)  {
@@ -32,26 +32,26 @@ exports.readProjectsFromEditingDrive = function(path) {
 readBTSFromArchive = function(ProjectPath)  {
 
   // SET USE-ABLE PATH
-  var BTSPath = ProjectPath + '/BTS/Done';
+  var BTSPath = path.join(ProjectPath, '/BTS/Done/');
 
   // EXTRACT BTS
   var BTS = fs.existsSync(BTSPath) ? fs.readdirSync(BTSPath) : [];
+
 
   // CREATE EMPTY LIST FOR FUTURE STORAGE
   var BTSFiles = [];
 
   // FOR EACH OBJECT
   for (var j = 0; j < BTS.length; j++) {
-    if (!BTS[j] === '.DS_Store') {
       // DECLARE ATTRIBUTES
       var Size = 0;
       var stats;
       var Birthdate;
 
       // CHECK IF FILE EXISTS
-      if (fs.existsSync(BTSPath + '/' + BTS[j])) {
+      if (fs.existsSync(BTSPath + BTS[j])) {
         // PULL FILE STATS
-        stats = fs.statSync(BTSPath + '/' + BTS[j]);
+        stats = fs.statSync(BTSPath + BTS[j]);
         // STORE SIZE
         Size = stats.size;
         // STORE CREATED DATE
@@ -66,8 +66,8 @@ readBTSFromArchive = function(ProjectPath)  {
         Size: Size,
         Created: Birthdate
       });
-    }
   }
+
   return BTSFiles;
 };
 readStillsFromArchive = function(ProjectPath)  {
@@ -214,10 +214,11 @@ function readProjectFromArchive(folder)  {
     Project.Date = new Date(fs.statSync(Fullpath).birthtime).getTime();
   } catch (err) {
     console.log("-");
-    Project.Date = new Date(fs.statSync(Fullpath + '-Archive').birthtime).getTime();
+    Project.Date = new Date(fs.statSync(Fullpath + '-Active').birthtime).getTime();
   }
   Project.Fullname = folder;
   Project.BTS = readBTSFromArchive(Fullpath);
+
   Project.Stills = readStillsFromArchive(Fullpath);
   Project.Dailies = readDailiesFromArchive(Fullpath);
   Project.RoughCuts = readRoughCutsFromArchive(Fullpath);
