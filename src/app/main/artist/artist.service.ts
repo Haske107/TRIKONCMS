@@ -6,4 +6,13 @@ import { Injectable } from '@angular/core';
 export class ArtistService {
 
   constructor() { }
+
+  // TODO CREATE ARTIST
+
+  // TODO GET SPECIFIC ARTIST
+
+  // TODO GET ALL ARTISTS
+
+  // TODO UPDATE ARTIST ATTRIBUTE(S)
+
 }

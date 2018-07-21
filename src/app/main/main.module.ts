@@ -14,6 +14,7 @@ import {SignInComponent} from "./landing-page/sign-in/sign-in.component";
 import {ContactModule} from "./contact/contact.module";
 import {HttpClientModule} from "@angular/common/http";
 import {ContentService} from "./content.service";
+import {AuthService} from "./auth.service";
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import {ContentService} from "./content.service";
     ProjectService,
     ArtistService,
     ClientService,
-    ContentService
+    ContentService,
+    AuthService
   ]
 })
 export class MainModule { }

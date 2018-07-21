@@ -3,11 +3,14 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class ContactService {
+export class AuthService {
 
   constructor() { }
 
-  // TODO POST MESSAGE
+  // TODO LOG IN
 
-  // TODO GET MESSAGE
+  // TODO LOG OUT
+
+  // TODO IS LOGGED IN / IN SESSION
+
 }

@@ -6,4 +6,14 @@ import { Injectable } from '@angular/core';
 export class ClientService {
 
   constructor() { }
+
+  // TODO CREATE CLIENT
+
+  // TODO GET CLIENT
+
+  // TODO GET ALL CLIENTS
+
+  // TODO UPDATE CLIENT ATTRIBUTES
+
+
 }
