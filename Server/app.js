@@ -36,11 +36,11 @@ mongoose.connect(localurl + dbName, function(err, result) {
 // Works
 
 var app = express();
-
-// If an incoming request uses
-// a protocol other than HTTPS,
-// redirect that request to the
-// same url but with HTTPS
+//
+// // If an incoming request uses
+// // a protocol other than HTTPS,
+// // redirect that request to the
+// // same url but with HTTPS
 // const forceSSL = function() {
 //     return function (req, res, next) {
 //         if (req.headers['x-forwarded-proto'] !== 'https') {

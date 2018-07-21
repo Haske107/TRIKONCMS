@@ -6,6 +6,6 @@ router.get('/', function (req, res, next) {
   res.render('index');
 });
 router.get('/*', function(req, res) {
-  res.sendFile(path.join('/Users/jeff/TRIKONCMS/dist/Trikon-App/index.html'));
+  res.sendFile(path.join(__dirname, '../../dist/Trikon-App/index.html'));
 });
 module.exports = router;
