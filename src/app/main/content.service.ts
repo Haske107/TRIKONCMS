@@ -36,7 +36,7 @@ export class ContentService {
   retrievePercentageUploaded(event)    {
     if (event.type === 1)   {
       const num = event.loaded / event.total * 100;
-      this.GalleryPercentage.emit(num);
+      //this.GalleryPercentage.emit(num);
       return num;
     }
   }
