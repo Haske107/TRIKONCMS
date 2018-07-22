@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpRequest} from "@angular/common/http";
-import {last} from "rxjs/internal/operators";
+import {HttpClient, HttpEvent, HttpEventType, HttpRequest} from "@angular/common/http";
+import {last, map} from "rxjs/internal/operators";
 import {User} from "../TS Models/User";
 
 @Injectable({
@@ -23,6 +23,7 @@ export class AuthService {
   createAdmin(Admin: User) {
     const req = new HttpRequest('POST', this.Base + '/admin/', Admin);
     return this.http.request(req).pipe(
+      map(Response => this.formatUserArray(Response)),
       last()
     );
   }
@@ -31,6 +32,7 @@ export class AuthService {
   getAdmin(Admin_ID: string) {
     const req = new HttpRequest('GET', this.Base + '/admin/' + Admin_ID);
     return this.http.request(req).pipe(
+      map(Response => this.formatUserArray(Response)),
       last()
     );
   }
@@ -39,6 +41,7 @@ export class AuthService {
   getAdmins() {
     const req = new HttpRequest('GET', this.Base + '/admin/');
     return this.http.request(req).pipe(
+      map(Response => this.formatUserArray(Response)),
       last()
     );
   }
@@ -48,8 +51,9 @@ export class AuthService {
     const body = {
       Attribute: Attribute, NewValue: NewValue, Admin_ID: Admin_ID
     };
-    const req = new HttpRequest('POST', this.Base + '/admin/', body);
+    const req = new HttpRequest('POST', this.Base + '/admin/update', body);
     return this.http.request(req).pipe(
+      map(Response => this.formatUserArray(Response)),
       last()
     );
   }
@@ -59,10 +63,23 @@ export class AuthService {
     const body = {
       Admin_ID: Admin_ID
     };
-    const req = new HttpRequest('POST', this.Base + '/admin/', body);
+    const req = new HttpRequest('POST', this.Base + '/admin/remove', body);
     return this.http.request(req).pipe(
+      map(Response => this.formatUserArray(Response)),
       last()
     );
+  }
+
+  private formatUserArray(event: HttpEvent<any>) {
+    if (event.type === HttpEventType.Response) {
+      let Users : User[] = [];
+      if (event.body instanceof Array)  {
+        Users = event.body;
+      } else {
+        return event.body;
+      }
+      return Users;
+    }
   }
 
 }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import {last} from "rxjs/internal/operators";
-import {HttpClient, HttpRequest} from "@angular/common/http";
+import {last, map} from "rxjs/internal/operators";
+import {HttpClient, HttpEvent, HttpEventType, HttpRequest} from "@angular/common/http";
 import {User} from "../../TS Models/User";
 
 @Injectable({
@@ -18,6 +18,7 @@ export class ClientService {
   createClient(Client: User) {
     const req = new HttpRequest('POST', this.Base + '/client/', Client);
     return this.http.request(req).pipe(
+      map(Response => this.formatUserArray(Response)),
       last()
     );
   }
@@ -26,6 +27,7 @@ export class ClientService {
   getClient(Client_ID: string) {
     const req = new HttpRequest('GET', this.Base + '/client/' + Client_ID);
     return this.http.request(req).pipe(
+      map(Response => this.formatUserArray(Response)),
       last()
     );
   }
@@ -34,6 +36,7 @@ export class ClientService {
   getClients() {
     const req = new HttpRequest('GET', this.Base + '/client/');
     return this.http.request(req).pipe(
+      map(Response => this.formatUserArray(Response)),
       last()
     );
   }
@@ -45,8 +48,9 @@ export class ClientService {
       Attribute: Attribute, NewValue: NewValue,
       Client_ID: Client_ID, Mod_ID: Mod_ID
     };
-    const req = new HttpRequest('POST', this.Base + '/client/', body);
+    const req = new HttpRequest('POST', this.Base + '/client/update', body);
     return this.http.request(req).pipe(
+      map(Response => this.formatUserArray(Response)),
       last()
     );
   }
@@ -56,10 +60,23 @@ export class ClientService {
     const body = {
       Client_ID: Client_ID, Mod_ID: Mod_ID
     };
-    const req = new HttpRequest('POST', this.Base + '/client/', body);
+    const req = new HttpRequest('POST', this.Base + '/client/remove', body);
     return this.http.request(req).pipe(
+      map(Response => this.formatUserArray(Response)),
       last()
     );
+  }
+
+  private formatUserArray(event: HttpEvent<any>) {
+    if (event.type === HttpEventType.Response) {
+      let Users : User[] = [];
+      if (event.body instanceof Array)  {
+        Users = event.body;
+      } else {
+        return event.body;
+      }
+      return Users;
+    }
   }
 
 }

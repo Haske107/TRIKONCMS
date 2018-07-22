@@ -6,7 +6,7 @@ const User = require(MODEL_PATH + 'User');
 
 // GET ALL ARTISTS
 router.get('/artist/', function(req,res)  {
-  User.find({type: 'Artist'}, function(err, Artists)  {
+  User.find({Type: 'Artist'}, function(err, Artists)  {
     if (err) return res.status(501);
     if (!Artists) return res.status(401);
     return res.status(200).json(Artists);
@@ -53,7 +53,7 @@ router.post('/artist/update', function(req,res)  {
   User.findById(req.body.Artist_ID, function(err, Artist)  {
     if (err) return res.status(500);
     if (!Artist) return res.status(401);
-    Artist[req.body.attribute] = req.body.newValue;
+    Artist[req.body.Attribute] = req.body.NewValue;
     Artist.Ledger.push({
       ID: req.body.Mod_ID,
       Time: new Date().getTime(),
@@ -88,7 +88,7 @@ router.post('/artist/remove', function(req,res)  {
 
 // GET ALL CLIENTS
 router.get('/client/', function(req,res)  {
-  User.find({type: 'Client'}, function(err, Clients)  {
+  User.find({Type: 'Client'}, function(err, Clients)  {
     if (err) return res.status(501);
     if (!Clients) return res.status(401);
     return res.status(200).json(Clients);
@@ -115,6 +115,10 @@ router.get('/client/:ID', function(req,res)  {
 // CREATE CLIENT
 router.post('/client/', function(req,res)  {
   const newUser = new User(req.body);
+  newUser.Ledger.push({
+    Time: new Date().getTime(),
+    Type: 'CREATED'
+  });
   newUser.save(function(err, success) {
     if (err) return res.status(501);
     if (!success) return res.status(401);
@@ -123,10 +127,10 @@ router.post('/client/', function(req,res)  {
 });
 // UPDATE CLIENT
 router.post('/client/update', function(req,res)  {
-  User.findById(req.body.ID, function(err, Client)  {
+  User.findById(req.body.Client_ID, function(err, Client)  {
     if (err) return res.status(500);
     if (!Client) return res.status(401);
-    Client[req.body.attribute] = req.body.newValue;
+    Client[req.body.Attribute] = req.body.NewValue;
     Client.Ledger.push({
       ID: req.body.Mod_ID,
       Time: new Date().getTime(),
@@ -141,7 +145,7 @@ router.post('/client/update', function(req,res)  {
 });
 // REMOVE CLIENT
 router.post('/client/remove', function(req,res)  {
-  User.findById(req.body.ID, function(err, Client)  {
+  User.findById(req.body.Client_ID, function(err, Client)  {
     if (err) return res.status(500);
     if (!Client) return res.status(401);
     Client.Delete = true;
@@ -156,14 +160,14 @@ router.post('/client/remove', function(req,res)  {
 // ADMIN ROUTES /////////
 // GET ALL ADMIN
 router.get('/admin/', function(req,res)  {
-  User.find({type: 'Admin'}, function(err, Admins)  {
+  User.find({Type: 'Admin'}, function(err, Admins)  {
     if (err) return res.status(501);
     if (!Admins) return res.status(401);
     return res.status(200).json(Admins);
   });
 });
 
-// GET SPECIFIC CLIENT
+// GET SPECIFIC ADMIN
 router.get('/admin/:ID', function(req,res)  {
   User.findById(req.params.ID, function(err, Admin)  {
     if (err) return res.status(501);
@@ -180,21 +184,25 @@ router.get('/admin/:ID', function(req,res)  {
   });
 });
 
-// CREATE CLIENT
+// CREATE ADMIN
 router.post('/admin/', function(req,res)  {
   const newUser = new User(req.body);
+  newUser.Ledger.push({
+    Time: new Date().getTime(),
+    Type: 'CREATED'
+  });
   newUser.save(function(err, success) {
     if (err) return res.status(501);
     if (!success) return res.status(401);
     return res.status(201);
   });
 });
-// UPDATE CLIENT
+// UPDATE ADMIN
 router.post('/admin/update', function(req,res)  {
-  User.findById(req.body.ID, function(err, Admin)  {
+  User.findById(req.body.Admin_ID, function(err, Admin)  {
     if (err) return res.status(500);
     if (!Admin) return res.status(401);
-    Admin[req.body.attribute] = req.body.newValue;
+    Admin[req.body.Attribute] = req.body.NewValue;
     Admin.Ledger.push({
       ID: req.body.ModsID,
       Time: new Date().getTime(),
@@ -207,13 +215,13 @@ router.post('/admin/update', function(req,res)  {
     });
   });
 });
-// REMOVE CLIENT
+// REMOVE ADMIN
 router.post('/admin/remove', function(req,res)  {
-  User.findById(req.body.ID, function(err, Admin)  {
+  User.findById(req.body.Admin_ID, function(err, Admin)  {
     if (err) return res.status(500);
     if (!Admin) return res.status(401);
     Admin.Delete = true;
-    Client.save(function(err, success)  {
+    Admin.save(function(err, success)  {
       if (err) return res.status(500);
       if (!success) return res.status(401);
       return res.status(200);
