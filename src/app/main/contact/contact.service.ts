@@ -6,4 +6,8 @@ import { Injectable } from '@angular/core';
 export class ContactService {
 
   constructor() { }
+
+  // TODO POST MESSAGE
+
+  // TODO GET MESSAGE
 }

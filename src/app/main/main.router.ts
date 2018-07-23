@@ -9,14 +9,14 @@ import {ClientProfilePageComponent} from "./client/client-search-page/client-pro
 
 export const MAIN_ROUTES: Routes = [
   // Home Page Routes
-  {path: '', redirectTo: '/landing', pathMatch: 'full'},
+  {path: '', redirectTo: '/', pathMatch: 'full'},
   {path: 'projectsearch', component: ProjectSearchPageComponent },
   {path: 'projectprofile', component: ProjectProfilePageComponent },
   {path: 'artistsearch', component: ArtistSearchPageComponent},
   {path: 'artistprofile', component: ArtistProfilePageComponent },
   {path: 'clientsearch', component: ClientSearchPageComponent},
   {path: 'clientprofile', component: ClientProfilePageComponent },
-  {path: 'landing', component: LandingPageComponent}
+  {path: '', component: LandingPageComponent}
 ];
 
 export const Routing = RouterModule.forRoot(MAIN_ROUTES);

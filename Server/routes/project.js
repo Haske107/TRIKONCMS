@@ -53,7 +53,7 @@ router.post('/change', function(req, res) {
 
   // FIND THE PROJECT IN THE DATABASE USING THE NAME IN THE BODY
   Project.findOne({Name : _Name}).exec(function(err, _Project) {
-    if (err) return handleError(err);
+    if (err) return res.status(500);
     if(!_Project) {
       return res.status(500).json({
         title: 'No Project Found Under the Name ' + _Name,

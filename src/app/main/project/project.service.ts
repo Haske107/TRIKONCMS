@@ -9,6 +9,7 @@ import {Project} from "../../TS Models/Project"
 export class ProjectService {
 
   BaseURL = 'http://trikon.xyz/api/project';
+
   CurrentProject: Project;
 
   constructor(private http : HttpClient) { }
@@ -19,7 +20,6 @@ export class ProjectService {
         last()
       );
   }
-
   getProjects() {
     const req = new HttpRequest('GET', this.BaseURL + '/all');
     return this.http.request(req).pipe(
@@ -27,7 +27,12 @@ export class ProjectService {
       last()
     );
   }
+  // TODO UPDATE PROJECT ATTRIBUTES
+  updateProjectAttributes() {
 
+  }
+
+  // HELPER FUNCTIONS
   formatProjectArray(event: HttpEvent<any>) {
     if (event.type === HttpEventType.Response) {
       let Projects : Project[] = [];
