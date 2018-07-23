@@ -13,10 +13,7 @@ export class LandingPageComponent implements OnInit, OnChanges{
 
   @ViewChild('videoPlayer') videoplayer: any;
 
-
   constructor(private projectService: ProjectService) { }
-
-
 
   toggleVideo(event: any) {
   }

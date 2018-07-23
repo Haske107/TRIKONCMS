@@ -3,16 +3,36 @@
   <!-- LOGO -->
   <img class="logo" src="../../../assets/TrikonLogo.png">
 
+  <!-- TABS -->
+  <div class="row tabs">
+    <div class="tab col-sm-2" routerLink="/projectsearch">
+      Projects
+    </div>
+    <div class="tab col-sm-2">
+      Artists
+    </div>
+    <div class="tab col-sm-2">
+      About
+    </div>
+    <div class="tab col-sm-2">
+      Contact
+    </div>
+  </div>
+
   <!-- CROP WRAPPER -->
   <div class="crop-wrapper">
     <!-- VIDEO -->
-    <video  (click)="toggleVideo($event)" #videoPlayer class="snow" autoplay>
-      <source src="../../assets/New Cut.mp4" type="video/mp4" />
+    <video  (click)="toggleVideo($event)" #videoPlayer class="snow" controls autoplay>
+      <!--<source src="../../assets/New Cut.mp4" type="video/mp4" />-->
       Browser not supported
     </video>
   </div>
+
+
+
+
   <!-- INFO BUTTON -->
-  <button  class="info-button" (click)="toggleVideo()"></button>
+  <button  class="info-button"></button>
 
   <!-- CONTACT -->
   <!--<h3 class="contact">CONTACT@TRIKON.XYZ</h3>-->

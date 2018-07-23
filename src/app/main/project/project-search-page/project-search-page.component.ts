@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnChanges, OnInit} from '@angular/core';
 import {ProjectService} from "../project.service";
+import {Router} from "@angular/router";
+import {Project} from "../../../TS Models/Project";
 
 @Component({
   selector: 'app-project-search-page',
@@ -10,23 +12,29 @@ import {ProjectService} from "../project.service";
 export class ProjectSearchPageComponent implements OnInit {
 
   Projects = [];
-
-  constructor(private projectService: ProjectService) { }
+  CurrProject: Project;
+  constructor(private projectService: ProjectService, private router: Router) { }
 
   ngOnInit() {
     this.projectService.getProjects().subscribe(
       _Projects => {
          this.Projects = _Projects;
-         // PREVENT DS_STORE FROM SNEAKING INTO THE FILES
-         this.Projects.forEach(Project => {
-           Project.BTS.forEach((BTS, i) => {
-             if (BTS.Filename === ".DS_Store")  {
-               Project.BTS.splice(i,1);
-               console.log(BTS);
-             }
-           });
-         });
-         console.log(_Projects[1].BTS[0].Filename);
+         this.CurrProject = this.Projects[0];
       });
   }
+
+  navToHome() {
+    this.router.navigateByUrl('/');
+  }
+
+  selectProject(Project: Project) {
+    this.projectService.CurrentProject = Project;
+    this.CurrProject = this.projectService.CurrentProject;
+  }
+
+
+ ]
+
+
+
 }

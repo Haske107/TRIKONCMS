@@ -1,1 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Play');
+@import url('https://fonts.googleapis.com/css?family=Rajdhani:300,400,600,700');
+
+
+button:focus {outline: 0}
+input:focus {outline:0}
+div:focus {outline: 0}
+img:focus {outline: 0}

@@ -8,3 +8,198 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+
+
+
+
+.background {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 0;
+  background-image: url("../../../../assets/Background.jpg");
+  background-size: cover;
+}
+.info-button  {
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  color: white;
+  outline: none;
+  z-index: 3;
+  background-image: url('../../../../assets/Button1.jpg');
+  background-size: 200%;
+  cursor: pointer;
+  border: 1px solid #363636;
+}
+.logo {
+  width: 200px;
+  height: 50px;
+  position: absolute;
+  z-index: 2;
+  top: 24px;
+  left: 24px;
+  cursor: pointer;
+  background-image: url("../../../../assets/TrikonLogo.jpg");
+  background-size: 10%;
+  border: none;
+  outline: none;
+
+}
+
+
+.left-panel {
+  position: absolute;
+  width: 300px;
+  height: 50vh;
+  left: 24px;
+  top: 200px;
+
+}
+.Project-Row  {
+  width: 100%;
+  left: 0;
+  margin: 0;
+}
+.Project-Name {
+  text-align: right;
+  cursor: pointer;
+  font-family: "Play", sans-serif;
+  font-size: 24px;
+  color: whitesmoke;
+}
+.Projects-Label {
+  position: absolute;
+  left: 24px;
+  top: 20%;
+  text-align: right;
+  margin: 0;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 300;
+  font-size: 30px;
+  color: #d1d1d1;
+}
+.main {
+  width: 75%;
+  height: 70vh;
+  position: absolute;
+  top: 20%;
+  left: 15%;
+}
+.Project-Title  {
+  position: absolute;
+  left: 0;
+  top: 62vh;
+  text-align: right;
+  margin: 0;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 60px;
+  color: #d1d1d1;
+}
+.Project-Director  {
+  position: absolute;
+  left: 0;
+  top: 73vh;
+  text-align: right;
+  margin: 0;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 300;
+  font-size: 30px;
+  color: #f0f0f0;
+}
+
+.Project-Details  {
+  position: absolute;
+  left: 225px;
+  top: 73vh;
+  text-align: right;
+  margin: 0;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  color: #f0f0f0;
+}
+.Project-Cut  {
+  position: absolute;
+  left: 325px;
+  top: 73vh;
+  text-align: right;
+  margin: 0;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  color: #f0f0f0;
+}
+.Project-Drafts  {
+  position: absolute;
+  left: 425px;
+  top: 73vh;
+  text-align: right;
+  margin: 0;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  color: #f0f0f0;
+}
+.Project-Stills  {
+  position: absolute;
+  left: 525px;
+  top: 73vh;
+  text-align: right;
+  margin: 0;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  color: #f0f0f0;
+}
+.Project-BTS  {
+  position: absolute;
+  left: 625px;
+  top: 73vh;
+  text-align: right;
+  margin: 0;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  color: #f0f0f0;
+}
+.Project-Documents  {
+  position: absolute;
+  left: 725px;
+  top: 73vh;
+  text-align: right;
+  margin: 0;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  color: #f0f0f0;
+}
+
+.crop-wrapper  {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  top: 0;
+  width: 100%;
+  left: 0;
+  height: 70vh;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.video  {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: -50px;
+  left: 0;
+  border: none;
+}

@@ -16,7 +16,7 @@
   height: 150px;
   position: absolute;
   z-index: 2;
-  top: calc(35% - 162px);
+  top: calc(35% - 192px);
   left: 20%;
   cursor: pointer;
   background-image: url("../../../assets/TrikonLogo.jpg");
@@ -25,13 +25,23 @@
   outline: none;
 
 }
-.location {
+
+.tabs {
   position: absolute;
-  bottom: 30px;
-  left: calc(50% - 98px);
-  font-size: 14px;
-  color: #e5e5e5;
+  top: calc(35% - 48px);
+  left: 20%;
+  height: 48px;
+  width: 600px;
 }
+
+.tab  {
+  cursor: pointer;
+  text-align: center;
+  color: white;
+  font-family: "Rajdhani", sans-serif;
+  font-size: 24px;
+}
+
 .contact {
   height: 50px;
   position: absolute;
@@ -93,8 +103,8 @@
   width: 40px;
   border-radius: 20px;
   position: absolute;
-  top: calc(35% - 102px);
-  right: 25%;
+  top: 24px;
+  right: 24px;
   color: white;
   outline: none;
   z-index: 3;
