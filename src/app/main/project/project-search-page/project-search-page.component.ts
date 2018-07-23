@@ -19,8 +19,14 @@ export class ProjectSearchPageComponent implements OnInit {
     this.projectService.getProjects().subscribe(
       _Projects => {
          this.Projects = _Projects;
-         console.log(this.Projects);
          this.CurrProject = this.Projects[0];
+
+
+         this.Projects.forEach(Project => {
+           if (Project.Stills[0]) {
+             console.log(Project.Stills[0].Filename);
+           }
+         })
       });
   }
 

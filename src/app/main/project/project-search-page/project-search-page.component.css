@@ -54,15 +54,7 @@
 
 }
 
-.list {
-  position: absolute;
-  left:0;
-  height: 100%;
-  width:100%;
-  top: 0;
-}
-.tile {
-}
+
 
 .Projects-Label {
   position: absolute;
@@ -79,10 +71,34 @@
 .main {
   position: absolute;
   width: 100%;
-  height: calc(100vh - 150px);
-  top: 122px;
+  height: calc(100vh - 100px);
+  top: 100px;
+  overflow-y: scroll;
+
 }
 
-.Main-Still {
 
+.list {
+  position: absolute;
+  overflow-y: scroll;
+  left:0;
+  width:100%;
+  top: 0;
+}
+.tile {
+  overflow: hidden;
+}
+.Project_Name {
+  font-family: 'Rajdhani', sans-serif;
+
+  z-index: 2;
+  position: absolute;
+  bottom: 12px;
+  color: white;
+}
+.Main-Still {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
 }
