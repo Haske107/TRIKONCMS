@@ -40,8 +40,8 @@
   border: 1px solid #363636;
 }
 .logo {
-  width: 200px;
-  height: 50px;
+  width: 96px;
+  height: 24px;
   position: absolute;
   z-index: 2;
   top: 24px;
@@ -67,12 +67,12 @@
 .Projects-Label {
   position: absolute;
   left: 24px;
-  top: 80px;
+  top: 48px;
   text-align: right;
   margin: 0;
   font-family: 'Rajdhani', sans-serif;
   font-weight: 300;
-  font-size: 30px;
+  font-size: 24px;
   color: #d1d1d1;
 }
 
@@ -83,3 +83,6 @@
   top: 122px;
 }
 
+.Main-Still {
+
+}

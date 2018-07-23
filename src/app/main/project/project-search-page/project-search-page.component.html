@@ -9,11 +9,12 @@
   </h4>
 
   <div class="main">
-  <mat-grid-list class="list" [cols]="6" rowHeight="1:1" gutterSize="2px" >
-  <mat-grid-tile class="tile" *ngFor="let Project of Projects">
-    {{Project.Name}}
-  </mat-grid-tile>
-  </mat-grid-list>
+    <mat-grid-list class="list" [cols]="6" rowHeight="1:1" gutterSize="2px" >
+      <mat-grid-tile class="tile" *ngFor="let Project of Projects">
+        {{Project.Name}}
+        <img src="http://www.trikon.xyz/Project.Name/Project.BTS[0]" class="Main-Still">
+      </mat-grid-tile>
+    </mat-grid-list>
   </div>
 
 </div>
