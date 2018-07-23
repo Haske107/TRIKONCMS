@@ -1,11 +1,19 @@
-<div class="top-bar">
+<!-- BACKGROUND -->
+<div class="background">
+  <!-- LOGO -->
+  <img class="logo" src="../../../assets/TrikonLogo.png">
 
-</div>
+  <!-- CROP WRAPPER -->
+  <div class="crop-wrapper">
+    <!-- VIDEO -->
+    <video  (click)="toggleVideo($event)" #videoPlayer class="snow" autoplay>
+      <source src="../../assets/New Cut.mp4" type="video/mp4" />
+      Browser not supported
+    </video>
+  </div>
+  <!-- INFO BUTTON -->
+  <button  class="info-button" (click)="toggleVideo()"></button>
 
-<div class="main">
-
-</div>
-
-<div class="bottom-bar">
-
+  <!-- CONTACT -->
+  <!--<h3 class="contact">CONTACT@TRIKON.XYZ</h3>-->
 </div>
