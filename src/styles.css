@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Play');
 @import url('https://fonts.googleapis.com/css?family=Rajdhani:300,400,600,700');
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 
 button:focus {outline: 0}

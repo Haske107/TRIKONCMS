@@ -7,34 +7,13 @@
   <h4 class="Projects-Label">
     Projects
   </h4>
-  <!-- LEFT-PANEL -->
-  <div class="left-panel">
-    <div class="row Project-Row" *ngFor="let Project of Projects">
-      <h4 class="Project-Name" (click)="selectProject(Project)">
-        {{Project.Name}}
-      </h4>
-    </div>
-  </div>
 
-
-  <!-- MAIN PANEL =-->
   <div class="main">
-    <!-- CROP WRAPPER -->
-    <div class="crop-wrapper">
-      <!-- VIDEO -->
-      <video  (click)="toggleVideo($event)" #videoPlayer class="video" controls autoplay>
-        <!--<source src="../../assets/New Cut.mp4" type="video/mp4" />-->
-        Browser not supported
-      </video>
-    </div>
-      <h4 class="Project-Title">{{CurrProject.Name}}</h4>
-    <h4 class="Project-Director">Dir. Jeff Haskell</h4>
-    <h4 class="Project-Details">Info</h4>
-
-    <h4 class="Project-Cut">Final Cuts</h4>
-    <h4 class="Project-Drafts">Drafts</h4>
-    <h4 class="Project-Stills">Stills</h4>
-    <h4 class="Project-BTS">BTS</h4>
-    <h4 class="Project-Documents">Documents</h4>
+  <mat-grid-list class="list" [cols]="6" rowHeight="1:1" gutterSize="2px" >
+  <mat-grid-tile class="tile" *ngFor="let Project of Projects">
+    {{Project.Name}}
+  </mat-grid-tile>
+  </mat-grid-list>
   </div>
+
 </div>

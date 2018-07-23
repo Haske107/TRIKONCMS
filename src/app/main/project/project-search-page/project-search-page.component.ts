@@ -19,6 +19,7 @@ export class ProjectSearchPageComponent implements OnInit {
     this.projectService.getProjects().subscribe(
       _Projects => {
          this.Projects = _Projects;
+         console.log(this.Projects);
          this.CurrProject = this.Projects[0];
       });
   }
@@ -32,8 +33,6 @@ export class ProjectSearchPageComponent implements OnInit {
     this.CurrProject = this.projectService.CurrentProject;
   }
 
-
- ]
 
 
 
