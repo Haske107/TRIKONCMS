@@ -1,7 +1,6 @@
 .Photo  {
   height: 100px;
   width: 100px;
-
 }
 
 .Container  {
@@ -40,8 +39,8 @@
   border: 1px solid #363636;
 }
 .logo {
-  width: 96px;
-  height: 24px;
+  width: 192px;
+  height: 48px;
   position: absolute;
   z-index: 2;
   top: 24px;
@@ -58,13 +57,13 @@
 
 .Projects-Label {
   position: absolute;
-  left: 24px;
-  top: 48px;
+  left: 230px;
+  top: 28px;
   text-align: right;
   margin: 0;
   font-family: 'Rajdhani', sans-serif;
   font-weight: 300;
-  font-size: 24px;
+  font-size: 42px;
   color: #d1d1d1;
 }
 
@@ -80,7 +79,6 @@
 
 .list {
   position: absolute;
-  overflow-y: scroll;
   left:0;
   width:100%;
   top: 0;
@@ -93,12 +91,44 @@
 
   z-index: 2;
   position: absolute;
-  bottom: 12px;
+  bottom: 4px;
+  left: 4px;
   color: white;
+  padding: 0;
+  margin: 0;
 }
 .Main-Still {
   position: absolute;
   left: 0;
   top: 0;
   height: 100%;
+}
+
+
+
+::-webkit-scrollbar {
+  width: 10px;  /* remove scrollbar space */
+  margin-left: 2px;
+  height: calc(100vh - 110px);
+  margin-top: 110px;
+  display: block;
+  background: transparent;
+  z-index: 1;/* optional: just make scrollbar invisible */
+}
+/* optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: #852731;
+  border-radius: 0;
+  z-index: 1;
+  display: block;
+
+}
+
+.footer {
+  position: absolute;
+  height: 36px;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  background-color: #1e1e1e;
 }

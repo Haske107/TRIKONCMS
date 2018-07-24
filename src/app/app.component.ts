@@ -8,3 +8,18 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'app';
 }
+
+
+
+// todo Contact video slide out
+
+
+// todo stagger animate in
+
+// todo log in slider
+
+// todo tile design
+
+
+
+

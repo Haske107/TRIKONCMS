@@ -4,6 +4,7 @@ import {ProjectSearchPageComponent} from "./project-search-page/project-search-p
 import {ProjectProfilePageComponent} from "./project-search-page/project-profile-page/project-profile-page.component";
 import {HttpClient} from "@angular/common/http";
 import {MatGridListModule} from "@angular/material";
+import { HidePipe } from './project-search-page/hide.pipe';
 
 @NgModule({
   imports: [
@@ -12,7 +13,8 @@ import {MatGridListModule} from "@angular/material";
   ],
   declarations: [
     ProjectSearchPageComponent,
-    ProjectProfilePageComponent
+    ProjectProfilePageComponent,
+    HidePipe
   ]
 })
 export class ProjectModule { }

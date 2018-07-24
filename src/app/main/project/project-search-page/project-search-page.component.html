@@ -9,17 +9,28 @@
   </h4>
 
   <div class="main">
-    <mat-grid-list class="list" [cols]="6" rowHeight="1:1" gutterSize="2px" >
-      <mat-grid-tile class="tile" *ngFor="let Project of Projects">
-        <h4 class="Project_Name">
-          {{Project.Name}}
-        </h4>
+    <mat-grid-list class="list" [cols]="6" rowHeight="1:1" gutterSize="6px" >
+
+
+
+      <mat-grid-tile class="tile" *ngFor="let Project of Projects | hide" (click)="selectProject(Project)">
+
         <div *ngFor="let Still of Project.Stills; let i = index">
           <img *ngIf="i === 0" src="http://www.trikon.xyz/content/Stills/{{Project.Fullname}}/{{Project.Stills[0].Filename}}" class="Main-Still">
         </div>
         <img *ngIf="!Project.Stills[0]" src="../../../../assets/Placeholder.jpg" class="Main-Still">
 
+        <div class="footer">
+          <h4 class="Project_Name">
+            {{Project.Name}}
+          </h4>
+        </div>
       </mat-grid-tile>
+
+
+
+
+
     </mat-grid-list>
   </div>
 
