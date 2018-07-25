@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8bc14cfd-3335-4622-86bf-7c7721255b0a" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/app/main/contact/contact/new-message/new-message.component.ts" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/contact/contact.module.ts" afterPath="$PROJECT_DIR$/src/app/main/contact/contact.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/contact/contact.service.ts" afterPath="$PROJECT_DIR$/src/app/main/contact/contact.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/contact/contact/contact.component.ts" afterPath="$PROJECT_DIR$/src/app/main/contact/contact/contact.component.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/landing-page/landing-page.component.css" afterPath="$PROJECT_DIR$/src/app/main/landing-page/landing-page.component.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/landing-page/landing-page.component.html" afterPath="$PROJECT_DIR$/src/app/main/landing-page/landing-page.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/project/project-search-page/project-search-page.component.ts" afterPath="$PROJECT_DIR$/src/app/main/project/project-search-page/project-search-page.component.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -30,8 +23,8 @@
               <file leaf-file-name="landing-page.component.css" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/src/app/main/landing-page/landing-page.component.css">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="733">
-                      <caret line="93" column="57" lean-forward="false" selection-start-line="93" selection-start-column="57" selection-end-line="93" selection-end-column="57" />
+                    <state relative-caret-position="572">
+                      <caret line="86" column="43" lean-forward="false" selection-start-line="86" selection-start-column="43" selection-end-line="86" selection-end-column="43" />
                       <folding />
                     </state>
                   </provider>
@@ -573,7 +566,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="227757000" />
+    <option name="totallyTimeSpent" value="228011000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -1028,8 +1021,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/main/landing-page/landing-page.component.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="733">
-          <caret line="93" column="57" lean-forward="false" selection-start-line="93" selection-start-column="57" selection-end-line="93" selection-end-column="57" />
+        <state relative-caret-position="572">
+          <caret line="86" column="43" lean-forward="false" selection-start-line="86" selection-start-column="43" selection-end-line="86" selection-end-column="43" />
           <folding />
         </state>
       </provider>

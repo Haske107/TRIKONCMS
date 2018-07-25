@@ -83,12 +83,18 @@
             .About  {
               width: 42px;
               margin-right: -4px;
-              background-image: url("../../../assets/Green-Pentagon.png");
+              background-size: contain;
+              background-repeat: no-repeat;
+              background-image: url("../../../assets/Maroon-Hexagon.png");
+
             }
             .Management  {
               width: 42px;
               margin-right: -4px;
-              background-image: url("../../../assets/Maroon-Hexagon.png");
+              background-size: contain;
+              background-repeat: no-repeat;
+              background-image: url("../../../assets/Green-Pentagon.png");
+
             }
             .Project  {
               background-image: url("../../../assets/Gold-Square.png");
