@@ -4,35 +4,54 @@
   <img class="logo" src="../../../assets/TrikonLogo.png">
 
   <!-- TABS -->
-  <div class="row tabs">
-    <div class="tab col-sm-2" routerLink="/projectsearch">
-      Projects
+  <div class="Tabs">
+    <div class="tab row" routerLink="/projectsearch">
+      <h4 class="label">
+        Projects
+      </h4>
+      <div class="Project Jewel" ></div>
     </div>
-    <div class="tab col-sm-2">
-      Artists
+    <div class="tab row">
+      <h4 class="label">
+        Management
+      </h4>
+      <div class="Management Jewel" ></div>
+
     </div>
-    <div class="tab col-sm-2">
-      About
+    <div class="tab row">
+      <h4 class="label">
+        About
+      </h4>
+      <div class="About Jewel" ></div>
+
     </div>
-    <div class="tab col-sm-2">
-      Contact
+    <div class="tab row">
+      <h4 class="label">
+        Contact
+      </h4>
+      <div class="Contact Jewel" ></div>
+
     </div>
   </div>
+
 
   <!-- CROP WRAPPER -->
   <div class="crop-wrapper">
     <!-- VIDEO -->
-    <video  (click)="toggleVideo($event)" #videoPlayer class="snow" controls autoplay>
+    <video  (click)="toggleVideo($event)" #videoPlayer class="video" controls >
       <source src="../../assets/New Cut.mp4" type="video/mp4" />
       Browser not supported
     </video>
+  </div>
+
+  <div class="triangle">
   </div>
 
 
 
 
   <!-- INFO BUTTON -->
-  <button  class="info-button"></button>
+  <div  class="info-button"></div>
 
   <!-- CONTACT -->
   <!--<h3 class="contact">CONTACT@TRIKON.XYZ</h3>-->
