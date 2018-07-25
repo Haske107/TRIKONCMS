@@ -1,4 +1,6 @@
 /* COMPONENTS */
+
+/* BACKGROUND GRADIENT */
 .background {
   position: fixed;
   width: 100%;
@@ -11,13 +13,15 @@
   background-size: cover;
 
 }
+
+/* LOGO */
 .logo {
-  width: 600px;
-  height: 150px;
+  width: 200px;
+  height: 50px;
   position: absolute;
   z-index: 2;
-  top: calc(35% - 192px);
-  left: 20%;
+  left: 24px;
+  top: 20px;
   cursor: pointer;
   background-image: url("../../../assets/TrikonLogo.jpg");
   background-size: 10%;
@@ -26,56 +30,81 @@
 
 }
 
-.tabs {
+
+/* DROP DOWN MENU COMPONENTS */
+.info-button  {
   position: absolute;
-  top: calc(35% - 48px);
-  left: 20%;
-  height: 48px;
-  width: 600px;
-}
-
-.tab  {
-  cursor: pointer;
-  text-align: center;
-  color: white;
-  font-family: "Rajdhani", sans-serif;
-  font-size: 24px;
-}
-
-.contact {
-  height: 50px;
-  position: absolute;
-  bottom: 4%;
-  left: -40%;
-  width: 300px;
-  font-family: "Rajdhani", sans-serif;
-  font-size: 40px;
-  font-style: normal;
-  font-variant: normal;
-  font-weight: 400;
-  line-height: 40px;
-  text-align: center;
-  padding: 0;
-  cursor: default;
-  color: white;
-  transition: .3s ease;
-  opacity: 0;
-  z-index: 1;
-}
-
-.info-button:focus ~ .contact  {
-  opacity: 1;
-  transition: .3s ease;
-  left: calc(50% - 220px);
-}
-
-.logo:focus ~ .contact  {
-  opacity: 1;
-  transition: .3s ease;
-  left: calc(50% - 220px);
+  top: 24px;
+  right: 24px;
+  height: 36px;
+  width: 42px;
   outline: none;
+  z-index: 3;
+  cursor: pointer;
+  background-image: url("../../../assets/Red-Triangle.png");
+  background-size: cover;
+  padding: 0;
+  margin :0;
 }
+    .Tabs {
+      position: absolute;
+      top: 74px;
+      right: 28px;
+      padding: 0;
+      margin :0;
+    }
+        .tab  {
+          cursor: pointer;
+          padding:0;
+          margin : 24px 0 24px 0;
+          color: white;
+          font-family: "Rajdhani", sans-serif;
+          font-size: 24px;
+          height: 36px;
+          justify-content: flex-end;
+        }
+            .label  {
+              padding: 6px;
 
+            }
+            .Jewel{
+              margin-left: 12px;
+              height: 36px;
+              width: 36px;
+              outline: none;
+              z-index: 3;
+              cursor: pointer;
+              background-size: cover;
+            }
+            .Contact  {
+              background-image: url("../../../assets/Blue-Circle.png");
+
+            }
+            .About  {
+              width: 42px;
+              margin-right: -4px;
+              background-size: contain;
+              background-repeat: no-repeat;
+              background-image: url("../../../assets/Maroon-Hexagon.png");
+
+            }
+            .Management  {
+              width: 42px;
+              margin-right: -4px;
+              background-size: contain;
+              background-repeat: no-repeat;
+              background-image: url("../../../assets/Green-Pentagon.png");
+
+            }
+            .Project  {
+              background-image: url("../../../assets/Gold-Square.png");
+
+            }
+
+/*---------------------------- */
+
+
+/* VIDEO COMPONENTS */
 .crop-wrapper  {
   position: absolute;
   padding: 0;
@@ -87,47 +116,30 @@
   z-index: 1;
   overflow: hidden;
 }
+      .video  {
+        width: 100%;
+        height: auto;
+        position: absolute;
+        top: -50px;
+        left: 0;
+        border: none;
+      }
+/* ---------------------*/
 
-.snow  {
-  width: 100%;
-  height: auto;
-  position: absolute;
-  top: -50px;
-  left: 0;
-  border: none;
+
+/* TRIANGLE */
+.triangle {
+  background-repeat: no-repeat;
+  background-image: url("../../../assets/Gray-Triangle.png");
+  background-size: contain;
+  margin-left: auto ;
+  margin-right: auto;
+  margin-top: 5vh;
+  width: 100vh;
+  height: 100vh;
+  z-index: 4;
+
 }
 
 
-.info-button  {
-  height: 40px;
-  width: 40px;
-  border-radius: 20px;
-  position: absolute;
-  top: 24px;
-  right: 24px;
-  color: white;
-  outline: none;
-  z-index: 3;
-  background-image: url('../../../assets/Button1.jpg');
-  background-size: 200%;
-  cursor: pointer;
-  border: 1px solid #363636;
-}
-.motto  {
-  height: 50px;
-  position: absolute;
-  bottom: 14px;
-  left: 24px;
-  font-family: "Rajdhani", sans-serif;
-  font-size: 25px;
-  font-style: italic;
-  font-variant: normal;
-  font-weight:100;
-  line-height: 20px;
-  padding: 0;
-  cursor: default;
-  color: white;
-  transition: .3s ease;
-  z-index: 1;
-}
 

@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ContactComponent } from './contact/contact.component';
 import {ContactService} from './contact.service';
-import { NewMessageComponent } from '../contact/contact/new-message/new-message.component';
 
 @NgModule({
   imports: [
@@ -12,8 +11,7 @@ import { NewMessageComponent } from '../contact/contact/new-message/new-message.
     ContactService
   ],
   declarations: [
-    ContactComponent,
-    NewMessageComponent
+    ContactComponent
   ]
 })
 export class ContactModule { }
