@@ -23,16 +23,17 @@ router.get('/all', function (req, res, next) {
 
 // FIND A SPECIFIC PROJECT BY NAME
 router.get('/:Name', function (req, res, next) {
-  Project.findOne({Name : req.params.Name}).exec(function(err, _Project) {
-    if(err) {
-      return res.status(500).json({
-        title: 'An Error Occured',
-        error: err
-      });
-    }
-    res.status(202).json({
-      message: 'Success',
-      obj: _Project
+  Project.findOne({Name : req.params.Name}, function(err, Project)  {
+    if (err) return res.status(501);
+    if (!Project) return res.status(401);
+    Project.Ledger.push({
+      Time: new Date().getTime(),
+      Type: 'View'
+    });
+    Project.save(function(err, success)  {
+      if (err) return res.status(502);
+      if (!success) return res.status(402);
+      return res.status(200).json(Project);
     });
   });
 });

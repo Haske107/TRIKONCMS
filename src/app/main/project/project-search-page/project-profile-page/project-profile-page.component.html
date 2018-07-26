@@ -1,0 +1,60 @@
+<div class="Container">
+
+  <div
+    class="Background"
+    [ngStyle]="(Project && Project.Stills) ? {'background-image' : 'url(' + 'http://www.trikon.xyz/content/Stills/' + Project.Fullname + '/' + Project.Stills[1].Filename + ')' }
+             : {'background-image' :  '../../../../../assets/Placeholder.jpg'}">
+  </div>
+
+  <!-- PROJECT TITLE -->
+  <h1 class="Project-Title" *ngIf="(Project && Project.Name)">
+    {{Project.Name}}
+  </h1>
+  <!-- LOGO -->
+  <img class="Logo" src="../../../../../assets/TrikonLogo.png" (click)="navToHome()">
+  <!-- RED BUTTON -->
+  <button  class="Red-Button"></button>
+  <!-- LEFT PANEL -->
+  <mat-card class="Left-Panel">
+
+  </mat-card>
+  <!-- CENTER PANEL -->
+  <mat-card class="Center-Panel">
+    <div class="Head-Board"></div>
+    <mat-tab-group class="Tab-Group">
+      <mat-tab label="Finals">
+
+      </mat-tab>
+      <mat-tab label="Drafts">
+        <mat-grid-list class="Draft-List"  [cols]="3" rowHeight="16:9" gutterSize="6px">
+          <mat-grid-tile class="Draft-Tile" *ngFor="let RoughCut of Project.RoughCuts">
+            <video #videoPlayer class="video"  >
+              <source src="http://www.trikon.xyz/content/RoughCuts/{{Project.Fullname}}/{{RoughCut.Filename}}" type="video/mp4" />
+              Browser not supported
+            </video>
+          </mat-grid-tile>
+        </mat-grid-list>
+
+
+
+      </mat-tab>
+      <mat-tab label="Dailies">
+
+      </mat-tab>
+      <mat-tab label="Stills">
+
+      </mat-tab>
+      <mat-tab label="BTS">
+
+      </mat-tab>
+      <mat-tab label="Documents">
+
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card>
+
+  <mat-card class="Right-Panel">
+
+  </mat-card>
+
+</div>

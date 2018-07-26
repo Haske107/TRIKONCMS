@@ -65,6 +65,7 @@
           font-family: "Rajdhani", sans-serif;
           font-size: 24px;
           height: 48px;
+          z-index: 6;
           justify-content: flex-start;
         }
             .label  {

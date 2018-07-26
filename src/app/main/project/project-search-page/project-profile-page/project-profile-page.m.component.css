@@ -1,0 +1,35 @@
+@media only screen and (max-width: 500px) {
+
+  .Left-Panel, .Right-Panel {
+    display: none;
+  }
+
+  .Project-Title {
+    top: 75px;
+  }
+
+  .Tab-Group  {
+    width: 100%;
+    top: 150px;
+    left: 0;
+    height: calc(100vh - 150px);
+  }
+
+  .Red-Button  {
+    display: none;
+  }
+
+  .Back-Arrow {
+    position: absolute;
+    display: block;
+    top: 20px;
+    right: 20px;
+    height: 40px;
+    width: 48px;
+    transform: rotate(-90deg);
+    z-index: 4;
+  }
+
+
+
+}

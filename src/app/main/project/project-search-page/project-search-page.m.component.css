@@ -1,0 +1,15 @@
+@media only screen and (max-width: 500px) {
+
+  .info-button  {
+    display: none;
+  }
+
+  .logo {
+    left: 4px;
+  }
+
+  .Projects-Label {
+    left: 200px;
+
+  }
+}

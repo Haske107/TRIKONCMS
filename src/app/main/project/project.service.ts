@@ -17,7 +17,8 @@ export class ProjectService {
   getProject(ProjectName) {
     const req = new HttpRequest('GET', this.BaseURL + '/' + ProjectName);
     return this.http.request(req).pipe(
-        last()
+      map(response => this.formatProjectArray(response)),
+      last()
       );
   }
   getProjects() {
@@ -27,20 +28,22 @@ export class ProjectService {
       last()
     );
   }
-  // TODO UPDATE PROJECT ATTRIBUTES
-  updateProjectAttributes() {
 
-  }
 
   // HELPER FUNCTIONS
   formatProjectArray(event: HttpEvent<any>) {
     if (event.type === HttpEventType.Response) {
       let Projects : Project[] = [];
-      event.body.obj.forEach(project => {
-        Projects.push(project);
-      });
+      if (!event['body']['obj'])  {
+        return event['body']
+      }
+      for (let Project of event['body']['obj']) {
+        Projects.push(Project);
+      }
       return Projects;
     }
   }
+
+
 
 }

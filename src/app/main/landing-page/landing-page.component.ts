@@ -1,6 +1,7 @@
 import {Component, OnChanges, OnInit, ViewChild} from '@angular/core';
 import {ProjectService} from "../project/project.service";
 import {Project} from "../../TS Models/Project";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-landing-page',
@@ -13,12 +14,16 @@ export class LandingPageComponent implements OnInit, OnChanges{
 
   @ViewChild('videoPlayer') videoplayer: any;
 
-  constructor(private projectService: ProjectService) { }
+  constructor(private projectService: ProjectService, private router: Router) { }
 
   toggleVideo(event: any) {
   }
   ngOnInit() {
 
+  }
+
+  navToProjects() {
+    this.router.navigateByUrl('/Search');
   }
 
   ngOnChanges() {

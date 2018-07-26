@@ -11,7 +11,7 @@ import {Project} from "../../../TS Models/Project";
 
 export class ProjectSearchPageComponent implements OnInit {
 
-  Projects = [];
+  Projects : Project[];
   CurrProject: Project;
   constructor(private projectService: ProjectService, private router: Router) { }
 
@@ -34,7 +34,7 @@ export class ProjectSearchPageComponent implements OnInit {
   selectProject(Project: Project) {
     this.projectService.CurrentProject = Project;
     this.CurrProject = this.projectService.CurrentProject;
-    this.router.navigateByUrl('/projectprofile');
+    this.router.navigateByUrl('/Project/' + this.CurrProject.Name);
   }
 
 
