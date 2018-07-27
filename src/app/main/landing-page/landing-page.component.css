@@ -15,19 +15,17 @@
 }
 
 /* LOGO */
-.logo {
-  width: 600px;
-  height: 150px;
+.Logo {
+  width: 192px;
+  height: 48px;
   position: absolute;
   z-index: 2;
-  left: calc(50% - 300px);
-  top: calc(25% - 60px);
+  top: 24px;
+  left: 24px;
   cursor: pointer;
-  background-image: url("../../../assets/TrikonLogo.jpg");
   background-size: 10%;
   border: none;
   outline: none;
-
 }
 
 
@@ -37,11 +35,13 @@
   top: 24px;
   right: 24px;
   height: 36px;
-  width: 42px;
+  width: 36px;
   outline: none;
   z-index: 3;
   cursor: pointer;
-  background-image: url("../../../assets/Red-Triangle.png");
+  border-radius: 18px;
+  border: 1px solid #595959;
+  background-image: url("../../../assets/Button1.jpg");
   background-size: cover;
   padding: 0;
   margin :0;
@@ -79,21 +79,23 @@
 /* VIDEO COMPONENTS */
 .crop-wrapper  {
   position: absolute;
+  width: 100vh;
+  left: calc((100% - 100vh)/2);
+  top: 2vh;
+  height: 90vh;
   padding: 0;
-  margin: 0;
-  top: calc(45%);
-  width: 60%;
-  left: 20%;
-  height: 70vh;
   z-index: 1;
   overflow: hidden;
+  background-color: transparent;
+  -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
 }
       .video  {
-        width: 100%;
-        height: auto;
         position: absolute;
-        top: -50px;
-        left: 0;
+        top:0;
+        left: -68%;
+        height: 110%;
         border: none;
       }
 /* ---------------------*/
@@ -108,9 +110,10 @@
   margin-left: auto ;
   margin-right: auto;
   margin-top: 0;
-  width: 110vh;
-  height: 110vh;
-  z-index: 1;
+  width: 100vh;
+  display: none;
+  height: 100vh;
+  z-index: 2;
   opacity: .5;
 }
 

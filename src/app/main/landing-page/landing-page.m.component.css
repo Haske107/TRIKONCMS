@@ -1,27 +1,28 @@
 @media only screen and (max-width: 500px) {
 
-  .logo {
-    width: 300px;
-    height: 75px;
+  .Logo {
+    width: 90vw;
+    height: calc(90vh/6);
     position: absolute;
-    z-index: 3;
-    top: calc(80px);
-    left: calc(50% - 150px);
+    z-index: 2;
+    top: 24px;
+    left: 5vw;
     cursor: pointer;
-    background-image: url("../../../assets/TrikonLogo.jpg");
     background-size: 10%;
     border: none;
     outline: none;
 
   }
 
-  .tabs {
+  .Tabs {
     position: absolute;
-    top:65vh;
-    left: calc(50% - 90px);
+    bottom:15vh;
+    left: calc(50% - 100px);
     height: 48px;
     width: 200px;
     z-index:3;
+    font-weight: 700;
+
   }
 
   .tab  {
@@ -30,6 +31,7 @@
     color: white;
     font-family: "Rajdhani", sans-serif;
     font-size: 24px;
+    font-weight: 700;
     z-index: 3;
   }
 
@@ -37,27 +39,21 @@
     position: absolute;
     padding: 0;
     margin: 0;
-    top: 10%;
+    bottom: 0;
     width: 100%;
     left: 0;
-    height: 100px;
+    height: 100vh;
     z-index: 1;
     overflow: hidden;
+    -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 0%);
+    clip-path: polygon(80% 0%, 0% 100%,  100% 100% , 100% 0%);
   }
 
-  .snow  {
-    width: 100%;
-    height: 200px;
-    position: absolute;
-    top: 35%;
-    left: 0;
-    border: none;
+  .video  {
+    left: -175%
   }
 
   .info-button  {
-    top: calc(100vh - 64px);
-    left: calc(50% - 20px);
-    display: none;
   }
 
   .play-button {
