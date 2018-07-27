@@ -86,11 +86,18 @@ readStillsFromArchive = function(ProjectPath)  {
     // GET FILE STATS
 
     // LOAD DATA INTO STILL OBJECT(S)
-    _Stills.push({
-      Filename: Stills[j],
-      Size: fs.statSync(StillsPath + "/" + Stills[j]).size,
-      Created: new Date(fs.statSync(StillsPath + '/' + Stills[j]).birthtime)
-    });
+    let l = Stills[j].substr(Stills[j].length - 3);
+    if(l === 'jpg' ||
+       l === 'JPG' ||
+       l === 'png' ||
+       l === 'PNG') {
+      _Stills.push({
+        Filename: Stills[j],
+        Size: fs.statSync(StillsPath + "/" + Stills[j]).size,
+        Created: new Date(fs.statSync(StillsPath + '/' + Stills[j]).birthtime)
+      });
+    }
+
   }
   return _Stills;
 

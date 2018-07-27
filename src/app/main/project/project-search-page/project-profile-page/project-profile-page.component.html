@@ -2,8 +2,9 @@
 
   <div
     class="Background"
-    [ngStyle]="(Project && Project.Stills) ? {'background-image' : 'url(' + 'http://www.trikon.xyz/content/Stills/' + Project.Fullname + '/' + Project.Stills[1].Filename + ')' }
-             : {'background-image' :  '../../../../../assets/Placeholder.jpg'}">
+    [ngStyle]="Project ? {'background-image' : 'url(' + 'http://www.trikon.xyz/content/Stills/' + toWebString(Project.Fullname) + '/' + toWebString(Project.Stills[1].Filename) + ')' } : {}">
+
+
   </div>
 
   <!-- PROJECT TITLE -->
@@ -26,12 +27,17 @@
 
       </mat-tab>
       <mat-tab label="Drafts">
-        <mat-grid-list class="Draft-List"  [cols]="3" rowHeight="16:9" gutterSize="6px">
+        <mat-grid-list class="Draft-List" *ngIf="Project && Project.RoughCuts"  [cols]="3" rowHeight="16:9" gutterSize="6px">
           <mat-grid-tile class="Draft-Tile" *ngFor="let RoughCut of Project.RoughCuts">
-            <video #videoPlayer class="video"  >
-              <source src="http://www.trikon.xyz/content/RoughCuts/{{Project.Fullname}}/{{RoughCut.Filename}}" type="video/mp4" />
+            <video #videoPlayer class="video"  controls>
+              <source src="http://www.trikon.xyz/content/RoughCuts/{{Project.Fullname}}/{{RoughCut.Filename}}" type="video/mp4"  />
               Browser not supported
             </video>
+            <div class="RoughCut-Footer">
+              <h4 class="RoughCut-Name">
+                {{RoughCut.Filename}}
+              </h4>
+            </div>
           </mat-grid-tile>
         </mat-grid-list>
 

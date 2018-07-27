@@ -70,6 +70,13 @@ var ProjectSchema = new schema({
       Time: {type: String}
     }]
   }],
+  Notes: [{
+    User: {type: String},
+    Time: {type: String},
+    Content: {type: String},
+    VideoTime: {type: String},
+    Addressed: {type: String}
+  }],
   Dailies: [{
     Filename: {type: String},
     Created: {type: String},

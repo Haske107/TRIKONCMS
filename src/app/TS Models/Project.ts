@@ -58,9 +58,17 @@ export class Project       {
     Size: number;
     Created: string;
     Type: string;
+    Approved: boolean;
     Ledger: [{
       ID: string,
       Time: string
+    }]
+    Notes: [{
+      User: string,
+      Time: string,
+      Content: string,
+      VideoTime: string,
+      Addressed: string
     }]
   }];
   FinalCuts: [{

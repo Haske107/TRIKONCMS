@@ -6,13 +6,13 @@ import {ActivatedRoute, Router} from "@angular/router";
 @Component({
   selector: 'app-project-profile-page',
   templateUrl: './project-profile-page.component.html',
-  styleUrls: ['./project-profile-page.component.css'],
+  styleUrls: ['./project-profile-page.component.css', './project-profile-page.m.component.css'],
   encapsulation: ViewEncapsulation.None,
 })
 
 export class ProjectProfilePageComponent implements OnInit, OnDestroy {
 
-  Project: Project;
+  Project;
   Sub: any;
 
   constructor(
@@ -23,8 +23,9 @@ export class ProjectProfilePageComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.Sub = this.router.params.subscribe(params =>  {
-      this.projectService.getProject(params['projectname']).subscribe(  Project =>  {
+      this.projectService.getProject(params['projectname'].replace('-',' ')).subscribe(  Project =>  {
         this.Project = Project;
+        console.log(Project.Stills[1]);
       });
     });
   }
@@ -37,5 +38,7 @@ export class ProjectProfilePageComponent implements OnInit, OnDestroy {
     this.Sub.unsubscribe();
   }
 
-
+  toWebString(string) {
+    return string.replace(' ', '%20');
+  }
 }

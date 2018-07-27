@@ -34,7 +34,7 @@ export class ProjectSearchPageComponent implements OnInit {
   selectProject(Project: Project) {
     this.projectService.CurrentProject = Project;
     this.CurrProject = this.projectService.CurrentProject;
-    this.router.navigateByUrl('/Project/' + this.CurrProject.Name);
+    this.router.navigateByUrl('/Project/' + this.CurrProject.Name.replace(' ', '-'));
   }
 
 

@@ -6,6 +6,7 @@ import {HttpClient} from "@angular/common/http";
 import {MatCardModule, MatGridListModule, MatTabsModule} from "@angular/material";
 import { HidePipe } from './project-search-page/hide.pipe';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { ProjectProfilePageGuestComponent } from './project-search-page/project-profile-page-guest/project-profile-page-guest.component';
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
   declarations: [
     ProjectSearchPageComponent,
     ProjectProfilePageComponent,
-    HidePipe
+    HidePipe,
+    ProjectProfilePageGuestComponent
   ]
 })
 export class ProjectModule { }
