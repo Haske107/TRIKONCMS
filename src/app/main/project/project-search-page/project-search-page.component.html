@@ -9,11 +9,11 @@
   </h4>
 
   <div class="main">
-    <mat-grid-list class="list" [cols]="6" rowHeight="1:1" gutterSize="6px" >
+    <mat-grid-list *ngIf="Projects" class="list" [cols]="6" rowHeight="1:1" gutterSize="6px" [@slideInOut]="Projects.length">
 
 
 
-      <mat-grid-tile class="tile" *ngFor="let Project of Projects | hide" (click)="selectProject(Project)">
+      <mat-grid-tile class="tile" *ngFor="let Project of Projects | hide" (click)="selectProject(Project)" >
 
         <div *ngFor="let Still of Project.Stills; let i = index">
           <img *ngIf="i === 0" src="http://www.trikon.xyz/content/Stills/{{Project.Fullname}}/{{Project.Stills[0].Filename}}" class="Main-Still">
@@ -33,5 +33,6 @@
 
     </mat-grid-list>
   </div>
+
 
 </div>

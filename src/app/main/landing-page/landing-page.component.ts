@@ -26,6 +26,7 @@ export class LandingPageComponent implements OnInit, OnChanges{
     this.router.navigateByUrl('/Search');
   }
 
+
   ngOnChanges() {
 
   }
