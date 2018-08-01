@@ -39,6 +39,6 @@ export class ProjectProfilePageComponent implements OnInit, OnDestroy {
   }
 
   toWebString(string) {
-    return string.replace(' ', '%20');
+    return string.replace(/ /g, '%20');
   }
 }

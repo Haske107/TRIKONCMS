@@ -27,7 +27,7 @@
 
       </mat-tab>
       <mat-tab label="Drafts">
-        <mat-grid-list class="Draft-List" *ngIf="Project && Project.RoughCuts"  [cols]="3" rowHeight="16:9" gutterSize="6px">
+        <mat-grid-list class="Draft-List" *ngIf="Project && Project.RoughCuts"  [cols]="window.screen.width > 500 ? 3 : 1" rowHeight="16:9" gutterSize="6px">
           <mat-grid-tile class="Draft-Tile" *ngFor="let RoughCut of Project.RoughCuts">
             <video #videoPlayer class="video"  controls>
               <source src="http://www.trikon.xyz/content/RoughCuts/{{Project.Fullname}}/{{RoughCut.Filename}}" type="video/mp4"  />
