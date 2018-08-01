@@ -25,6 +25,7 @@ router.get('/BTS/:ProjectName/:FileName', function (req, res, next) {
 
 
 router.get('/Stills/:ProjectName/:FileName', function (req, res, next) {
+  console.log(req.params.ProjectName);
   Project.findOne({Fullname : req.params.ProjectName}, function (err, project) {
     if (err) return res.status(501);
     if (!project) return res.status(401);
