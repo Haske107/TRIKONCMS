@@ -20,8 +20,19 @@
 
   }
 
+
   .Projects-Label {
-    left: 200px;
+    width: 144px;
+    height: 36px;
+    position: absolute;
+    z-index: 2;
+    top: 18px;
+    left: calc(150px);
+    cursor: pointer;
+    background-size: 10%;
+    border: none;
+    outline: none;
+    margin: 0;
 
   }
 }

@@ -7,7 +7,7 @@ import {animate, query, stagger, style, transition, trigger} from "@angular/anim
 @Component({
   selector: 'app-project-search-page',
   templateUrl: './project-search-page.component.html',
-  styleUrls: ['./project-search-page.component.css'],
+  styleUrls: ['./project-search-page.component.css', './project-search-page.m.component.css'],
   animations: [
     trigger('slideInOut', [
       transition('void => *', [
