@@ -15,21 +15,35 @@ var ProjectSchema = new schema({
     Time: {type: String}
   }],
 
-  // NON-ARCHIVED ATTRIBUTES
+  // CSV ATTRIBUTES
   Producer: {type: String},
   Director: {type: String},
   Cinematographer: {type: String},
-  Actor: [{type: String}],
-  Musician: [{type: String}],
+  Client: {type: String},
+  PostSupervisor: {type: String},
+  Editor: {type: String},
+  DaysLeft: {type: String},
+  City: {type: String},
+  Country: {type: String},
+  Camera: {type: String},
+  ProductionStatus: {type: String},
+  GreenlightStatus: {type: String},
+  PhotographyStatus: {type: String},
+  DeliverablesStatus: {type: String},
+  DeliveredStatus: {type: String},
+
+
+  Budget: {type: String},
+  Revenue: {type: String},
+  Paid: {type: String},
   ReleaseDate: {type: String},
+  InitiatedDate: {type: String},
   CreatedPhase: {type: String},
   GreenlightDate: {type: String},
   ProductionDates: [{type: String}],
-  PostDates: {
-    Begin: {type: String},
-    End: {type: String}
-  },
+  EnterPost: {type: String},
   Delivery: {type: String},
+
 
   // ATTACHED FILES
   BTS: [{

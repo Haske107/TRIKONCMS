@@ -12,7 +12,9 @@ export class ProjectService {
 
   CurrentProject: Project;
 
-  constructor(private http : HttpClient) { }
+  constructor(private http : HttpClient) {
+
+  }
 
   getProject(ProjectName) {
     const req = new HttpRequest('GET', this.BaseURL + '/' + ProjectName);
@@ -29,7 +31,6 @@ export class ProjectService {
     );
   }
 
-
   // HELPER FUNCTIONS
   formatProjectArray(event: HttpEvent<any>) {
     if (event.type === HttpEventType.Response) {
@@ -43,6 +44,8 @@ export class ProjectService {
       return Projects;
     }
   }
+
+
 
 
 
