@@ -4,8 +4,20 @@
     display: none;
   }
 
+
   .logo {
-    left: 4px;
+    width: 144px;
+    height: 36px;
+    position: absolute;
+    z-index: 2;
+    top: 24px;
+    left: 2vw;
+    cursor: pointer;
+    background-size: 10%;
+    border: none;
+    outline: none;
+    margin: 0;
+
   }
 
   .Projects-Label {
