@@ -48,30 +48,23 @@ import {animate, group, query, stagger, style, transition, trigger} from "@angul
           transform: 'scale(.1) ',
           opacity: 0
         })),
-        query('.Border', style({
-          transform: 'scale(.1) ',
-          opacity: 0
-        })),
+
         group([
           query('.crop-wrapper', animate('7s .5s ease-in-out', style({
               opacity: 1,
               transform: 'scale(1) '
             }))
-          ),
-          query('.Border', animate('7s .5s ease-in-out', style({
-              opacity: .3,
-              transform: 'scale(1)  '
-            }))
           )
+
         ])
       ]),
       //going out
       transition('* => void', [
-        query('.crop-wrapper, .Border', style({
+        query('.crop-wrapper', style({
           transform: 'scale(-200%) rotate(-720deg)',
           opacity: 0
         })),
-        query('.crop-wrapper, .Border', animate('4s .1s ease-out', style({
+        query('.crop-wrapper', animate('4s .1s ease-out', style({
             opacity: 1,
             transform: 'scale(0%) rotate(0deg)'
           }))
