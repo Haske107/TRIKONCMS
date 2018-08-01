@@ -23,7 +23,7 @@ router.get('/all', function (req, res, next) {
 
 // FIND A SPECIFIC PROJECT BY NAME
 router.get('/:Name', function (req, res, next) {
-  let Name = req.params.Name.replace('-', '%20');
+  let Name = req.params.Name.replace('-', ' ');
   Project.findOne({Name : Name}, function(err, Project)  {
     if (err) return res.status(501);
     if (!Project) return res.status(401);
