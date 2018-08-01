@@ -2,15 +2,46 @@ import {Component, OnChanges, OnInit} from '@angular/core';
 import {ProjectService} from "../project.service";
 import {Router} from "@angular/router";
 import {Project} from "../../../TS Models/Project";
+import {animate, query, stagger, style, transition, trigger} from "@angular/animations";
 
 @Component({
   selector: 'app-project-search-page',
   templateUrl: './project-search-page.component.html',
-  styleUrls: ['./project-search-page.component.css']
+  styleUrls: ['./project-search-page.component.css'],
+  animations: [
+    trigger('slideInOut', [
+      transition('void => *', [
+        query('.tile', style({
+          transform: 'translateY(200%)',
+          opacity: 0
+        })),
+        query('.tile', stagger('200ms', [
+          animate('600ms .1s ease-out', style({
+            opacity: 1,
+            transform: 'translateY(0%)'
+          }))
+        ]))
+      ]),
+      transition('* => void', [
+        query('.tile', style({
+          opacity: 1,
+          transform: 'translateY(0%)'
+        })),
+        query('.tile', stagger('500ms', [
+          animate('100ms .1s ease-out', style({
+            opacity: 0.2,
+            transform: 'translateY(200%)'
+          }))
+        ]))
+      ])
+    ])
+  ]
 })
+
 
 export class ProjectSearchPageComponent implements OnInit {
 
+  PageState = 'in';
   Projects : Project[];
   CurrProject: Project;
   constructor(private projectService: ProjectService, private router: Router) { }
@@ -35,6 +66,11 @@ export class ProjectSearchPageComponent implements OnInit {
     this.projectService.CurrentProject = Project;
     this.CurrProject = this.projectService.CurrentProject;
     this.router.navigateByUrl('/Project/' + this.CurrProject.Name.replace(' ', '-'));
+  }
+
+  toggle()  {
+    this.PageState === 'in' ? this.PageState = 'out'
+      : this.PageState = 'in';
   }
 
 

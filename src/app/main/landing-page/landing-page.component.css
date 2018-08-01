@@ -48,11 +48,11 @@
 }
     .Tabs {
       position: absolute;
-      top: calc(35vh);
+      top: 76px;
       right: 28px;
-      left: 24.5%;
+      left: 24px;
       margin :0;
-      width: 90%;
+      width: 40%;
       z-index: 5;
       justify-content: flex-start;
 
@@ -60,13 +60,14 @@
         .tab  {
           cursor: pointer;
           padding:0;
-          margin : 24px 0 24px 0;
+          margin: 0;
           color: white;
           font-family: "Rajdhani", sans-serif;
-          font-size: 24px;
+          font-size: 36px;
+          font-weight: 700;
           height: 48px;
           z-index: 6;
-          justify-content: flex-start;
+          text-align: left;
         }
             .label  {
               padding: 6px;
@@ -81,7 +82,7 @@
   position: absolute;
   width: 100vh;
   left: calc((100% - 100vh)/2);
-  top: 2vh;
+  top: 4.5vh;
   height: 90vh;
   padding: 0;
   z-index: 1;
@@ -90,6 +91,7 @@
   -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
   box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+
 }
       .video  {
         position: absolute;
@@ -103,18 +105,20 @@
 
 /* TRIANGLE */
 
-.triangle {
-  background-repeat: no-repeat;
-  background-image: url("../../../assets/Gray-Triangle.png");
-  background-size: contain;
-  margin-left: auto ;
-  margin-right: auto;
-  margin-top: 0;
-  width: 100vh;
-  display: none;
-  height: 100vh;
-  z-index: 2;
-  opacity: .5;
+.Border {
+  position: absolute;
+  width: 105vh;
+  left: calc((100% - 105vh)/2);
+  top: 2vh;
+  height: 94vh;
+  padding: 0;
+  z-index: 0;
+  overflow: hidden;
+  background-image: url('../../../assets/metal-texture.jpg');
+  opacity: .3;
+  -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  box-shadow: 0 3px 1px -2px rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.18), 0 1px 5px 0 rgba(0,0,0,.18);
 }
 
 

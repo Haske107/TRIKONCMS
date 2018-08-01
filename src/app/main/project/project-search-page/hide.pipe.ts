@@ -14,7 +14,14 @@ export class HidePipe implements PipeTransform {
 
         // TEMP FILTERS
         // REMOVE DEAD END TILL AUG 26TH
-        if(Project.Name !== 'Dead End') {
+        if(Project.Name !== 'Dead End'
+        && Project.Name !== 'Costco'
+          && Project.Name !== 'ArtFamilia'
+          && Project.Name !== 'Trikon Promo Shorts'
+          && Project.Name !== 'My Beautiful Thing'
+          && Project.Name !== 'Hatch Beauty'
+
+        ) {
           NewProjects.push(Project);
         }
 

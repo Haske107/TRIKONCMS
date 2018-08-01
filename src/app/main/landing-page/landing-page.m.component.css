@@ -1,27 +1,29 @@
 @media only screen and (max-width: 500px) {
 
   .Logo {
-    width: 90vw;
-    height: calc(90vh/6);
+    width: 144px;
+    height: 36px;
     position: absolute;
     z-index: 2;
     top: 24px;
-    left: 5vw;
+    left: 2vw;
     cursor: pointer;
     background-size: 10%;
     border: none;
     outline: none;
+    margin: 0;
 
   }
 
   .Tabs {
     position: absolute;
-    bottom:15vh;
+    top: 30vh !important;
     left: calc(50% - 100px);
     height: 48px;
     width: 200px;
     z-index:3;
-    font-weight: 700;
+    font-weight: 800;
+    padding: 0;
 
   }
 
@@ -33,34 +35,22 @@
     font-size: 24px;
     font-weight: 700;
     z-index: 3;
-  }
+    margin-top: 20px;
 
-  .crop-wrapper  {
-    position: absolute;
-    padding: 0;
-    margin: 0;
-    bottom: 0;
-    width: 100%;
-    left: 0;
-    height: 100vh;
-    z-index: 1;
-    overflow: hidden;
-    -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 0%);
-    clip-path: polygon(80% 0%, 0% 100%,  100% 100% , 100% 0%);
-  }
-
-  .video  {
-    left: -175%
   }
 
   .info-button  {
+    display: block;
   }
+.Border{
+  display: none;
+}
 
   .play-button {
     position: absolute;
     top: 40vh;
     left: 0;
-    display: block;
+    display: none;
     height: auto;
     width: 100%;
     cursor: pointer;
