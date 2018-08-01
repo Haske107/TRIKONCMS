@@ -39,7 +39,7 @@ export class ProjectProfilePageGuestComponent implements OnInit {
   }
 
   toWebString(string) {
-    return string.split(' ').join('-');
+    return string.split(' ').join('%20');
   }
 
 }
