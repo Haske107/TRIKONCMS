@@ -22,7 +22,7 @@ export class ProjectProfilePageGuestComponent implements OnInit {
   ngOnInit() {
 
     this.Sub = this.router.params.subscribe(params =>  {
-      this.projectService.getProject(params['projectname'].replace('-','')).subscribe(  Project =>  {
+      this.projectService.getProject(params['projectname'].replace('-',' ')).subscribe(  Project =>  {
         this.Project = Project;
       });
     });
