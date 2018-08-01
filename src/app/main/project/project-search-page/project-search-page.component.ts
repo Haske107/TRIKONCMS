@@ -44,9 +44,13 @@ export class ProjectSearchPageComponent implements OnInit {
   PageState = 'in';
   Projects : Project[];
   CurrProject: Project;
+  Col = 6;
   constructor(private projectService: ProjectService, private router: Router) { }
 
   ngOnInit() {
+    if (window.screen.width < 500)  {
+      this.Col = 1;
+    }
     this.projectService.getProjects().subscribe(
       _Projects => {
          this.Projects = _Projects;

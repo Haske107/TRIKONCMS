@@ -14,6 +14,7 @@ export class ProjectProfilePageComponent implements OnInit, OnDestroy {
 
   Project;
   Sub: any;
+  Col = 6;
 
   constructor(
     public projectService : ProjectService,
@@ -22,12 +23,15 @@ export class ProjectProfilePageComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit() {
+
     this.Sub = this.router.params.subscribe(params =>  {
       this.projectService.getProject(params['projectname'].replace('-',' ')).subscribe(  Project =>  {
         this.Project = Project;
         console.log(Project.Stills[1]);
       });
     });
+
+
   }
 
   navToHome() {
