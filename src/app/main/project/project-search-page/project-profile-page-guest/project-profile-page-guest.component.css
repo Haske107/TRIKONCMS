@@ -1,0 +1,171 @@
+.Container  {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+}
+.Background {
+  background-size: cover;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-image: url('../../../../../assets/Placeholder.jpg');
+}
+.Logo {
+  width: 192px;
+  height: 48px;
+  position: absolute;
+  z-index: 2;
+  top: 24px;
+  left: 24px;
+  cursor: pointer;
+  background-size: 10%;
+  border: none;
+  outline: none;
+}
+.Project-Title  {
+  width: 60vh;
+  left: 20vw;
+  top: calc(20vh - 52pt);
+  text-align: left;
+  font-family: "Rajdhani", sans-serif;
+  font-size: 48pt;
+  padding: 0;
+
+  color: white;
+}
+.description  {
+  width: 60vw;
+  left: 20vw;
+  top: calc(20vh);
+  text-align: left;
+  font-family: "Rajdhani", sans-serif;
+  font-size: 20pt;
+  line-height: 24px;
+  color: white;
+}
+.Red-Button  {
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  color: white;
+  outline: none;
+  z-index: 3;
+  background-image: url('../../../../../assets/Button1.jpg');
+  background-size: 200%;
+  cursor: pointer;
+  border: 1px solid #363636;
+}
+.Left-Panel {
+  position: absolute !important;
+  top: 158px;
+  left: 2%;
+  height: calc(100vh - 208px);
+  width: 22%;
+  background-color: rgba(255,255,255,.2);
+}
+
+.Center-Panel {
+  position: absolute !important;
+  top: 110px;
+  left: 25%;
+  height: calc(100vh - 160px);
+  width: 50%;
+  background-color: rgba(255,255,255,.2);
+}
+.Head-Board {
+  position:absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 48px;
+  background-color: rgba(0,0,0,.5);
+}
+.Tab-Group  {
+  position:absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+.mat-tab-label .mat-tab-label-content {
+  color: white;
+}
+.Draft-List {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 208px);
+}
+.Draft-Tile  {
+
+}
+.RoughCut-Footer  {
+  background-color: #1e1e1e;
+  height: 24px;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+}
+.RoughCut-Name  {
+  color: white;
+  font-familY: "Rajdhani", sans-serif;
+  font-size: 14px;
+  margin: 4px;
+}
+
+.Right-Panel  {
+  position: absolute !important;
+  top: 158px;
+  right: 2%;
+  height: calc(100vh - 208px);
+  width: 22%;
+  background-color: rgba(255,255,255,.2);
+}
+
+
+::-webkit-scrollbar {
+  width: 10px;  /* remove scrollbar space */
+  margin-left: 2px;
+  height: calc(100vh - 110px);
+  margin-top: 110px;
+  display: block;
+  background: transparent;
+  z-index: 1;/* optional: just make scrollbar invisible */
+}
+/* optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: #852731;
+  border-radius: 0;
+  z-index: 1;
+  display: block;
+
+}
+
+.video  {
+  width: 60vw;
+}
+.Slate  {
+  width: 62vw;
+  top: calc(10vh);
+  height: calc( 80vh);
+  left: 19vw;
+  background-color: rgba(30,30,30,.3);
+  overflow-y: scroll;
+  position: absolute;
+}
+.Stills {
+  width: 60vw;
+}
+.tile {
+  background-color: white;
+}
+.Photo  {
+  min-width: 100%;
+  max-height: 100%;
+  position: absolute;
+}

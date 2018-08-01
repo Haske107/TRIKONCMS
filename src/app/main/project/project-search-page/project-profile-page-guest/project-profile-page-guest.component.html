@@ -1,3 +1,36 @@
-<p>
-  project-profile-page-guest works!
-</p>
+<div class="Container">
+
+  <div
+    class="Background"
+    [ngStyle]="Project ? {'background-image' : 'url(' + 'http://www.trikon.xyz/content/Stills/' + toWebString(Project.Fullname) + '/' + toWebString(Project.Stills[1].Filename) + ')' } : {}">
+  </div>
+
+  <mat-card class="Slate">
+    <!-- PROJECT TITLE -->
+    <h1 class="Project-Title" *ngIf="(Project && Project.Name)">
+      {{Project.Name}}
+    </h1>
+    <p class="description">This is a description of a description filling in for a description that is presented here to describe this description.
+      This is a description of a description filling in for a description that is presented here to describe this description.</p>
+
+
+    <video #videoPlayer class="video"  controls >
+      //<source *ngIf="Project && Project.FinalCuts[0]" src="http://www.trikon.xyz/content/FinalCuts/{{Project.Fullname}}/{{FinalCuts[0].Filename}}" type="video/mp4"  />
+      Browser not supported
+    </video>
+
+    <mat-grid-list class="Stills" [cols]="4" rowHeight="1:1" gutterSize="6px" *ngIf="Project">
+      <mat-grid-tile *ngFor="let Still of Project.Stills" class="tile" >
+        <img class="Photo" src="http://www.trikon.xyz/content/Stills/{{toWebString(Project.Fullname)}}/{{toWebString(Still.Filename)}}">
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-card>
+
+  <!-- LOGO -->
+  <img class="Logo" src="../../../../../assets/TrikonLogo.png" (click)="navToHome()">
+  <!-- RED BUTTON -->
+  <button  class="Red-Button"></button>
+
+
+
+</div>
