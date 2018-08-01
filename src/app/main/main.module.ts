@@ -15,6 +15,7 @@ import {ContactModule} from "./contact/contact.module";
 import {HttpClientModule} from "@angular/common/http";
 import {ContentService} from "./content.service";
 import {AuthService} from "./auth.service";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import {AuthService} from "./auth.service";
   imports: [
     Routing,
     HttpClientModule,
+    BrowserAnimationsModule,
     CommonModule,
     ProjectModule,
     ArtistModule,

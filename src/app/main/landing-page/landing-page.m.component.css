@@ -2,7 +2,7 @@
 
   .Logo {
     width: 90vw;
-    height: calc(90vh/6);
+    height: calc(100vw/5);
     position: absolute;
     z-index: 2;
     top: 24px;
@@ -16,7 +16,7 @@
 
   .Tabs {
     position: absolute;
-    bottom:15vh;
+    bottom: 4px !important;
     left: calc(50% - 100px);
     height: 48px;
     width: 200px;
@@ -35,32 +35,17 @@
     z-index: 3;
   }
 
-  .crop-wrapper  {
-    position: absolute;
-    padding: 0;
-    margin: 0;
-    bottom: 0;
-    width: 100%;
-    left: 0;
-    height: 100vh;
-    z-index: 1;
-    overflow: hidden;
-    -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 0%);
-    clip-path: polygon(80% 0%, 0% 100%,  100% 100% , 100% 0%);
-  }
 
-  .video  {
-    left: -175%
-  }
 
   .info-button  {
+    display: none;
   }
 
   .play-button {
     position: absolute;
     top: 40vh;
     left: 0;
-    display: block;
+    display: none;
     height: auto;
     width: 100%;
     cursor: pointer;

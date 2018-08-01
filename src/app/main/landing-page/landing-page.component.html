@@ -1,10 +1,12 @@
 <!-- BACKGROUND -->
 <div class="background">
   <!-- LOGO -->
-  <img class="Logo" src="../../../assets/TrikonLogo.png">
+  <div  >
+    <img class="Logo" src="../../../assets/TrikonLogo.png">
+  </div>
 
   <!-- TABS -->
-  <div class="row Tabs">
+  <div class="row Tabs" [@slideInOut]>
 
     <div class="tab col-sm-3" routerLink="/Search">
       <h4 class="label" >
@@ -38,17 +40,19 @@
 
 
   <!-- CROP WRAPPER -->
-  <div class="crop-wrapper">
-    <!-- VIDEO -->
-    <video  (click)="toggleVideo($event)" #videoPlayer class="video" autoplay >
-      <source src="../../assets/New Cut.mp4" type="video/mp4" />
-      Browser not supported
-    </video>
-  </div>
+  <div [@scalein]>
+    <div class="crop-wrapper">
+      <!-- VIDEO -->
+      <video  (click)="toggleVideo($event)" #videoPlayer class="video" autoplay >
+        <source src="../../assets/New Cut.mp4" type="video/mp4" />
+        Browser not supported
+      </video>
+    </div>
 
-  <div class="triangle">
-  </div>
-  <div class="Border">
+    <div class="Border">
+
+    </div>
+
 
   </div>
 

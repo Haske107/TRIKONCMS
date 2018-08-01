@@ -1,6 +1,10 @@
 const fs = require('fs');
 const path = require('path');
+<<<<<<< HEAD
 const _Archive = 'G:';
+=======
+const _Archive = 'F:';
+>>>>>>> 5ee26ac2645933909101646f58ba610f3af8f7b0
 
 exports.readProjectFromArchive =  readProjectFromArchive;
 exports.readProjectsFromArchive = function(path)  {

@@ -4,7 +4,11 @@ var Toolkit = require('./Assets/Toolkit');
 var observableDiff = require('deep-diff').observableDiff;
 var applyChange = require('deep-diff').applyChange;
 var CronJob = require('cron').CronJob;
+<<<<<<< HEAD
 const _Archive = 'G:';
+=======
+const _Archive = 'F:';
+>>>>>>> 5ee26ac2645933909101646f58ba610f3af8f7b0
 
 // DEFINE CRON JOB
 var Job = new CronJob('*/10 * * * * *', function() {
