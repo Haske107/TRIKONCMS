@@ -7,6 +7,11 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 const project = require('./routes/project');
 const content = require('./routes/content');
+var express = require('express');
+var ipfilter = require('express-ipfilter').IpFilter;
+
+//FOR DEVELOPMENT ONLY111111111111111111111111111111111111111111111111111111111111111111111111111111
+var ips = ['45.48.226.49'];
 
 
 // IMPORT API ROUTES
@@ -55,6 +60,7 @@ var app = express();
 // // to use the forceSSL
 // // middleware
 // app.use(forceSSL());
+app.use(ipfilter(ips, {mode: 'allow'}));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
