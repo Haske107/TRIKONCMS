@@ -24,6 +24,7 @@ export class ProjectProfilePageGuestComponent implements OnInit {
     this.Sub = this.router.params.subscribe(params =>  {
       this.projectService.getProject(params['projectname'].split(' ').join('-')).subscribe(  Project =>  {
         this.Project = Project;
+        console.log(Project);
       });
     });
 

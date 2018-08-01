@@ -71,8 +71,12 @@ router.get('/FinalCuts/:ProjectName/:FileName', function (req, res, next) {
     if (!project) return res.status(401);
     project.FinalCuts.forEach(file => {
       if (file.Filename === req.params.FileName)  {
-        if (fs.existsSync(DB + project.Fullname + '/Exports/Final Cut/' + req.params.FileName))  {
-          let readstream = fs.createReadStream(DB + project.Fullname + '/Exports/Final Cut/' + req.params.FileName);
+        if (fs.existsSync(DB[0] + project.Fullname + '/Exports/Final Cuts/' + req.params.FileName))  {
+          let readstream = fs.createReadStream(DB[0] + project.Fullname + '/Exports/Final Cuts/' + req.params.FileName);
+          res.set('Content-Type', 'image/jpg');
+          return readstream.pipe(res);
+        } else if (fs.existsSync(DB[1] + project.Fullname + '/Exports/Final Cut/' + req.params.FileName))  {
+          let readstream = fs.createReadStream(DB[1] + project.Fullname + '/Exports/Final Cuts/' + req.params.FileName);
           res.set('Content-Type', 'image/jpg');
           return readstream.pipe(res);
         } else {

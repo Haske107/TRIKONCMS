@@ -15,8 +15,8 @@
       This is a description of a description filling in for a description that is presented here to describe this description.</p>
 
 
-    <video #videoPlayer class="video"  controls  *ngIf="Project  && Project.FinalCuts[0]">
-      <source  src="http://www.trikon.xyz/content/FinalCuts/{{Project.Fullname}}/{{FinalCuts[0].Filename}}" type="video/mp4"  />
+    <video #videoPlayer class="video"  controls  *ngIf="Project  && Project.FinalCuts">
+      <source  *ngIf="Project  && Project.FinalCuts" src="http://www.trikon.xyz/content/FinalCuts/{{Project.Fullname}}/{{Project.FinalCuts[0].Filename}}" type="video/mp4"  />
       Browser not supported
     </video>
 
