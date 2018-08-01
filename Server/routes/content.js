@@ -3,7 +3,7 @@ var router = express.Router();
 const path = require('path');
 const fs = require('fs');
 const Project = require('../models/Project');
-const DB = ["Y:/",'F:/'];
+const _Archive = ['K:','F:'];
 
 router.get('/BTS/:ProjectName/:FileName', function (req, res, next) {
   Project.findOne({Fullname : req.params.ProjectName}, function (err, project) {
