@@ -22,7 +22,7 @@ export class ProjectProfilePageGuestComponent implements OnInit {
   ngOnInit() {
 
     this.Sub = this.router.params.subscribe(params =>  {
-      this.projectService.getProject(params['projectname'].replace('-',' ')).subscribe(  Project =>  {
+      this.projectService.getProject(params['projectname'].split(' ').join('-')).subscribe(  Project =>  {
         this.Project = Project;
       });
     });
@@ -39,7 +39,7 @@ export class ProjectProfilePageGuestComponent implements OnInit {
   }
 
   toWebString(string) {
-    return string.replace(/ /g, '%20');
+    return string.split(' ').join('-');
   }
 
 }
