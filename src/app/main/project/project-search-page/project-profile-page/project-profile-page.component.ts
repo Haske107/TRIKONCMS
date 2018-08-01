@@ -25,7 +25,7 @@ export class ProjectProfilePageComponent implements OnInit, OnDestroy {
   ngOnInit() {
 
     this.Sub = this.router.params.subscribe(params =>  {
-      this.projectService.getProject(params['projectname'].replace('-',' ')).subscribe(  Project =>  {
+      this.projectService.getProject(params['projectname'].replace('-',/ /g)).subscribe(  Project =>  {
         this.Project = Project;
       });
     });
