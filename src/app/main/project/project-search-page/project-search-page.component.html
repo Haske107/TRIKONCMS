@@ -14,7 +14,9 @@
 
 
       <mat-grid-tile class="tile" *ngFor="let Project of Projects | hide" (click)="selectProject(Project)" >
-
+        <div class="Status-Tag">
+          {{Project.ProductionStatus}}
+        </div>
         <div *ngFor="let Still of Project.Stills; let i = index">
           <img *ngIf="i === 0" src="http://www.trikon.xyz/content/Stills/{{Project.Fullname}}/{{Project.Stills[0].Filename}}" class="Main-Still">
         </div>

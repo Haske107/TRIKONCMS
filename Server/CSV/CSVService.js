@@ -26,7 +26,7 @@ function runScript(scriptPath, callback) {
 }
 
 // DEFINE CRON JOB
-var Job = new CronJob('*/10 * * * * *', function() {
+var Job = new CronJob('* 1 * * * *', function() {
   console.log("Starting CSV Upload Sequence: " + new Date);
   // Now we can run a script and invoke a callback when complete, e.g.
   runScript('./index.js', function (err) {

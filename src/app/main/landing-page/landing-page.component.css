@@ -36,7 +36,7 @@
   right: 24px;
   height: 36px;
   width: 36px;
-  outline: none;
+  outline: 0;
   z-index: 3;
   cursor: pointer;
   border-radius: 18px;
@@ -44,7 +44,7 @@
   background-image: url("../../../assets/Button1.jpg");
   background-size: cover;
   padding: 0;
-  margin :0;
+  margin: 0;
 }
     .Tabs {
       position: absolute;
