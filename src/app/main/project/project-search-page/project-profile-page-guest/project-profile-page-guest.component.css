@@ -149,6 +149,20 @@
 .video  {
   width: 60vw;
 }
+.Info-Bar {
+  height: 48px;
+  width: 60vw;
+  text-align: center;
+  color: white;
+  margin: 0;
+  font-family: "Rajdhani", sans-serif;
+
+}
+
+
+
+
+
 .Slate  {
   width: 62vw;
   top: calc(10vh);
@@ -160,6 +174,7 @@
 }
 .Stills {
   width: 60vw;
+  margin-top: 12px;
 }
 .tile {
   background-color: white;

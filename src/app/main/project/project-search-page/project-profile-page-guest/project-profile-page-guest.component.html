@@ -16,10 +16,27 @@
 
 
     <video #videoPlayer class="video"  controls  *ngIf="Project  && Project.FinalCuts">
-      <source  *ngIf="Project  && Project.FinalCuts" src="http://www.trikon.xyz/content/FinalCuts/{{Project.Fullname}}/{{Project.FinalCuts[0].Filename}}" type="video/mp4"  />
+      <source  *ngIf="Project  && Project.FinalCuts[0]" src="http://www.trikon.xyz/content/FinalCuts/{{Project.Fullname}}/{{Project.FinalCuts[0].Filename}}" type="video/mp4"  />
       Browser not supported
     </video>
-
+    <div class="Info-Bar row">
+      <div class="col-md-3">
+        <h5>Director</h5>
+        {{Project?.Director}}
+      </div>
+      <div class="col-md-3">
+        <h5>Cinematographer</h5>
+        {{Project?.Cinematographer}}
+      </div>
+      <div class="col-md-3">
+        <h5>Editor</h5>
+        {{Project?.Editor}}
+      </div>
+      <div class="col-md-3">
+        <h5>Producer</h5>
+         {{Project?.Producer}}
+      </div>
+    </div>
     <mat-grid-list class="Stills" [cols]="4" rowHeight="1:1" gutterSize="6px" *ngIf="Project">
       <mat-grid-tile *ngFor="let Still of Project.Stills" class="tile" >
         <img class="Photo" src="http://www.trikon.xyz/content/Stills/{{(Project.Fullname)}}/{{(Still.Filename)}}">

@@ -128,7 +128,7 @@ readRoughCutsFromArchive = function(ProjectPath)  {
 };
 readFinalCutsFromArchive = function(ProjectPath)  {
   // SET USE-ABLE PATH
-  var FinalCutsPath = ProjectPath + '/Exports/Final Cut';
+  var FinalCutsPath = ProjectPath + '/Exports/Final Cuts';
 
   // EXTRACT VIDEO
   var FinalCuts =  fs.existsSync(FinalCutsPath) ? fs.readdirSync(FinalCutsPath) : [];
