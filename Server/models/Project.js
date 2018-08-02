@@ -8,6 +8,7 @@ var ProjectSchema = new schema({
   Type: {type: String},
   Date: {type: String},
   Size: {type: String},
+  Description: {type: String},
   Fullname: {type: String},
   Path: {type: String},
   Ledger: [{

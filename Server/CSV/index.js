@@ -123,6 +123,7 @@ function listMajors(auth) {
             _Project.Revenue = row[29];
             _Project.Paid = row[30];
             _Project.ReleaseDate = row[32];
+            _Project.Description = row[33];
             _Project.save(function (err, Success) {
               if (err) console.log(err);
               if (!Success) console.log("No Save");
