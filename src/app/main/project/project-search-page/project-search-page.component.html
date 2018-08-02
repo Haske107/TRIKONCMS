@@ -14,6 +14,11 @@
 
 
       <mat-grid-tile class="tile" *ngFor="let Project of Projects | hide" (click)="selectProject(Project)" >
+        <div class="header">
+          <h4 class="Project_Name">
+            {{Project.Type}}
+          </h4>
+        </div>
         <div class="Status-Tag">
           {{Project.ProductionStatus}}
         </div>

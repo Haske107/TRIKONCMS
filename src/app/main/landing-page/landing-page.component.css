@@ -46,6 +46,13 @@
   padding: 0;
   margin: 0;
 }
+app-sign-in {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+}
+
+
     .Tabs {
       position: absolute;
       top: 76px;

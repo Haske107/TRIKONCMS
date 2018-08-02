@@ -216,7 +216,6 @@ function readProjectFromArchive(folder, path)  {
   var Fullpath = path + folder;
   var Project = {};
   Project.Name = folder.split('-')[2];
-  Project.Type = folder.split('-')[1];
   try {
     Project.Date = new Date(fs.statSync(Fullpath).birthtime).getTime();
   } catch (err) {

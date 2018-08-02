@@ -11,8 +11,7 @@
     <h1 class="Project-Title" *ngIf="(Project && Project.Name)">
       {{Project.Name}}
     </h1>
-    <p class="description">This is a description of a description filling in for a description that is presented here to describe this description.
-      This is a description of a description filling in for a description that is presented here to describe this description.</p>
+    <p class="description">{{Project?.Description}}</p>
 
 
     <video #videoPlayer class="video"  controls  *ngIf="Project  && Project.FinalCuts">

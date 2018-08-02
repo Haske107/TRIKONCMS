@@ -130,11 +130,20 @@
 
 }
 
+
+.header {
+  position: absolute;
+  height: 36px;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgba(87, 29, 39, 0.5);
+}
 .footer {
   position: absolute;
   height: 36px;
   width: 100%;
   left: 0;
   bottom: 0;
-  background-color: #1e1e1e;
+  background-color: rgba(87, 29, 39, 0.5);
 }

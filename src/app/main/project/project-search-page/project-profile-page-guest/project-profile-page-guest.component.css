@@ -148,6 +148,7 @@
 
 .video  {
   width: 60vw;
+  margin-bottom: 0;
 }
 .Info-Bar {
   height: 48px;
@@ -156,11 +157,14 @@
   color: white;
   margin: 0;
   font-family: "Rajdhani", sans-serif;
+  background-color: rgba(133, 39, 49, 0.4);
 
 }
 
 
-
+h5  {
+  margin-bottom: 0;
+}
 
 
 .Slate  {
