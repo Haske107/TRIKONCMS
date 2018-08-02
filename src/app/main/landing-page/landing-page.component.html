@@ -58,8 +58,8 @@
 
 
   <!-- INFO BUTTON -->
-  <div  class="info-button"></div>
-  <app-sign-in></app-sign-in>
+  <div  class="info-button" (click)="toggleLogIn()"></div>
+  <app-sign-in [Show]="LogInShow"></app-sign-in>
 
   <!-- CONTACT -->
   <!--<h3 class="contact">CONTACT@TRIKON.XYZ</h3>-->

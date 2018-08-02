@@ -137,6 +137,7 @@
   width: 100%;
   left: 0;
   top: 0;
+  z-index: 3;
   background-color: rgba(87, 29, 39, 0.5);
 }
 .footer {

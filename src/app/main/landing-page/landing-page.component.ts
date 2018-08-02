@@ -79,6 +79,7 @@ export class LandingPageComponent implements OnInit, OnChanges{
 
   Projects: Project[];
   ShowMenu = false;
+  LogInShow = true;
 
   @ViewChild('videoPlayer') videoplayer: any;
 
@@ -91,6 +92,10 @@ export class LandingPageComponent implements OnInit, OnChanges{
 
   navToProjects() {
     this.router.navigateByUrl('/Search');
+  }
+
+  toggleLogIn() {
+    this.LogInShow = !this.LogInShow;
   }
 
 
