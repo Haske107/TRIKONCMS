@@ -2,7 +2,18 @@ const fs = require('fs');
 const readline = require('readline');
 const {google} = require('googleapis');
 const Project = require('../models/Project.js');
-
+const mongoose = require('mongoose');
+// DB CREDENTIALS
+const localurl = "mongodb://localhost:27017/";
+const dbName = 'TRIKON-DB';
+// CONNECT TO DB
+mongoose.connect(localurl + dbName, function(err, result) {
+  if (err)  {
+    console.error(err);
+  } else {
+    console.log('Succesfully Connected to '  + dbName );
+  }
+});
 
 
 
@@ -85,6 +96,7 @@ function listMajors(auth) {
       // Print columns A and E, which correspond to indices 0 and 4.
       rows.map((row) => {
         Project.findOne({Name: row[0]}, function (err, _Project) {
+
           if (_Project) {
             _Project.Name = row[0];
             _Project.Type = row[3];

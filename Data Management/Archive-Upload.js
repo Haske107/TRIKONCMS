@@ -10,8 +10,8 @@ const _Archive = ['K:','F:'];
 // DEFINE CRON JOB
 var Job = new CronJob('*/10 * * * * *', function() {
     console.log("Starting Archive Upload Sequence: " + new Date);
-    _Archive.forEach(Drive=>  {
-      Toolkit.readProjectsFromArchive(_Archive).forEach( Project =>  {
+    _Archive.forEach( Drive =>  {
+      Toolkit.readProjectsFromArchive(Drive).forEach( Project =>  {
         if (Project.Name) uploadProjectToDB(Project);
       });
     });

@@ -11,7 +11,7 @@ exports.readProjectsFromArchive = function(path)  {
   // ITERATE THROUGH EACH PROJECT
   for (var i = 0; i < projects.length; i++) {
     // READ PROJECT FROM DRIVE, STORE INTO PROJECTS LIST
-    Projects.push(readProjectFromArchive(projects[i]), path);
+    Projects.push(readProjectFromArchive(projects[i], path));
   }
   return Projects;
 };
@@ -248,5 +248,3 @@ function readProjectFromEditingDrive(folder, FullPath)  {
   Project.Size = calcContentSize(Project);
   return Project;
 }
-
-
