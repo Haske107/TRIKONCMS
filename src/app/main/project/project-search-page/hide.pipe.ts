@@ -2,38 +2,48 @@ import { Pipe, PipeTransform } from '@angular/core';
 import {isUndefined} from "util";
 
 @Pipe({
-  name: 'hide'
+  name: 'hide',
+  pure: false
 })
 export class HidePipe implements PipeTransform {
 
-  transform(Projects: any, args?: any): any {
+  transform(Projects: any, Type: any): any {
     let NewProjects = [];
 
     if (Projects) {
       Projects.forEach(Project => {
-
-        // TEMP FILTERS
-        // REMOVE DEAD END TILL AUG 26TH
         if(Project.Name !== 'Dead End'
         && Project.Name !== 'Costco'
           && Project.Name !== 'ArtFamilia'
           && Project.Name !== 'Trikon Promo Shorts'
           && Project.Name !== 'My Beautiful Thing'
           && Project.Name !== 'Hatch Beauty'
-
         ) {
-          NewProjects.push(Project);
+
+
+          if (Type === "all") {
+            console.log("test");
+            NewProjects.push(Project);
+          }
+          if (Type === "Narrative") {
+            if (Project.Type === "Short Film" || Project.Type === "Documentary") {
+              NewProjects.push(Project);
+            }
+          }
+          if (Type === "Fashion") {
+            if (Project.Type === "Commercial" || Project.Type === "Fashion Film" || Project.Type === "Fashion") {
+              NewProjects.push(Project);
+            }
+          }
+          if (Type === "Music") {
+            if (Project.Type === "Music Video" ) {
+              NewProjects.push(Project);
+            }
+          }
         }
-
-        // REMOVE NO PHOTO PROJECTS
-        // if (!isUndefined(Project.Stills[0]))  {
-        //   NewProjects.push(Project);
-        // }
-
-
-
       });
     }
+
 
 
 

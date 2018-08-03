@@ -1,6 +1,9 @@
-import {animate, query, stagger, style, transition, trigger} from "@angular/animations";
+import {animate, group, query, stagger, style, transition, trigger} from "@angular/animations";
 
-export const slideInOut  = trigger('slideInOut', [
+
+
+//TRIGGER 1
+export const SlideInOut = trigger('slideInOut', [
   //going in
   transition('void => *', [
     query('.tab', style({
@@ -30,23 +33,33 @@ export const slideInOut  = trigger('slideInOut', [
 ]);
 
 
-export const FadeInOut  = trigger('FadeInOut', [
-  //going in
-  transition('void => *', [
-    query('.Logo', style({
-      opacity: 0
-    })),
-    query('.tab', style({
-        opacity: 1,
-      }))
-  ]),
-  //going out
-  transition('* => void', [
-    query('.Logo', style({
-      opacity: 1
-    })),
-    query('.tab', style({
-      opacity: 0,
-    }))
-  ])
-]);
+  export const ScaleIn = trigger('scalein', [
+    //going in
+    transition('void => *', [
+      query('.crop-wrapper', style({
+        transform: 'scale(.1) ',
+        opacity: 0
+      })),
+
+      group([
+        query('.crop-wrapper', animate('7s .5s ease-in-out', style({
+            opacity: 1,
+            transform: 'scale(1) '
+          }))
+        )
+
+      ])
+    ]),
+    //going out
+    transition('* => void', [
+      query('.crop-wrapper', style({
+        transform: 'scale(-200%) rotate(-720deg)',
+        opacity: 0
+      })),
+      query('.crop-wrapper', animate('4s .1s ease-out', style({
+          opacity: 1,
+          transform: 'scale(0%) rotate(0deg)'
+        }))
+      )
+    ])
+  ]);

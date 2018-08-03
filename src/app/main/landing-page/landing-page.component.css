@@ -30,22 +30,7 @@
 
 
 /* DROP DOWN MENU COMPONENTS */
-.info-button  {
-  position: absolute;
-  top: 24px;
-  right: 24px;
-  height: 36px;
-  width: 36px;
-  outline: 0;
-  z-index: 3;
-  cursor: pointer;
-  border-radius: 18px;
-  border: 1px solid #595959;
-  background-image: url("../../../assets/Button1.jpg");
-  background-size: cover;
-  padding: 0;
-  margin: 0;
-}
+
 app-sign-in {
   position: absolute;
   top: 24px;
@@ -78,6 +63,11 @@ app-sign-in {
         }
             .label  {
               padding: 6px;
+              transition: .3s ease;
+            }
+            .label:hover  {
+              transform: translateX(18%);
+              text-shadow: 0 0  20px white;
 
             }
 

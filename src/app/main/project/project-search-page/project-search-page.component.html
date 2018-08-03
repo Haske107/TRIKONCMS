@@ -8,14 +8,31 @@
     Projects
   </h4>
 
+
+
+  <div class="options row">
+    <div class="col-md-4">
+      <h4 class="Type-Title" (click)="selectType('Narrative')" [ngStyle]="Type === 'Narrative' ? {  'text-decoration': 'underline solid white'}: null">
+        Narrative
+      </h4>
+    </div>
+    <div class="col-md-4" (click)="selectType('Fashion')" [ngStyle]="Type === 'Fashion' ? {  'text-decoration': 'underline solid white'}: null">
+      <h4 class="Type-Title">
+        Fashion
+      </h4>
+    </div>
+    <div class="col-md-4" (click)="selectType('Music')" [ngStyle]="Type === 'Music' ? {  'text-decoration': 'underline solid white'}: null">
+      <h4 class="Type-Title">
+        Music
+      </h4>
+    </div>
+  </div>
+
   <div class="main">
     <mat-grid-list *ngIf="Projects" class="list" [cols]="Col" rowHeight="1:1" gutterSize="6px" [@slideInOut]="Projects.length">
-
-
-
-      <mat-grid-tile class="tile" *ngFor="let Project of Projects | hide" (click)="selectProject(Project)" >
+      <mat-grid-tile class="tile" *ngFor="let Project of Projects | hide:Type" (click)="selectProject(Project)" >
         <div class="header">
-          <h4 class="Project_Name">
+          <h4 class="Project_Type">
             {{Project.Type}}
           </h4>
         </div>
