@@ -21,7 +21,7 @@ export class ProjectSearchPageComponent implements OnInit {
   PageState = 'in';
   Projects : Project[];
   CurrProject: Project;
-  Col = 3;
+  Col = 4;
   Type = "all";
 
 

@@ -9,10 +9,14 @@ import {User} from "../TS Models/User";
 export class AuthService {
   Base = "http://trikon.xyz/users";
 
+  constructor(private http: HttpClient) {
 
-  constructor(private http: HttpClient) { }
+  }
 
   // TODO LOG IN
+
+
+
 
   // TODO LOG OUT
 

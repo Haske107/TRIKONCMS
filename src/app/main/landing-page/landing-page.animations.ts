@@ -18,14 +18,14 @@ export const SlideInOut = trigger('slideInOut', [
     ]))
   ]),
   //going out
-  transition('* => void', [
+  transition('in => void', [
     query('.tile', style({
       opacity: 1,
       transform: 'translateY(0%)'
     })),
     query('.tile', stagger('-500ms', [
       animate('100ms .1s ease-out', style({
-        opacity: 0.2,
+        opacity: 0,
         transform: 'translateY(-200%)'
       }))
     ]))
@@ -36,13 +36,13 @@ export const SlideInOut = trigger('slideInOut', [
   export const ScaleIn = trigger('scalein', [
     //going in
     transition('void => *', [
-      query('.crop-wrapper', style({
+      query('.crop-wrapper, .Border', style({
         transform: 'scale(.1) ',
         opacity: 0
       })),
 
       group([
-        query('.crop-wrapper', animate('7s .5s ease-in-out', style({
+        query('.crop-wrapper, Border', animate('7s .5s ease-in-out', style({
             opacity: 1,
             transform: 'scale(1) '
           }))
@@ -52,11 +52,11 @@ export const SlideInOut = trigger('slideInOut', [
     ]),
     //going out
     transition('* => void', [
-      query('.crop-wrapper', style({
+      query('.crop-wrapper, .Border', style({
         transform: 'scale(-200%) rotate(-720deg)',
         opacity: 0
       })),
-      query('.crop-wrapper', animate('4s .1s ease-out', style({
+      query('.crop-wrapper, .Border', animate('4s .1s ease-out', style({
           opacity: 1,
           transform: 'scale(0%) rotate(0deg)'
         }))

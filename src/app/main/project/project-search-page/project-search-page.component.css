@@ -65,7 +65,7 @@
 
 .main {
   position: absolute;
-  width: 60vw;
+  width: 80vw;
   height: calc(100vh - 100px);
   top: 84px;
   left: 20vw;
@@ -160,12 +160,43 @@
 
 .footer {
   position: absolute;
-  height: 36px;
-  width: 100%;
-  left: 0;
-  bottom: 0;
-  background-color: rgba(105, 31, 41, .5);
+  height: 24px;
+  width: 80%;
+  left: 10%;
+  top: 24px;
+  background-color: rgba(105, 31, 41, 1);
+  opacity: 0;
+
 }
+.dir {
+  position: absolute;
+  height: 24px;
+  width: 80%;
+  left: 10%;
+  top: 64px;
+  background-color: rgba(105, 31, 41, 0);
+  color: white;
+  text-align: left;
+  z-index:4;
+  opacity: 0;
+}
+.DirName {
+  opacity: 0;
+
+  text-align: right;
+  font-size: 18px;
+  font-weight: 100;
+  color: white;
+   position: absolute;
+   height: 24px;
+   width: 80%;
+   left: 10%;
+   top: 72px;
+  z-index: 3;
+   background-color: rgba(105, 31, 41, 1);
+ }
+
+
 
 .drawer {
   width: 100%;
