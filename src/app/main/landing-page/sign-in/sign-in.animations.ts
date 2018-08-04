@@ -9,7 +9,7 @@ export const FlipInOut = trigger('FlipInOut', [
     query('.background', style({
       width: '36px',
       height: '36px',
-      transform: 'translateX(-36px) rotate(-90deg)',
+      transform: 'translateX(-24px) rotate(-90deg)',
       borderTopLeftRadius: '24px',
       borderBottomRightRadius: '24px'
     }), {optional: true}),

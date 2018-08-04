@@ -7,42 +7,37 @@
   <h4 class="Projects-Label">
     Projects
   </h4>
-
-
-
-  <div class="options row">
-    <div class="col-md-4">
-      <h4 class="Type-Title" (click)="selectType('narrative')" [ngStyle]="Type === 'Narrative' ? {  'text-decoration': 'underline solid white'}: null">
+  <!-- TABS -->
+  <div class=" Tabs" [@slideInOut]>
+    <div class="tab row" routerLink="/Search" (click)="selectType('narrative')" [ngStyle]="Type === 'narrative' ? { transform: 'translateX(26px)',  'text-shadow': ' 0 0  20px white', color: 'yellow'}  : null">
+      <h4 class="label" >
         Narrative
       </h4>
     </div>
-    <div class="col-md-4" (click)="selectType('fashion')" [ngStyle]="Type === 'Fashion' ? {  'text-decoration': 'underline solid white'}: null">
-      <h4 class="Type-Title">
+    <div class="tab row" (click)="selectType('fashion')" [ngStyle]="Type === 'fashion' ? { transform: 'translateX(26px)',  'text-shadow': ' 0 0  20px white', color: 'yellow'}  : null">
+      <h4 class="label">
         Fashion
       </h4>
     </div>
-    <div class="col-md-4" (click)="selectType('music')" [ngStyle]="Type === 'Music' ? {  'text-decoration': 'underline solid white'}: null">
-      <h4 class="Type-Title">
+    <div class="tab row" (click)="selectType('music')" [ngStyle]="Type === 'music' ? { transform: 'translateX(26px)',  'text-shadow': ' 0 0  20px white', color: 'yellow'} : null" >
+      <h4 class="label">
         Music
       </h4>
     </div>
   </div>
 
   <div class="main">
-    <mat-grid-list *ngIf="Projects" class="list" [cols]="Col" rowHeight="1:1" gutterSize="6px" [@typeinout]="Type">
-
+    <mat-grid-list *ngIf="Projects" class="list" [cols]="Col" rowHeight="1:1" gutterSize="4px" [@typeinout]="Type">
       <mat-grid-tile class="tile" *ngFor="let Project of Projects | hide:Type" (click)="selectProject(Project)" >
-        <div class="header">
-          <h4 class="Project_Type">
-            {{Project.Type}}
-          </h4>
-        </div>
-
+        <!--<div class="header">-->
+          <!--<h4 class="Project_Type">-->
+            <!--{{Project.Type}}-->
+          <!--</h4>-->
+        <!--</div>-->
         <div *ngFor="let Still of Project.Stills; let i = index">
           <img *ngIf="i === 0" src="http://www.trikon.xyz/content/Stills/{{Project.Fullname}}/{{Project.Stills[0].Filename}}" class="Main-Still">
         </div>
         <img *ngIf="!Project.Stills[0]" src="../../../../assets/Placeholder.jpg" class="Main-Still">
-
         <div class="footer">
           <h4 class="Project_Name">
             {{Project.Name}}
@@ -51,6 +46,4 @@
       </mat-grid-tile>
     </mat-grid-list>
   </div>
-
-
 </div>

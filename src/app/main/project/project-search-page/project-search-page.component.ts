@@ -10,7 +10,8 @@ import {TypeInOut} from "./type.animations";
   templateUrl: './project-search-page.component.html',
   styleUrls: ['./project-search-page.component.css', './project-search-page.m.component.css'],
   animations: [
-    TypeInOut
+    TypeInOut,
+    SlideInOut
   ]
 })
 
@@ -20,7 +21,7 @@ export class ProjectSearchPageComponent implements OnInit {
   PageState = 'in';
   Projects : Project[];
   CurrProject: Project;
-  Col = 6;
+  Col = 3;
   Type = "all";
 
 

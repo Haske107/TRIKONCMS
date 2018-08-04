@@ -25,18 +25,18 @@ export class HidePipe implements PipeTransform {
             console.log("test");
             NewProjects.push(Project);
           }
-          if (Type === "Narrative") {
-            if (Project.Type === "Short Film" || Project.Type === "Documentary") {
+          if (Type === "narrative") {
+            if (Project.Type.toUpperCase() === "NARRATIVE") {
               NewProjects.push(Project);
             }
           }
-          if (Type === "Fashion") {
-            if (Project.Type === "Commercial" || Project.Type === "Fashion Film" || Project.Type === "Fashion") {
+          if (Type === "fashion") {
+            if (Project.Type.toUpperCase() === "FASHION" ) {
               NewProjects.push(Project);
             }
           }
-          if (Type === "Music") {
-            if (Project.Type === "Music Video" ) {
+          if (Type === "music") {
+            if (Project.Type.toUpperCase() === "MUSIC VIDEO" ) {
               NewProjects.push(Project);
             }
           }

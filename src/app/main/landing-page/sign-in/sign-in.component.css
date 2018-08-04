@@ -1,10 +1,10 @@
 .background {
-  background-color: #141414;
+  background-color: rgba(159, 170, 226, 0.2);
   width: 300px;
   height: 96px;
   border-top-right-radius: 24px;
   border-bottom-left-radius: 24px;
-  border: 2px solid #494949;
+  border: 2px solid rgba(197, 187, 195, 0.2);
   transform-origin: top right;
   overflow: hidden;
   font-family: "Rajdhani", sans-serif;

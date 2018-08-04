@@ -128,23 +128,6 @@
 }
 
 
-::-webkit-scrollbar {
-  width: 10px;  /* remove scrollbar space */
-  margin-left: 2px;
-  height: calc(100vh - 110px);
-  margin-top: 110px;
-  display: block;
-  background: transparent;
-  z-index: 1;/* optional: just make scrollbar invisible */
-}
-/* optional: show position indicator in red */
-::-webkit-scrollbar-thumb {
-  background: #852731;
-  border-radius: 0;
-  z-index: 1;
-  display: block;
-
-}
 
 .video  {
   width: 60vw;

@@ -9,7 +9,7 @@
   left: 0;
   overflow: hidden;
   z-index: 0;
-  background-image: url("../../../assets/Background.jpg");
+  background-image: url("../../../assets/stars.png");
   background-size: cover;
 
 }
@@ -20,7 +20,7 @@
   height: 48px;
   position: absolute;
   z-index: 2;
-  top: 24px;
+  top: 30px;
   left: 24px;
   cursor: pointer;
   background-size: 10%;
@@ -36,11 +36,9 @@ app-sign-in {
   top: 24px;
   right: 24px;
 }
-
-
     .Tabs {
       position: absolute;
-      top: 76px;
+      top: 84px;
       right: 28px;
       left: 24px;
       margin :0;
@@ -77,10 +75,10 @@ app-sign-in {
 /* VIDEO COMPONENTS */
 .crop-wrapper  {
   position: absolute;
-  width: 100vh;
-  left: calc((100% - 100vh)/2);
-  top: 4.5vh;
-  height: 90vh;
+  width: 70vh;
+  left: calc((100% - 70vh)/2);
+  top: 20vh;
+  height: 60vh;
   padding: 0;
   z-index: 1;
   overflow: hidden;
@@ -91,7 +89,7 @@ app-sign-in {
       .video  {
         position: absolute;
         top:0;
-        left: -68%;
+        left: -62%;
         height: 110%;
         border: none;
       }
@@ -102,10 +100,10 @@ app-sign-in {
 
 .Border {
   position: absolute;
-  width: 105vh;
+  width: 70vh;
   left: calc((100% - 105vh)/2);
   top: 2vh;
-  height: 94vh;
+  height: 60vh;
   padding: 0;
   z-index: 0;
   overflow: hidden;

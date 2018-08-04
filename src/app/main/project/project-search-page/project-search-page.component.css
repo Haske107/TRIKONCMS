@@ -8,10 +8,6 @@
   flex-wrap: wrap;
 }
 
-
-
-
-
 .background {
   position: fixed;
   width: 100%;
@@ -20,15 +16,16 @@
   left: 0;
   overflow: hidden;
   z-index: 0;
-  background-image: url("../../../../assets/Background.jpg");
+  background-image: url("../../../../assets/stars.png");
   background-size: cover;
 }
+
 .info-button  {
   height: 36px;
   width: 36px;
   border-radius: 18px;
   position: absolute;
-  top: 24px;
+  top: 30px;
   right: 24px;
   color: white;
   outline: none;
@@ -38,12 +35,13 @@
   cursor: pointer;
   border: 1px solid #363636;
 }
+
 .logo {
   width: 192px;
   height: 48px;
   position: absolute;
   z-index: 2;
-  top: 14px;
+  top: 30px;
   left: 24px;
   cursor: pointer;
   background-image: url("../../../../assets/TrikonLogo.jpg");
@@ -53,12 +51,10 @@
 
 }
 
-
-
 .Projects-Label {
   position: absolute;
-  left: 230px;
-  top: 14px;
+  left: 20vw;
+  top: 30px;
   text-align: right;
   margin: 0;
   font-family: 'Rajdhani', sans-serif;
@@ -69,11 +65,11 @@
 
 .main {
   position: absolute;
-  width: 100%;
+  width: 60vw;
   height: calc(100vh - 100px);
-  top: 100px;
+  top: 84px;
+  left: 20vw;
   overflow-y: scroll;
-
 }
 .Status-Tag {
   position: absolute;
@@ -84,17 +80,13 @@
 }
 
 .list {
-  position: absolute;
-  left:0;
   width:100%;
-  top: 0;
 }
 .tile {
   overflow: hidden;
 }
 .Project_Name {
   font-family: 'Rajdhani', sans-serif;
-
   z-index: 2;
   position: absolute;
   bottom: 4px;
@@ -125,31 +117,26 @@
   height: 100%;
 }
 
-.options  {
-  position: absolute;
-  top: 28px;
-  width: 30vw;
-  left: 35vw;
-}
 .Type-Title {
    text-align: center;
    font-family: "Rajdhani", sans-serif;
    color: white;
+  font-size: 12pt;
    cursor: pointer;
   transition: .3s ease;
  }
+
 .Type-Title:hover {
-  transform: translateY(-6px);
+  transform: translateY(-2px);
   text-shadow: 0 0  20px white;
 }
-
 
 ::-webkit-scrollbar {
   width: 10px;  /* remove scrollbar space */
   margin-left: 2px;
   height: calc(100vh - 110px);
   margin-top: 110px;
-  display: block;
+  display: none;
   background: transparent;
   z-index: 1;/* optional: just make scrollbar invisible */
 }
@@ -169,7 +156,6 @@
   top: 2px;
   z-index: 3;
   text-align: center;
-
 }
 
 .footer {
@@ -178,5 +164,46 @@
   width: 100%;
   left: 0;
   bottom: 0;
-  background-color: rgba(87, 29, 39, 0.5);
+  background-color: rgba(105, 31, 41, .5);
+}
+
+.drawer {
+  width: 100%;
+  height: 24px;
+  padding-top: 2px;
+  background-color: rgb(65, 61, 64);
+  z-index: 4;
+  margin: 0 0 6px 0;
+}
+.Tabs {
+  position: absolute;
+  top: 84px;
+  right: 28px;
+  left: 24px;
+  margin :0;
+  width: 40%;
+  z-index: 5;
+  justify-content: flex-start;
+
+}
+.tab  {
+  cursor: pointer;
+  padding:0;
+  margin: 0;
+  color: white;
+  font-family: "Rajdhani", sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  height: 48px;
+  z-index: 6;
+  text-align: left;
+}
+.label  {
+  padding: 6px;
+  transition: .3s ease;
+}
+.label:hover  {
+  padding-left: 26px;
+  text-shadow: 0 0  20px white;
+  color: yellow;
 }
