@@ -61,7 +61,7 @@ export const SpinInOut = trigger('SpinInOut', [
       transform: 'rotate(-1000deg)',
     }), {optional: false}),
     query('.info-button',
-      animate('2s .5s ease', style({
+      animate('1s .9s ease', style({
         transform:  'rotate(0deg)'
       })), {optional: false}),
   ]),

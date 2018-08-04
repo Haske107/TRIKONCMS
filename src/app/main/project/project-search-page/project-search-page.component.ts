@@ -3,13 +3,14 @@ import {ProjectService} from "../project.service";
 import {Router} from "@angular/router";
 import {Project} from "../../../TS Models/Project";
 import {SlideInOut} from "./project-search.animations";
+import {TypeInOut} from "./type.animations";
 
 @Component({
   selector: 'app-project-search-page',
   templateUrl: './project-search-page.component.html',
   styleUrls: ['./project-search-page.component.css', './project-search-page.m.component.css'],
   animations: [
-   SlideInOut
+    TypeInOut
   ]
 })
 
@@ -20,7 +21,6 @@ export class ProjectSearchPageComponent implements OnInit {
   Projects : Project[];
   CurrProject: Project;
   Col = 6;
-
   Type = "all";
 
 

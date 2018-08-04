@@ -132,10 +132,15 @@
   left: 35vw;
 }
 .Type-Title {
-  text-align: center;
-  font-family: "Rajdhani", sans-serif;
-  color: white;
-  cursor: pointer;
+   text-align: center;
+   font-family: "Rajdhani", sans-serif;
+   color: white;
+   cursor: pointer;
+  transition: .3s ease;
+ }
+.Type-Title:hover {
+  transform: translateY(-6px);
+  text-shadow: 0 0  20px white;
 }
 
 

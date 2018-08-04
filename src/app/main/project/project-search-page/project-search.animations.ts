@@ -25,4 +25,4 @@ export const SlideInOut = trigger('slideInOut', [
       }))
     ]))
   ])
-])
+]);

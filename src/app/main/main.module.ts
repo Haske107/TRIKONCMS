@@ -16,13 +16,15 @@ import {HttpClientModule} from "@angular/common/http";
 import {ContentService} from "./content.service";
 import {AuthService} from "./auth.service";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
     MainComponent,
     LandingPageComponent,
     NavigatorComponent,
-    SignInComponent
+    SignInComponent,
+    AboutComponent
   ],
   imports: [
     Routing,

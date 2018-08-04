@@ -32,7 +32,7 @@ export const SlideInOut = trigger('slideInOut', [
   ])
 ]);
 
-
+//TRIGGER 2
   export const ScaleIn = trigger('scalein', [
     //going in
     transition('void => *', [
