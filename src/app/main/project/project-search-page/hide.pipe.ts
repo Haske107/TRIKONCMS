@@ -12,12 +12,17 @@ export class HidePipe implements PipeTransform {
 
     if (Projects) {
       Projects.forEach(Project => {
-        if(Project.Name !== 'Dead End'
-        && Project.Name !== 'Costco'
-          && Project.Name !== 'ArtFamilia'
-          && Project.Name !== 'Trikon Promo Shorts'
-          && Project.Name !== 'My Beautiful Thing'
-          && Project.Name !== 'Hatch Beauty'
+
+        if(
+          // FILTER OUT SOME PROJECTS MANUALLY
+          Project.Name !== 'Dead End'
+          && Project.Name !== 'Costco'
+            && Project.Name !== 'ArtFamilia'
+              && Project.Name !== 'Trikon Promo Shorts'
+                && Project.Name !== 'My Beautiful Thing'
+                  && Project.Name !== 'Hatch Beauty'
+          // CHECK IF TYPE EXISTS
+          && Project.Type
         ) {
 
 

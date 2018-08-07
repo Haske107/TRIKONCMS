@@ -34,7 +34,7 @@
   color: white;
 }
 .description  {
-  width: 60vw;
+  width: 100%;
   left: 20vw;
   top: calc(20vh);
   text-align: left;
@@ -130,12 +130,12 @@
 
 
 .video  {
-  width: 60vw;
+  width: 100%;
   margin-bottom: 0;
 }
 .Info-Bar {
   height: 48px;
-  width: 60vw;
+  width: 100%;
   text-align: center;
   color: white;
   margin: 0;
@@ -160,7 +160,7 @@ h5  {
   position: absolute;
 }
 .Stills {
-  width: 60vw;
+  width: 100%;
   margin-top: 12px;
 }
 .tile {
@@ -170,4 +170,19 @@ h5  {
   min-width: 100%;
   max-height: 100%;
   position: absolute;
+}
+
+
+
+::-webkit-scrollbar {
+  width: 10px;  /* remove scrollbar space */
+  background: transparent;
+  z-index: 1;/* optional: just make scrollbar invisible */
+}
+/* optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: #852731;
+  border-radius: 0;
+  z-index: 1;
+  opacity: .4
 }
