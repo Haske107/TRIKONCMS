@@ -1,9 +1,7 @@
 
-<div class="background">
+<div class="background" [@slideInOut]>
   <!-- INFO BUTTON -->
-  <button  class="info-button"></button>
   <!-- LOGO -->
-  <img class="logo" (click)="navToHome()" src="../../../../assets/TrikonLogo.png" >
   <h4 class="Projects-Label">
     Projects
   </h4>
@@ -11,17 +9,17 @@
   <div class=" Tabs" [@slideInOut]>
     <div class="tab row" routerLink="/Search" (click)="selectType('narrative')" [ngStyle]="Type === 'narrative' ? { transform: 'translateX(26px)',  'text-shadow': ' 0 0  20px white', color: 'yellow'}  : null">
       <h4 class="label" >
-        Narrative
+        narrative
       </h4>
     </div>
     <div class="tab row" (click)="selectType('fashion')" [ngStyle]="Type === 'fashion' ? { transform: 'translateX(26px)',  'text-shadow': ' 0 0  20px white', color: 'yellow'}  : null">
       <h4 class="label">
-        Fashion
+        fashion
       </h4>
     </div>
     <div class="tab row" (click)="selectType('music')" [ngStyle]="Type === 'music' ? { transform: 'translateX(26px)',  'text-shadow': ' 0 0  20px white', color: 'yellow'} : null" >
       <h4 class="label">
-        Music
+        music
       </h4>
     </div>
   </div>

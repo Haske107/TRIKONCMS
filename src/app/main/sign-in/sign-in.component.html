@@ -1,7 +1,7 @@
 
 
 <div class="animatecontainer"   [@SpinInOut]="Show" [@FlipInOut]="Show">
-  <div class="info-button">
+  <div class="info-button" (click)="Show = !Show">
 
   </div>
   <div class="background"  *ngIf="Show" >

@@ -1,47 +1,44 @@
+<div [@contactslide]="Contactshow" [@aboutslide]="AboutShow" class="Blackground">
 <!-- BACKGROUND -->
-<div class="background">
-  <!-- LOGO -->
-  <div  >
-    <img class="Logo" src="../../../assets/TrikonLogo.png">
+<div class="background" [ngStyle]=" Contactshow  ? {transform: 'translateY(-50vh)', filter: 'hue-rotate(' + Degrees + 'deg)' } :
+                                     AboutShow ? {'transition-delay' : '.3s', filter: 'saturate(0)', transform: 'translateY(0)'  } :
+                                     {transform: 'translateY(0) scale('+ Scale + ')'} ">
+
+  <img src="../../../assets/up.svg" alt="" class="back" [ngStyle]="Contactshow ? {opacity: 1} : {opacity: 0}"(click)="Contactshow = !Contactshow">
+
+
+
+  <div class="about" *ngIf="AboutShow" [ngStyle]="AboutShow ? {left: '0',   transition: '.3s ease'} : {left: '100vw',    transition: '.3s ease'}">
+
   </div>
 
+</div>
   <!-- TABS -->
   <div class=" Tabs" [@slideInOut]>
-    <div class="tab row" routerLink="/Search">
-      <h4 class="label" >
-        Projects
-      </h4>
-    </div>
-    <div class="tab row" routerLink="/Artists">
-      <h4 class="label">
-        Artists
-      </h4>
-    </div>
-
-
-
     <div class="tab row" >
-      <h4 class="label">
-        Contact
+      <h4 class="label" routerLink="/Search">
+        projects
       </h4>
-
     </div>
-
-    <div class="tab row">
-      <h4 class="label">
-        About
+    <div class="tab row" >
+      <h4 class="label" routerLink="/Artists">
+        artists
       </h4>
-
     </div>
-
-
-
+    <div class="tab row" [ngStyle]="Contactshow ? {color: '#FFE200' , 'padding-left': '26px'} : {}">
+      <h4 class="label" (click)="setContact()" >
+        contact
+      </h4>
+    </div>
+    <div class="tab row" [ngStyle]="AboutShow ? {color: '#FFE200' , 'padding-left': '26px'} : {}">
+      <h4 class="label" (click)="setAbout()">
+        about
+      </h4>
+    </div>
   </div>
-
-
   <!-- CROP WRAPPER -->
-  <div [@scalein]>
-    <div class="crop-wrapper">
+  <div [@scalein] >
+    <div class="crop-wrapper" *ngIf="!Contactshow && !AboutShow" [ngStyle]="Contactshow ? {transform: 'translateY(100%)'} :  {}" >
       <!-- VIDEO -->
       <video  (click)="toggleVideo($event)" #videoPlayer class="video" autoplay >
         <source src="../../assets/New Cut.mp4" type="video/mp4" />
@@ -49,16 +46,15 @@
       </video>
     </div>
     <!--<div class="Border"></div>-->
-
   </div>
-
-
-
-
-
+  <mat-card class="contact"  >
+    <h4 class="Contact-Label" >
+      contact
+    </h4>
+    <h4 class="contact-title">  contact@Trikon.xyz   </h4>>
+    <p class="instructions">+1 (323) 919-9629 </p>
+  </mat-card>
   <!-- INFO BUTTON -->
-  <app-sign-in [Show]="LogInShow"  (click)="toggleLogIn()"></app-sign-in>
-
   <!-- CONTACT -->
   <!--<h3 class="contact">CONTACT@TRIKON.XYZ</h3>-->
 </div>

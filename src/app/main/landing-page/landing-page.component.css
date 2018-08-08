@@ -7,10 +7,13 @@
   height: 100%;
   top: 0;
   left: 0;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: visible;
   z-index: 0;
   background-image: url("../../../assets/stars.png");
   background-size: cover;
+  transition: .3s ease;
+  filter: hue-rotate(80deg);
 
 }
 
@@ -28,17 +31,15 @@
   outline: none;
 }
 
-
 /* DROP DOWN MENU COMPONENTS */
-
 app-sign-in {
   position: absolute;
-  top: 24px;
+  top: 24px ;
   right: 24px;
 }
     .Tabs {
       position: absolute;
-      top: 84px;
+      top: 100px;
       right: 28px;
       left: 24px;
       margin :0;
@@ -52,9 +53,9 @@ app-sign-in {
           padding:0;
           margin: 0;
           color: white;
-          font-family: "Rajdhani", sans-serif;
+          font-family: "Futura PT", sans-serif;
           font-size: 36px;
-          font-weight: 700;
+          font-weight: 200;
           height: 48px;
           z-index: 6;
           text-align: left;
@@ -85,6 +86,7 @@ app-sign-in {
   background-color: transparent;
   -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  transition: .3s ease;
 }
       .video  {
         position: absolute;
@@ -97,7 +99,6 @@ app-sign-in {
 
 
 /* TRIANGLE */
-
 .Border {
   position: absolute;
   width: 72vh;
@@ -114,4 +115,131 @@ app-sign-in {
   box-shadow: 0 3px 1px -2px rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.18), 0 1px 5px 0 rgba(0,0,0,.18);
 }
 
+.Contact-Label  {
+  position: absolute;
+  top: 24px;
+  left: 0;
+  font-family: "Futura PT", sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  color: #FFE200;
+  transition: .3s ease;
+  cursor: default;
+}
+.back{
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  top: calc(40vh - 24px) ;
+  left: calc(50% - 24px);
+  transition-delay: 2s;
+  transition: .3s ease;
+  cursor: pointer;
+}
 
+.contact  {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 50vh;
+  background-image: url('../../../assets/Santi.jpg');
+  background-size: cover;
+  background-position-y:  -50vh;
+  background-position-x:  -10vw;
+  z-index: -1;
+  /*border: 1px solid rgba(255, 226, 0, 1);*/
+}
+.contact-title  {
+  font-family: "futura pt", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 24px;
+  width: 100%;
+  text-align: center;
+  color: #FFE200;
+  position: absolute;
+  top: 40%;
+  left: 0;
+
+}
+
+.name {
+  width: 42%;
+  margin:0 0 12px;
+  background-color: rgba(255, 255, 255, .4);
+  border: none;
+  outline: 0;
+  background-color: rgb(105, 101, 104);
+}
+.email  {
+  width: 100%;
+  padding-right: 58%;
+  margin:0 0 12px;
+  background-color: rgb(105, 101, 104);
+  border: none;
+  outline: 0;
+  background-color: rgb(105, 101, 104);
+}
+.message  {
+  width: 100%;
+  height: calc(100% - 50px);
+  background-color: rgba(255, 255, 255,.6);
+  border: 2px solid black;
+  outline: 0;
+  font-family: "futura pt";
+}
+.instructions {
+  color: #FFE200;
+  font-family: "futura pt", sans-serif;
+  font-size: 19px;
+  text-align: center;
+  margin-bottom: 0;
+  line-height: 22px;
+  width: 100%;
+  position: absolute;
+  top: calc( 40% + 28px);
+  left: 0;
+
+}
+.Send-Button  {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+}
+.send {
+  font-family: "Futura PT";
+  color: grey;
+  margin: 0;
+}
+.about  {
+  position: absolute;
+  width: calc(100vw);
+  bottom: 0;
+  z-index: 2;
+  background-image: url('../../../assets/about.jpg');
+  background-size: cover;
+  height: 100vh;
+  transition: .3s ease;
+}
+.description  {
+  color: black;
+  font-family: "Futura PT", sans-serif;
+  width: 400px;
+  font-weight: 600;
+  font-size: 30px;
+  position: absolute;
+  left: 35%;
+  top: 40vh;
+}
+.Blackground  {
+  background-color: Black;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: -2;
+}

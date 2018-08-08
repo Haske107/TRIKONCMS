@@ -10,13 +10,14 @@ import {MainComponent} from "./main.component";
 import {Routing} from "./main.router";
 import {LandingPageComponent} from "./landing-page/landing-page.component";
 import {NavigatorComponent} from "./landing-page/navigator/navigator.component";
-import {SignInComponent} from "./landing-page/sign-in/sign-in.component";
+import {SignInComponent} from "./sign-in/sign-in.component";
 import {ContactModule} from "./contact/contact.module";
 import {HttpClientModule} from "@angular/common/http";
 import {ContentService} from "./content.service";
 import {AuthService} from "./auth.service";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { AboutComponent } from './about/about.component';
+import {MatButtonModule, MatCardMdImage, MatCardModule} from "@angular/material";
 
 @NgModule({
   declarations: [
@@ -34,7 +35,9 @@ import { AboutComponent } from './about/about.component';
     ProjectModule,
     ArtistModule,
     ClientModule,
-    ContactModule
+    ContactModule,
+    MatCardModule,
+    MatButtonModule
   ],
   exports:  [
     MainComponent

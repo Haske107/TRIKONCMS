@@ -63,3 +63,51 @@ export const SlideInOut = trigger('slideInOut', [
       )
     ])
   ]);
+
+
+export const ContactSlide = trigger('contactslide', [
+
+
+
+]);
+
+export const AboutSlide = trigger('aboutslide', [
+  transition('false => true', [
+    query('.about', style({
+      transform: 'translateX(200%)',
+      opacity: 0
+    })),
+    group([
+      query('.about',animate('.5s .4s ease-in-out', style({
+        transform: 'translateX(-0)',
+        opacity: 1
+      }))),
+      query('.crop-wrapper',animate('.5s .4s ease-in-out', style({
+        transform: 'translateX(-300%)',
+        opacity: 1
+      }))),
+    ])
+
+  ]),
+  transition('true => false', [
+    query('.about', style({
+      transform: 'translateX(0)',
+      opacity: 1
+    })),
+    query('.crop-wrapper', style({
+      transform: 'translateX(-300%)',
+      opacity: 0
+    })),
+    group([
+      query('.about',animate('.3s .4s ease-in-out', style({
+        transform: 'translateX(200%)',
+        opacity: 0
+      }))),
+      query('.crop-wrapper',animate('.5s .4s ease-in-out', style({
+        transform: 'translateX(0)',
+        opacity: 1
+      }))),
+    ])
+  ])
+
+]);

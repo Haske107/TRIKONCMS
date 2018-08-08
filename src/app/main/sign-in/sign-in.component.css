@@ -1,13 +1,12 @@
 .background {
-  background-color: rgba(159, 170, 226, 0.2);
+  background-color: rgba(105, 31, 41, 0.2);
   width: 300px;
   height: 96px;
   border-top-right-radius: 24px;
-  border-bottom-left-radius: 24px;
   border: 2px solid rgba(197, 187, 195, 0.2);
   transform-origin: top right;
   overflow: hidden;
-  font-family: "Rajdhani", sans-serif;
+  font-family: "futura pt", sans-serif;
 }
 .User {
   background-color: transparent;
@@ -20,11 +19,9 @@
   border-bottom: 1px ridge #b3b3b3;
   outline: 0;
   color: white;
-
 }
 
 .Pass {
-
   background-color: transparent;
   position: absolute;
   bottom: 16px;
@@ -49,7 +46,7 @@
   cursor: pointer;
   border-radius: 18px;
   border: 1px solid #595959;
-  background-image: url("../../../../assets/Button1.jpg");
+  background-image: url("../../../assets/Button1.jpg");
   background-size: cover;
   padding: 0;
   margin: 0;

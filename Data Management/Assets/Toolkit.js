@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const _Archive = ['X:','Y'];
+const _Archive = ['X:','Y:'];
 
 exports.readProjectFromArchive =  readProjectFromArchive;
 exports.readProjectsFromArchive = function(path)  {
@@ -86,7 +86,7 @@ readStillsFromArchive = function(ProjectPath)  {
     // GET FILE STATS
 
     // LOAD DATA INTO STILL OBJECT(S)
-    let l = Stills[j].substr(Stills[j].length - 3);
+    var l = Stills[j].substr(Stills[j].length - 3);
     if(l === 'jpg' ||
        l === 'JPG' ||
        l === 'png' ||

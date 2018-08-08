@@ -53,12 +53,12 @@
 
 .Projects-Label {
   position: absolute;
-  left: 20vw;
+  left: 234px;
   top: 30px;
   text-align: right;
   margin: 0;
-  font-family: 'Rajdhani', sans-serif;
-  font-weight: 300;
+  font-family: 'Futura PT', sans-serif;
+  font-weight: 100;
   font-size: 42px;
   color: #d1d1d1;
 }
@@ -208,11 +208,11 @@
 }
 .Tabs {
   position: absolute;
-  top: 84px;
+  top: 100px;
   right: 28px;
   left: 24px;
   margin :0;
-  width: 40%;
+  width: 100px;
   z-index: 5;
   justify-content: flex-start;
 
@@ -222,9 +222,9 @@
   padding:0;
   margin: 0;
   color: white;
-  font-family: "Rajdhani", sans-serif;
+  font-family: "Futura PT", sans-serif;
   font-size: 36px;
-  font-weight: 700;
+  font-weight: 200;
   height: 48px;
   z-index: 6;
   text-align: left;
@@ -237,4 +237,10 @@
   padding-left: 26px;
   text-shadow: 0 0  20px white;
   color: yellow;
+}
+.label:active  {
+  padding-left: 330px;
+  text-shadow: 0 0  20px white;
+  color: yellow;
+  transition: 1s ease-in-out
 }

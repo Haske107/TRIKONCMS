@@ -1,19 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import {ArtistService} from "../artist.service";
 import {User} from "../../../TS Models/User";
-import {ClientService} from "../../client/client.service";
-import {AuthService} from "../../auth.service";
+import {Router} from "@angular/router";
+import {SlideInOut} from "./artist-search.animation";
 
 @Component({
   selector: 'app-artist-search-page',
   templateUrl: './artist-search-page.component.html',
-  styleUrls: ['./artist-search-page.component.css']
+  styleUrls: ['./artist-search-page.component.css'],
+  animations: [SlideInOut]
 })
 export class ArtistSearchPageComponent implements OnInit {
 
   Artists: User[];
 
-  constructor(private adminService: ArtistService) { }
+  constructor(private adminService: ArtistService, private router: Router) { }
 
   ngOnInit() {
     const newUser = new User({
@@ -36,6 +37,10 @@ export class ArtistSearchPageComponent implements OnInit {
     this.adminService.getArtists().subscribe(
       Response => console.log(Response)
     )
+  }
+
+  navToHome() {
+    this.router.navigateByUrl('/Landing');
   }
 
 }

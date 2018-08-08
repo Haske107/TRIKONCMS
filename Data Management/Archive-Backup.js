@@ -12,19 +12,19 @@ const Destination = '/Users/Jeff/Desktop/BackUp';
 //  PATCH FUNCTIONS
 function getProjectPatches() {
   try {
-    let Archive = new FSTree({
+    var Archive = new FSTree({
       entries: walkSync.entries(Archives)
     });
 
-    let EditingDrivesTree = new FSTree({
+    var EditingDrivesTree = new FSTree({
       entries: walkSync.entries(Destination)
     });
 
 
 
-  let ValidPatches = [];
+  var ValidPatches = [];
 
-  for (let Patch of EditingDrivesTree.calculatePatch(Archive)) {
+  for (var Patch of EditingDrivesTree.calculatePatch(Archive)) {
     if (Patch[1].split('/')[1] !== '.DS_Store'
       && !(Patch[0] === 'rmdir'
         && Patch[2].basePath === Destination
@@ -69,9 +69,9 @@ const job = new CronJob('*/3 * * * * *', () => {
       fs.mkdirSync(Destination);
     }
     // FIND DONE PROJECTS IN ARCHIVE THAT ARE ACTIVE IN BACKUP
-    for (let Project in fs.readdirSync(Destination)) {
+    for (var Project in fs.readdirSync(Destination)) {
       if (Project.substr(Project.length - 6) === 'Active')  {
-        for (let _Project in fs.readdirSync(Archives)) {
+        for (var _Project in fs.readdirSync(Archives)) {
           if (Project.substr(0, Project.length - 7) === _Project)  {
             fs.renameSync(path.join(Destination, Project),
               path.join(Destination, Project.substr(0, Project.length - 7)))
@@ -80,12 +80,12 @@ const job = new CronJob('*/3 * * * * *', () => {
       }
     }
 
-    for (let patch of getProjectPatches())  {
+    for (var patch of getProjectPatches())  {
       performPatch(patch);
     }
 
 
-  console.log("Back Up Sequence Complete");
+  console.log("Back Up Sequence Compvare");
   }, () => {}, true
 );
 
