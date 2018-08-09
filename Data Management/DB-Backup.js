@@ -1,7 +1,9 @@
 const ncp = require('ncp').ncp;
 const fs = require('fs');
 const CronJob = require('cron').CronJob;
-
+const walkSync = require('walk-sync');
+const FSTree = require('fs-tree-diff');
+const path = require('path');
 // // DEFINE CRON JOB
 // const job = new CronJob('*/10 * * * * *', () => {
 //     console.log("Starting Back Up Sequence: " + new Date);
@@ -51,4 +53,4 @@ function getProjectPatches() {
 }
 
 
-cosole.log(getProjectPatches());
+console.log(getProjectPatches());
