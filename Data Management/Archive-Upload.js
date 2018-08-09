@@ -22,6 +22,7 @@ var Job = new CronJob('*/10 * * * * *', function() {
 // DB CREDENTIALS
 const localurl = "mongodb://localhost:27017/";
 const dbName = 'TRIKON-DB';
+
 // CONNECT TO DB
 mongoose.connect(localurl + dbName, function(err, result) {
   if (err)  {

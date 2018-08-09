@@ -1,0 +1,33 @@
+
+//// READ CSV /////////
+Download from google
+store into mongodb
+
+////////////////////////
+
+
+
+////////  GET PROJECT STATES //////////
+Pull projects into array
+separate into done and active
+fire active project save ---->
+fire done project remove ---->
+
+
+
+/////    ACTIVE BACK UP DRIVE //////
+Read Editing Drive
+  - if blocked
+Compare with Archive
+  - if blocked
+Add missing files
+Replace same files of different sizes
+
+
+///// BACK UP SEQUENCE ///////
+Read Archive Drive -
+  - if blocked
+Compare with Back Up
+  - if blocked
+Add missing files
+Replace same files of different sizes

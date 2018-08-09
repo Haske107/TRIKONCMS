@@ -21,4 +21,3 @@ export const MAIN_ROUTES: Routes = [
 ];
 
 export const Routing = RouterModule.forRoot(MAIN_ROUTES);
-
