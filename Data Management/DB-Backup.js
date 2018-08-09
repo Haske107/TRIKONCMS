@@ -26,9 +26,9 @@ const path = require('path');
 function getProjectPatches() {
   try {
 
-    let Archive = FSTree.fromPaths(['E:\\']);
+    let Archive = FSTree.fromPaths(['E:']);
 
-    let EditingDrivesTree = FSTree.fromPaths(['Z:\\']);
+    let EditingDrivesTree = FSTree.fromPaths(['Z:']);
 
     let ValidPatches = [];
 
