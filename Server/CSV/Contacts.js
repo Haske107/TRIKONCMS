@@ -1,7 +1,12 @@
+
+
+
+
+
 const fs = require('fs');
 const readline = require('readline');
 const {google} = require('googleapis');
-const Project = require('../models/Project.js');
+const Artist = require('../models/Artist.js');
 const mongoose = require('mongoose');
 // DB CREDENTIALS
 const localurl = "mongodb://localhost:27017/";
@@ -86,8 +91,8 @@ function getNewToken(oAuth2Client, callback) {
 function listMajors(auth) {
   const sheets = google.sheets({version: 'v4', auth});
   sheets.spreadsheets.values.get({
-    spreadsheetId: '1PcWDXsZ-BGbYgw8d6b8G3LHNCAoPot0iFsGImoesjwA',
-    range: 'Projects!A2:AZ',
+    spreadsheetId: '1v-MDb_xX-_F-BFOcHQEcR31doZ57IT6pUK_YGbM7BEA',
+    range: 'Contacts!A:E',
   }, (err, res) => {
     if (err) return console.log('The API returned an error: ' + err);
     const rows = res.data.values;
@@ -95,41 +100,12 @@ function listMajors(auth) {
       const _rows = [];
       // Print columns A and E, which correspond to indices 0 and 4.
       rows.map((row) => {
-        Project.findOne({Name: row[0]}, function (err, _Project) {
-          if (_Project) {
-            _Project.Name = row[0];
-            _Project.Type = row[3];
-            _Project.Client = row[4];
-            _Project.Producer = row[5];
-            _Project.PostSupervisor = row[6];
-            _Project.Cinematographer = row[8];
-            _Project.DaysLeft = row[10];
-            _Project.Director = row[7];
-            _Project.Editor = row[9];
-            _Project.InitatedDate = row[11];
-            _Project.ProductionDates = row[12];
-            _Project.EnterPost = row[13];
-            _Project.Delivery = row[14];
-            _Project.City = row[16];
-            _Project.Country = row[17];
-            _Project.Camera = row[18];
-            _Project.ProductionStatus = row[19] ? row[19][0] : 0;
-            _Project.GreenlightStatus = row[21];
-            _Project.PhotographyStatus = row[22];
-            _Project.DeliverablesStatus = row[23];
-            _Project.DeliveredStatus = row[24];
-            _Project.Budget = row[28];
-            _Project.Revenue = row[29];
-            _Project.Paid = row[30];
-            _Project.ReleaseDate = row[32];
-            _Project.Description = row[33];
-            _Project.save(function (err, Success) {
-              if (err) console.log(err);
-              if (!Success) console.log("No Save");
-              if (Success) console.log("Successfully Saved ", _Project.Name);
-            });
-          }
-        });
+        let temp = new Artist();
+        console.log(row);
+        temp.Name = row[0];
+        temp.Position = row[2];
+        temp.save(temp);
+
       });
     } else {
       console.log('No data found.');

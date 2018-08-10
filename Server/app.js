@@ -17,7 +17,7 @@ var ips = ['45.48.226.49'];
 // IMPORT API ROUTES
 var index = require('./routes/index');
 var users = require('./routes/users');
-
+var artist = require('./routes/artist');
 
 // CONNECT TO DATABASE
 
@@ -80,6 +80,7 @@ app.use(function (req, res, next) {
     next();
 });
 
+app.use('/collab', artist);
 app.use('/api/project', project);
 app.use('/content', content);
 app.use('/users', users);
