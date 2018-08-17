@@ -10,7 +10,7 @@
   overflow-x: hidden;
   overflow-y: visible;
   z-index: 0;
-  background-image: url("../../../assets/stars.png");
+  background-color: white;
   background-size: cover;
   transition: .3s ease;
   filter: hue-rotate(80deg);
@@ -39,12 +39,12 @@ app-sign-in {
 }
     .Tabs {
       position: absolute;
-      top: 100px;
+      bottom: 84px;
       right: 28px;
       left: 24px;
       margin :0;
       width: 40%;
-      z-index: 5;
+      z-index: 6;
       justify-content: flex-start;
 
     }
@@ -52,7 +52,7 @@ app-sign-in {
           cursor: pointer;
           padding:0;
           margin: 0;
-          color: white;
+          color: black;
           font-family: "Futura PT", sans-serif;
           font-size: 36px;
           font-weight: 200;
@@ -86,7 +86,7 @@ app-sign-in {
   background-color: transparent;
   -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  transition: .3s ease;
+  transition: .5s ease;
 }
       .video  {
         position: absolute;
@@ -146,12 +146,13 @@ app-sign-in {
   left: 0;
   bottom: 0;
   width: 100vw;
-  height: 50vh;
+  height: 100vh;
   background-image: url('../../../assets/Santi.jpg');
   background-size: cover;
-  background-position-y:  -50vh;
+  background-position-y:  0;
   background-position-x:  -10vw;
   z-index: -1;
+  transition: .3s ease-out;
   /*border: 1px solid rgba(255, 226, 0, 1);*/
 }
 .contact-title  {
@@ -221,7 +222,7 @@ app-sign-in {
   width: calc(100vw);
   bottom: 0;
   z-index: 2;
-  background-image: url('../../../assets/about.jpg');
+  background-color: black;
   background-size: cover;
   height: 100vh;
   transition: .3s ease;
@@ -251,8 +252,8 @@ app-sign-in {
   bottom: 0;
   left: 0;
   z-index: 5;
-  height: 400px;
-  width: 400px;
+  height: 20vw;
+  width: 18vw;
 }
 
 .sting:hover + .contact {
@@ -278,4 +279,64 @@ app-sign-in {
   40%, 60% {
     transform: translate3d(8px, 0, 0);
   }
+}
+
+
+/* about page components */
+
+.About-Video1 {
+  position: absolute;
+  width: 18vw;
+  left: 22vw;
+  top: calc((100% - 18vw)/2);
+  height: 18vw;
+  padding: 0;
+  z-index: 1;
+  overflow: hidden;
+  transition: .5s ease;
+  background-color: white;
+}
+.About-Video2 {
+  position: absolute;
+  width: 18vw;
+  left: calc((100% - 18vw)/2);
+  top: calc((100% - 18vw)/2);
+  height: 18vw;
+  padding: 0;
+  z-index: 1;
+  overflow: hidden;
+  transition: .5s ease;
+  background-color: white;
+}
+.About-Video3 {
+  position: absolute;
+  width: 18vw;
+  left: 60vw;
+  top: calc((100% - 18vw)/2);
+  height: 18vw;
+  padding: 0;
+  z-index: 1;
+  overflow: hidden;
+  transition: .5s ease;
+  background-color: white;
+}
+
+.Circle-Text  {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  text-align: center;
+  color: yellow;
+  z-index: 7;
+
+}
+
+.border {
+  position: absolute;
+  top: 20vh;
+  left:  calc((100% - 60vh)/2);
+  border: 2px solid white;
+  height: 60vh;
+  width: 60vh;
+  border-radius: 30vh;
 }

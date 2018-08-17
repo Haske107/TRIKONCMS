@@ -1,19 +1,22 @@
 app-sign-in {
   position: absolute;
-  top: 24px ;
+  top: 30px ;
   right: 24px;
 }
 
+
+
 .Logo {
   width: 192px;
-  height: 48px;
+  height: 96px;
   position: absolute;
   z-index: 3;
-  top: 30px;
+  bottom: 0;
   left: 24px;
   cursor: pointer;
-  background-image: url("../../assets/TrikonLogo.jpg");
-  background-size: 10%;
   border: none;
   outline: none;
+  background-image: url('../../assets/LogoBlack.png');
+  background-size: contain;
+  background-repeat: no-repeat;
 }

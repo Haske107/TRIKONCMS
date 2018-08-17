@@ -4,8 +4,8 @@ const FSTree = require('fs-tree-diff');
 const fs = require('fs-extra');
 const path = require('path');
 const CronJob = require('cron').CronJob;
-const EditingDrives = ['/Users/Jeff/Desktop/Editing-A','/Users/Jeff/Desktop/Editing-B'];
-const _Archive = '/Users/Jeff/Desktop/Archive/';
+const EditingDrives = ['/Users/Jeff/Desktop/Editing'];
+const _Archive = '/Users/Jeff/Desktop/Archive';
 
 // DEFINE CRON JOB
 const job = new CronJob('*/4 * * * * *', () => {
@@ -19,7 +19,6 @@ const job = new CronJob('*/4 * * * * *', () => {
 function backUpEditingDrive() {
   let DoneProjects = [];
   let ActiveProjects = [];
-
   // POPULATE LISTS
   for (let Drive of EditingDrives)  {
     for (let Project of fs.readdirSync(Drive))  {

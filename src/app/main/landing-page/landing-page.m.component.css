@@ -1,8 +1,8 @@
 @media only screen and (max-width: 500px) {
 
   .Logo {
-    width: 144px;
-    height: 36px;
+    width: 248px;
+    height: 96px;
     position: absolute;
     z-index: 2;
     top: 24px;
@@ -12,6 +12,7 @@
     border: none;
     outline: none;
     margin: 0;
+
 
   }
 

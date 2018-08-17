@@ -1,4 +1,4 @@
-import {Component, OnChanges, OnDestroy, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, OnChanges, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {ProjectService} from "../project/project.service";
 import {Project} from "../../TS Models/Project";
 import {Router} from "@angular/router";
@@ -13,12 +13,13 @@ import {TimeInterval} from "rxjs/internal/operators/timeInterval";
     ScaleIn, SlideInOut, ContactSlide, AboutSlide
     ]
 })
-export class LandingPageComponent implements OnInit, OnChanges, OnDestroy{
+export class LandingPageComponent implements OnInit, OnChanges, AfterViewInit, OnDestroy{
 
   Projects: Project[];
   Scale = 1;
   ScaleUp = true;
   ShowMenu = false;
+  Hider = false;
   LogInShow = false;
   Contactshow = false;
   AboutShow = false;
@@ -32,6 +33,12 @@ export class LandingPageComponent implements OnInit, OnChanges, OnDestroy{
 
   toggleVideo(event: any) {
   }
+
+  ngAfterViewInit() {
+    this.Hider = true;
+    console.log("hi");
+  }
+
   ngOnInit() {
 
     this.Timer = setInterval(() => {

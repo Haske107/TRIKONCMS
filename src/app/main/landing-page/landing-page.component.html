@@ -1,6 +1,6 @@
 <div [@contactslide]="Contactshow" [@aboutslide]="AboutShow" class="Blackground">
 <!-- BACKGROUND -->
-<div class="background" [ngStyle]=" Contactshow  ? {transform: 'translateY(-50vh)', filter: 'hue-rotate(' + Degrees + 'deg)' } :
+<div class="background" [ngStyle]=" Contactshow  ? {transform: 'translateY(100vh)', filter: 'hue-rotate(' + Degrees + 'deg)' } :
                                      AboutShow ? {'transition-delay' : '.3s', filter: 'saturate(0)', transform: 'translateY(0)'  } :
                                      {transform: 'translateY(0) scale('+ Scale + ')'} ">
 
@@ -9,20 +9,34 @@
 
 
   <div class="about" *ngIf="AboutShow" [ngStyle]="AboutShow ? {left: '0',   transition: '.3s ease'} : {left: '100vw',    transition: '.3s ease'}">
-
+    <div class="About-Video1">
+      <h4 class="Circle-Text">
+        Sun Is The Same In A Relative Way But You're Older
+      </h4>
+    </div>
+    <div class="About-Video2">
+      <h4 class="Circle-Text">
+        Sun Is The Same In A Relative Way But You're Older
+      </h4>
+    </div>
+    <div class="About-Video3">
+      <h4 class="Circle-Text">
+        Sun Is The Same In A Relative Way But You're Older
+      </h4>
+    </div>
   </div>
 
 </div>
   <!-- TABS -->
   <div class=" Tabs" [@slideInOut]>
+    <!--<div class="tab row" >-->
+      <!--<h4 class="label" routerLink="/Search">-->
+        <!--projects-->
+      <!--</h4>-->
+    <!--</div>-->
     <div class="tab row" >
-      <h4 class="label" routerLink="/Search">
-        projects
-      </h4>
-    </div>
-    <div class="tab row" >
-      <h4 class="label" routerLink="/Artists">
-        artists
+      <h4 class="label" >
+        demo
       </h4>
     </div>
     <div class="tab row" [ngStyle]="Contactshow ? {color: '#FFE200' , 'padding-left': '26px'} : {}">
@@ -37,23 +51,26 @@
     </div>
   </div>
   <!-- CROP WRAPPER -->
-  <div [@scalein] >
+  <div >
     <div class="crop-wrapper" *ngIf="!Contactshow && !AboutShow" [ngStyle]="Contactshow ? {transform: 'translateY(100%)'} :  {}" >
       <!-- VIDEO -->
       <video  (click)="toggleVideo($event)" #videoPlayer class="video" autoplay >
-        <source src="../../assets/New Cut.mp4" type="video/mp4" />
+        <source src="../../assets/New Cut.mp4" type="video/mp4"  />
         Browser not supported
       </video>
     </div>
     <!--<div class="Border"></div>-->
   </div>
   <div class="sting"></div>
-  <mat-card class="contact"  >
-    <h4 class="Contact-Label" >
-      contact
-    </h4>
-    <h4 class="contact-title">  contact@Trikon.xyz   </h4>>
-    <p class="instructions">+1 (323) 919-9629 </p>
+  <mat-card class="contact" [ngStyle]="Contactshow ? {opacity: 1} : {opacity: 0}" >
+    <div class="border">
+      <!--<h4 class="Contact-Label" >-->
+        <!--contact-->
+      <!--</h4>-->
+      <h4 class="contact-title">  contact@Trikon.xyz   </h4>
+      <p class="instructions"> +1 (323) 919-9629 </p>
+    </div>
+
   </mat-card>
   <!-- INFO BUTTON -->
   <!-- CONTACT -->

@@ -20,8 +20,6 @@ function getProjectPatches() {
       entries: walkSync.entries(Destination)
     });
 
-
-
   var ValidPatches = [];
 
   for (var Patch of EditingDrivesTree.calculatePatch(Archive)) {

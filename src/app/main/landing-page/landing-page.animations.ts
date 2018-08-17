@@ -39,15 +39,13 @@ export const SlideInOut = trigger('slideInOut', [
       query('.crop-wrapper, .Border', style({
         transform: 'scale(.1) ',
         opacity: 0
-      })),
-
+      }), {optional: true}),
       group([
         query('.crop-wrapper, Border', animate('7s .5s ease-in-out', style({
             opacity: 1,
             transform: 'scale(1) '
-          }))
+          })), {optional: true}
         )
-
       ])
     ]),
     //going out
