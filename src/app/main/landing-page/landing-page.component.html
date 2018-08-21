@@ -1,79 +1,53 @@
-<div [@contactslide]="Contactshow" [@aboutslide]="AboutShow" class="Blackground">
 <!-- BACKGROUND -->
-<div class="background" [ngStyle]=" Contactshow  ? {transform: 'translateY(100vh)', filter: 'hue-rotate(' + Degrees + 'deg)' } :
-                                     AboutShow ? {'transition-delay' : '.3s', filter: 'saturate(0)', transform: 'translateY(0)'  } :
-                                     {transform: 'translateY(0) scale('+ Scale + ')'} ">
+<div class="background" >
+  <!-- ABOUT PAGE -->
+  <app-about class="about" [ngStyle]="!About ? {transform: 'translateX(200vw)'} : {transform: 'translateX(0)'}" >
 
-  <img src="../../../assets/up.svg" alt="" class="back" [ngStyle]="Contactshow ? {opacity: 1} : {opacity: 0}"(click)="Contactshow = !Contactshow">
+  </app-about>
+  <!-- CONTACT PAGE -->
+  <app-contact class="contact"  [ngStyle]="!Contact ? {transform: 'translateY(200vh)'} : {transform: 'translateX(0)'}" >
 
+  </app-contact>
+  <!-- DEMO PAGE -->
+  <app-demo class="demo"  [ngStyle]="!Demo ? {transform: 'translateX(-200vw)', opacity: 0} : {transform: 'translateX(0)'}" >
 
-
-  <div class="about" *ngIf="AboutShow" [ngStyle]="AboutShow ? {left: '0',   transition: '.3s ease'} : {left: '100vw',    transition: '.3s ease'}">
-    <div class="About-Video1">
-      <h4 class="Circle-Text">
-        Sun Is The Same In A Relative Way But You're Older
-      </h4>
-    </div>
-    <div class="About-Video2">
-      <h4 class="Circle-Text">
-        Sun Is The Same In A Relative Way But You're Older
-      </h4>
-    </div>
-    <div class="About-Video3">
-      <h4 class="Circle-Text">
-        Sun Is The Same In A Relative Way But You're Older
-      </h4>
-    </div>
-  </div>
-
+  </app-demo>
 </div>
-  <!-- TABS -->
-  <div class=" Tabs" [@slideInOut]>
-    <!--<div class="tab row" >-->
-      <!--<h4 class="label" routerLink="/Search">-->
-        <!--projects-->
-      <!--</h4>-->
-    <!--</div>-->
-    <div class="tab row" >
-      <h4 class="label" >
-        demo
-      </h4>
-    </div>
-    <div class="tab row" [ngStyle]="Contactshow ? {color: '#FFE200' , 'padding-left': '26px'} : {}">
-      <h4 class="label" (click)="setContact()" >
-        contact
-      </h4>
-    </div>
-    <div class="tab row" [ngStyle]="AboutShow ? {color: '#FFE200' , 'padding-left': '26px'} : {}">
-      <h4 class="label" (click)="setAbout()">
-        about
-      </h4>
-    </div>
-  </div>
-  <!-- CROP WRAPPER -->
-  <div >
-    <div class="crop-wrapper" *ngIf="!Contactshow && !AboutShow" [ngStyle]="Contactshow ? {transform: 'translateY(100%)'} :  {}" >
-      <!-- VIDEO -->
-      <video  (click)="toggleVideo($event)" #videoPlayer class="video" autoplay >
-        <source src="../../assets/New Cut.mp4" type="video/mp4"  />
-        Browser not supported
-      </video>
-    </div>
-    <!--<div class="Border"></div>-->
-  </div>
-  <div class="sting"></div>
-  <mat-card class="contact" [ngStyle]="Contactshow ? {opacity: 1} : {opacity: 0}" >
-    <div class="border">
-      <!--<h4 class="Contact-Label" >-->
-        <!--contact-->
-      <!--</h4>-->
-      <h4 class="contact-title">  contact@Trikon.xyz   </h4>
-      <p class="instructions"> +1 (323) 919-9629 </p>
-    </div>
 
-  </mat-card>
-  <!-- INFO BUTTON -->
-  <!-- CONTACT -->
-  <!--<h3 class="contact">CONTACT@TRIKON.XYZ</h3>-->
+
+
+
+<!-- TABS -->
+<div class=" Tabs" >
+  <div class="tab row" [ngStyle]="Demo ? {color: '#FFE200' , 'padding-left': '26px'} : Contact ? {color: '#FFFFFF' } :  About ? {color: '#FFFFFF' }  :  {}">
+    <h4 class="label" (click)="setDemo()">
+      demo
+    </h4>
+  </div>
+  <div class="tab row" [ngStyle]="Contact ? {color: '#FFE200' , 'padding-left': '26px'} : About ? {color: '#FFFFFF' } : Demo ? {color: '#FFFFFF' }  : {}">
+    <h4 class="label" (click)="setContact()" >
+      contact
+    </h4>
+  </div>
+  <div class="tab row" [ngStyle]="About ? {color: '#FFE200' , 'padding-left': '26px'} : Contact ? {color: '#FFFFFF' } : Demo ? {color: '#FFFFFF' } : {}">
+    <h4 class="label" (click)="setAbout()">
+      about
+    </h4>
+  </div>
 </div>
+
+
+
+
+
+<!-- VIDEO -->
+<div class="VIDEO">
+  <div class="crop-wrapper"  [ngStyle]="Contact ? {transform: 'translateY(-150vh)'} : About ? {transform: 'translateX(-150vw)'} : Demo ? {transform: 'translateX(150vw)'} : {transform: 'translateX(0)'}" >
+    <video  (click)="toggleVideo($event)" #videoPlayer class="video" autoplay >
+      <source src="../../assets/New Cut.mp4" type="video/mp4"  />
+    </video>
+  </div>
+</div>
+
+
 

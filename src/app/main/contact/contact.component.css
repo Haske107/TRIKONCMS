@@ -1,0 +1,51 @@
+.container  {
+  border: 1px solid #FFE200;
+  width: 70vh;
+  height: 70vh;
+  position: absolute;
+  top: 15vh;
+  left: calc((100vw - 70vh)/2);
+  border-radius: 35vh;
+}
+.title {
+  position: absolute;
+  width: 200px;
+  left: calc(50% - 100px);
+  color: yellow;
+  font-size: 24px;
+}
+.instructions {
+  color: #FFE200;
+  font-family: "futura pt", sans-serif;
+  font-size: 19px;
+  text-align: center;
+  margin-bottom: 0;
+  line-height: 22px;
+  width: 100%;
+  position: absolute;
+  top: calc( 40% + 28px);
+  left: 0;
+
+}
+.contact-title  {
+  font-family: "futura pt", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 24px;
+  width: 100%;
+  text-align: center;
+  color: #FFE200;
+  position: absolute;
+  top: 40%;
+  left: 0;
+
+}
+.border {
+  position: absolute;
+  top: 20vh;
+  left:  calc((100% - 60vh)/2);
+  border: 2px solid #FFE200 !important;
+  height: 60vh;
+  width: 60vh;
+  border-radius: 30vh;
+}

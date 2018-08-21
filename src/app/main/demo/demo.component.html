@@ -1,0 +1,8 @@
+<!-- VIDEO -->
+<div class="VIDEO">
+  <div class="crop-wrapper"  [ngStyle]="Contact ? {transform: 'translateY(-150vh)'} : About ? {transform: 'translateX(-150vw)'} : Demo ? {transform: 'translateX(150vw)'} : {transform: 'translateX(0)'}" >
+    <video  (click)="toggleVideo($event)" #videoPlayer class="video" autoplay >
+      <source src="../../../assets/New Cut.mp4" type="video/mp4"  />
+    </video>
+  </div>
+</div>

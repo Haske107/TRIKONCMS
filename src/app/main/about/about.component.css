@@ -1,0 +1,47 @@
+
+.About-Video1 {
+  position: absolute;
+  width: 18vw;
+  left: 22vw;
+  top: calc((100% - 18vw)/2);
+  height: 18vw;
+  padding: 0;
+  z-index: 1;
+  overflow: hidden;
+  transition: .5s ease;
+  background-color: white;
+}
+.About-Video2 {
+  position: absolute;
+  width: 18vw;
+  left: calc((100% - 18vw)/2);
+  top: calc((100% - 18vw)/2);
+  height: 18vw;
+  padding: 0;
+  z-index: 1;
+  overflow: hidden;
+  transition: .5s ease;
+  background-color: white;
+}
+.About-Video3 {
+  position: absolute;
+  width: 18vw;
+  left: 60vw;
+  top: calc((100% - 18vw)/2);
+  height: 18vw;
+  padding: 0;
+  z-index: 1;
+  overflow: hidden;
+  transition: .5s ease;
+  background-color: white;
+}
+
+.Circle-Text  {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  text-align: center;
+  color: yellow;
+  z-index: 7;
+
+}

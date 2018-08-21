@@ -13,7 +13,6 @@
   background-color: white;
   background-size: cover;
   transition: .3s ease;
-  filter: hue-rotate(80deg);
 
 }
 
@@ -53,9 +52,9 @@ app-sign-in {
           padding:0;
           margin: 0;
           color: black;
-          font-family: "Futura PT", sans-serif;
+          font-family: "Rajdhani", sans-serif;
           font-size: 36px;
-          font-weight: 200;
+          font-weight: 700;
           height: 48px;
           z-index: 6;
           text-align: left;
@@ -79,19 +78,19 @@ app-sign-in {
   width: 70vh;
   left: calc((100% - 70vh)/2);
   top: 20vh;
-  height: 60vh;
+  height: 70vh;
   padding: 0;
   z-index: 1;
   overflow: hidden;
   background-color: transparent;
-  -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  -webkit-clip-path: polygon(50% 0%, 0% 86.6%, 100% 86.6%);
+  clip-path: polygon(50% 0%, 0% 86.6%, 100% 86.6%);
   transition: .5s ease;
 }
       .video  {
         position: absolute;
         top:0;
-        left: -62%;
+        left: -100%;
         height: 110%;
         border: none;
       }
@@ -110,8 +109,8 @@ app-sign-in {
   overflow: hidden;
   background-color: white;
   opacity: .8;
-  -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  -webkit-clip-path: polygon(50% 0%, 0% 86.6%, 100% 86.6%);
+  clip-path: polygon(50% 0%, 0% 86.6%, 100% 86.6%);
   box-shadow: 0 3px 1px -2px rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.18), 0 1px 5px 0 rgba(0,0,0,.18);
 }
 
@@ -152,22 +151,10 @@ app-sign-in {
   background-position-y:  0;
   background-position-x:  -10vw;
   z-index: -1;
-  transition: .3s ease-out;
+  transition: .3s ;
   /*border: 1px solid rgba(255, 226, 0, 1);*/
 }
-.contact-title  {
-  font-family: "futura pt", sans-serif;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 24px;
-  width: 100%;
-  text-align: center;
-  color: #FFE200;
-  position: absolute;
-  top: 40%;
-  left: 0;
 
-}
 
 .name {
   width: 42%;
@@ -194,19 +181,7 @@ app-sign-in {
   outline: 0;
   font-family: "futura pt";
 }
-.instructions {
-  color: #FFE200;
-  font-family: "futura pt", sans-serif;
-  font-size: 19px;
-  text-align: center;
-  margin-bottom: 0;
-  line-height: 22px;
-  width: 100%;
-  position: absolute;
-  top: calc( 40% + 28px);
-  left: 0;
 
-}
 .Send-Button  {
   position: absolute;
   bottom: 24px;
@@ -225,7 +200,7 @@ app-sign-in {
   background-color: black;
   background-size: cover;
   height: 100vh;
-  transition: .3s ease;
+  transition: .3s;
 }
 .description  {
   color: black;
@@ -284,59 +259,20 @@ app-sign-in {
 
 /* about page components */
 
-.About-Video1 {
-  position: absolute;
-  width: 18vw;
-  left: 22vw;
-  top: calc((100% - 18vw)/2);
-  height: 18vw;
-  padding: 0;
-  z-index: 1;
-  overflow: hidden;
-  transition: .5s ease;
-  background-color: white;
-}
-.About-Video2 {
-  position: absolute;
-  width: 18vw;
-  left: calc((100% - 18vw)/2);
-  top: calc((100% - 18vw)/2);
-  height: 18vw;
-  padding: 0;
-  z-index: 1;
-  overflow: hidden;
-  transition: .5s ease;
-  background-color: white;
-}
-.About-Video3 {
-  position: absolute;
-  width: 18vw;
-  left: 60vw;
-  top: calc((100% - 18vw)/2);
-  height: 18vw;
-  padding: 0;
-  z-index: 1;
-  overflow: hidden;
-  transition: .5s ease;
-  background-color: white;
-}
 
-.Circle-Text  {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  text-align: center;
-  color: yellow;
-  z-index: 7;
 
-}
 
-.border {
+
+.demo{
   position: absolute;
-  top: 20vh;
-  left:  calc((100% - 60vh)/2);
-  border: 2px solid white;
-  height: 60vh;
-  width: 60vh;
-  border-radius: 30vh;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../../../assets/Santi.jpg');
+  background-size: cover;
+  background-position-y:  0;
+  background-position-x:  -10vw;
+  z-index: -1;
+  transition: .3s;
 }
