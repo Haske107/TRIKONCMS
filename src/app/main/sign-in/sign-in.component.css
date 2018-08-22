@@ -8,7 +8,6 @@
   overflow: hidden;
   font-family: "futura pt", sans-serif;
 }
-
 .User {
   background-color: transparent;
   position: absolute;
@@ -33,6 +32,7 @@
   outline: 0;
   color: white;
   border-bottom: 1px groove #b3b3b3;
+
 }
 
 .info-button  {
@@ -44,11 +44,10 @@
   outline: 0;
   z-index: 3;
   cursor: pointer;
-  border: 1px solid #595959;
-  background-color: #762c2f;
+  border-radius: 18px;
+  border: none;
+  background-color: #a22e3d;
   background-size: cover;
   padding: 0;
-  -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  clip-path: polygon(50% 0%, 0% 86.6%, 100% 86.6%);
   margin: 0;
 }

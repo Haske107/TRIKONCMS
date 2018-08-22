@@ -9,7 +9,7 @@
 
   </app-contact>
   <!-- DEMO PAGE -->
-  <app-demo class="demo"  [ngStyle]="!Demo ? {transform: 'translateX(-200vw)', opacity: 0} : {transform: 'translateX(0)'}" >
+  <app-demo class="demo"  [ngStyle]="!Demo ? {transform: 'translateX(-200vw)'} : {transform: 'translateX(0)'}" >
 
   </app-demo>
 </div>
@@ -21,7 +21,7 @@
 <div class=" Tabs" >
   <div class="tab row" [ngStyle]="Demo ? {color: '#FFE200' , 'padding-left': '26px'} : Contact ? {color: '#FFFFFF' } :  About ? {color: '#FFFFFF' }  :  {}">
     <h4 class="label" (click)="setDemo()">
-      demo
+      demo  {{isIOS}}
     </h4>
   </div>
   <div class="tab row" [ngStyle]="Contact ? {color: '#FFE200' , 'padding-left': '26px'} : About ? {color: '#FFFFFF' } : Demo ? {color: '#FFFFFF' }  : {}">
@@ -42,7 +42,7 @@
 
 <!-- VIDEO -->
 <div class="VIDEO">
-  <div class="crop-wrapper"  [ngStyle]="Contact ? {transform: 'translateY(-150vh)'} : About ? {transform: 'translateX(-150vw)'} : Demo ? {transform: 'translateX(150vw)'} : {transform: 'translateX(0)'}" >
+  <div class="crop-wrapper"  [ngStyle]="Contact ? {transform: 'translateY(-150vh)'} : About ? {transform: 'translateY(-150vw)'} : Demo ? {transform: 'translateY(-150vh)'} : {transform: 'translateX(0)'}" >
     <video  (click)="toggleVideo($event)" #videoPlayer class="video" autoplay >
       <source src="../../assets/New Cut.mp4" type="video/mp4"  />
     </video>

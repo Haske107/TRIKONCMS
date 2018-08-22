@@ -11,15 +11,9 @@ export class AppComponent {
 
 
 
-// todo Contact video slide out
+// todo color change
 
-
-// todo stagger animate in
-
-// todo log in slider
-
-// todo tile design
-
+// todo iphone triangle fix
 
 
 

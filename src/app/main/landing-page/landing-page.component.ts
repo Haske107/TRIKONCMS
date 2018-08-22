@@ -14,10 +14,13 @@ export class LandingPageComponent implements OnInit, OnChanges, AfterViewInit, O
   Contact = false;
   About = false;
   Demo = false;
+  isIOS;
 
   @ViewChild('videoPlayer') videoplayer: any;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {
+    this.isIOS = !!navigator.platform && /iPad|iPhone|(android)|iPod/i.test(navigator.platform);
+  }
 
 
   toggleVideo(event: any) {

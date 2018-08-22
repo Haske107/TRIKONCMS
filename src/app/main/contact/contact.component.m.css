@@ -1,0 +1,17 @@
+@media (max-width: 800px) {
+  .border {
+    position: absolute;
+    top: 20vh;
+    left:  calc((100% - 60vw)/2);
+    border: 2px solid #FFE200 !important;
+    height: 60vw;
+    width: 60vw;
+    border-radius: 30vh;
+  }
+  .contact-title{
+    font-size: 16px;
+  }
+  .instructions {
+    font-size: 14px;
+  }
+}

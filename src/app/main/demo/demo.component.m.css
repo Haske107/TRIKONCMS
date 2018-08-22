@@ -1,0 +1,25 @@
+@media (max-width: 800px) {
+
+  /* VIDEO COMPONENTS */
+  .crop-wrapper  {
+    position: absolute;
+    width: 70vw;
+    left: calc((100% - 70vw)/2);
+    top: 25vh;
+    height: 60vw;
+    padding: 0;
+    z-index: 1;
+    overflow: hidden;
+    background-color: transparent;
+    transition: .5s ease;
+  }
+  .video  {
+    position: absolute;
+    top:0;
+    left: -62%;
+    height: 110%;
+    border: none;
+  }
+  /* ---------------------*/
+
+}
