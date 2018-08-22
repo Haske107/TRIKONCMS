@@ -2,10 +2,10 @@
 
   .Video{
     position: absolute;
-    left: 10vw;
+    left: 0;
     width: 100vw;
     height: 34vw;
-    top: 22vh;
+    top: 18vh;
   }
 
 

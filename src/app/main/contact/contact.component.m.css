@@ -1,7 +1,7 @@
 @media (max-width: 800px) {
   .border {
     position: absolute;
-    top: 60px;
+    top: 10vh;
     left:  calc((100% - 60vw)/2);
     border: 2px solid #FFE200 !important;
     height: 60vw;
