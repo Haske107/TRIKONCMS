@@ -15,7 +15,4 @@ export class MainComponent implements OnInit {
   }
 
 
-  navHome() {
-    this.router.navigateByUrl('/Landing');
-  }
 }

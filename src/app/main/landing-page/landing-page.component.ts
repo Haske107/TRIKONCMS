@@ -14,12 +14,12 @@ export class LandingPageComponent implements OnInit, OnChanges, AfterViewInit, O
   Contact = false;
   About = false;
   Demo = false;
-  isIOS;
+  isIOS = false;
 
-  @ViewChild('videoPlayer') videoplayer: any;
+  @ViewChild('Player') Player: any;
 
   constructor(private router: Router) {
-    this.isIOS = !!navigator.platform && /iPad|iPhone|(android)|iPod/i.test(navigator.platform);
+    this.isIOS = !!navigator.platform && /iPad|iPhone|iPod/i.test(navigator.platform);
   }
 
 
@@ -27,11 +27,20 @@ export class LandingPageComponent implements OnInit, OnChanges, AfterViewInit, O
 
   }
 
+
+  navHome() {
+    this.router.navigateByUrl('/Landing');
+  }
+
   ngAfterViewInit() {
   }
 
   ngOnInit() {
 
+
+    setTimeout (() => {
+      this.Player.nativeElement.play();
+    }, 1000);
   }
 
   toggleLogIn() {

@@ -19,17 +19,17 @@
 
 <!-- TABS -->
 <div class=" Tabs" >
-  <div class="tab row" [ngStyle]="Demo ? {color: '#FFE200' , 'padding-left': '26px'} : Contact ? {color: '#FFFFFF' } :  About ? {color: '#FFFFFF' }  :  {}">
+  <div class="tab row" [ngStyle]="Demo ? {color: '#FFE200' , 'padding-left': '26px'} :{} ">
     <h4 class="label" (click)="setDemo()">
-      demo  {{isIOS}}
+      demo
     </h4>
   </div>
-  <div class="tab row" [ngStyle]="Contact ? {color: '#FFE200' , 'padding-left': '26px'} : About ? {color: '#FFFFFF' } : Demo ? {color: '#FFFFFF' }  : {}">
+  <div class="tab row" [ngStyle]="Contact ? {color: '#FFE200' , 'padding-left': '26px'} : Demo ?  {color: '#FFFFFF'} : {}">
     <h4 class="label" (click)="setContact()" >
       contact
     </h4>
   </div>
-  <div class="tab row" [ngStyle]="About ? {color: '#FFE200' , 'padding-left': '26px'} : Contact ? {color: '#FFFFFF' } : Demo ? {color: '#FFFFFF' } : {}">
+  <div class="tab row" [ngStyle]="About ? {color: '#FFE200' , 'padding-left': '26px'} : Demo ?  {color: '#FFFFFF'} : {}">
     <h4 class="label" (click)="setAbout()">
       about
     </h4>
@@ -43,11 +43,11 @@
 <!-- VIDEO -->
 <div class="VIDEO">
   <div class="crop-wrapper"  [ngStyle]="Contact ? {transform: 'translateY(-150vh)'} : About ? {transform: 'translateY(-150vw)'} : Demo ? {transform: 'translateY(-150vh)'} : {transform: 'translateX(0)'}" >
-    <video  (click)="toggleVideo($event)" #videoPlayer class="video" autoplay >
-      <source src="../../assets/New Cut.mp4" type="video/mp4"  />
-    </video>
+    <iframe src="https://player.vimeo.com/video/268527243?background=1" allow="autoplay" class="video" width="90vw" height="45vw" frameborder="0" #Player > </iframe>
   </div>
 </div>
 
 
 
+<div (click)="navHome()" class="Logo" [ngStyle]="!Demo ? {opacity: 1} : {opacity: 0}"></div>
+<div (click)="navHome()" class="Logo1" [ngStyle]="Demo ?  {opacity: 1} : {opacity: 0}"></div>

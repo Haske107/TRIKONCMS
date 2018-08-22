@@ -1,0 +1,11 @@
+@media (max-width: 800px) {
+
+  .text {
+    height: 40vh;
+    width: 100%;
+    left: 0;
+    top: 12vh;
+    overflow-y: scroll;
+    padding: 24px;
+  }
+}

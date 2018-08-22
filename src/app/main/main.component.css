@@ -4,17 +4,3 @@ app-sign-in {
   right: 24px;
 }
 
-.Logo {
-  width: 192px;
-  height: 96px;
-  position: absolute;
-  z-index: 3;
-  bottom: 0;
-  left: 24px;
-  cursor: pointer;
-  border: none;
-  outline: none;
-  background-image: url('../../assets/LogoBlack.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-}

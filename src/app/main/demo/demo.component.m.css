@@ -1,25 +1,21 @@
 @media (max-width: 800px) {
 
-  /* VIDEO COMPONENTS */
-  .crop-wrapper  {
+  .Video{
     position: absolute;
-    width: 70vw;
-    left: calc((100% - 70vw)/2);
-    top: 25vh;
-    height: 60vw;
-    padding: 0;
-    z-index: 1;
-    overflow: hidden;
-    background-color: transparent;
-    transition: .5s ease;
+    left: 10vw;
+    width: 80vw;
+    height: 34vw;
+    top: 22vh;
   }
-  .video  {
-    position: absolute;
-    top:0;
-    left: -62%;
-    height: 110%;
-    border: none;
-  }
-  /* ---------------------*/
 
+
+}
+@media all and (orientation:landscape) {
+  .Video{
+    position: absolute;
+    left: calc(50vw - 25vw);
+    width: 50vw;
+    height: 34vh;
+    top: 30vh;
+  }
 }
