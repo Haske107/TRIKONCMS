@@ -1,7 +1,7 @@
 @media (max-width: 800px) {
   .border {
     position: absolute;
-    top: 10vh;
+    top: 10vh !important;
     left:  calc((100% - 60vw)/2);
     border: 2px solid #FFE200 !important;
     height: 60vw;
@@ -14,17 +14,19 @@
   .instructions {
     font-size: 14px;
   }
-}
 
-
-@media all and (orientation:landscape) {
-  .border {
-    position: absolute;
-    top: 20vh;
-    left:  calc((100% - 60vh)/2);
-    border: 2px solid #FFE200 !important;
-    height: 60vh;
-    width: 60vh;
-    border-radius: 30vh;
+  /* IPHONE X */
+  @media (max-height: 900px) and (min-height: 700px) {
+    .border {
+      position: absolute;
+      top: 25vh;
+      left:  calc((100% - 60vw)/2);
+      border: 2px solid #FFE200 !important;
+      height: 60vw;
+      width: 60vw;
+      border-radius: 30vh;
+    }
   }
 }
+
+

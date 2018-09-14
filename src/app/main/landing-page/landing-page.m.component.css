@@ -2,10 +2,10 @@
   /* VIDEO COMPONENTS */
   .crop-wrapper {
     position: absolute;
-    width: 100vw;
-    left: calc((100% - 100vw) / 2);
+    width: 80vw;
+    left: calc((100% - 80vw) / 2);
     top: 10vh;
-    height: 100vw;
+    height: 80vw;
     padding: 0;
     z-index: 1;
     overflow: hidden;
@@ -16,10 +16,10 @@
   }
   .video  {
     position: absolute;
-    width: 160%;
-    height: 90%;
-    top: -20%;
-    right: -30%;
+    width: 100%;
+    height: 87%;
+    top: -1%;
+    right: 0;
   }
 
   /* ---------------------*/
@@ -34,19 +34,4 @@
   }
 }
 
-@media all and (orientation:landscape) {
-  .crop-wrapper {
-    position: absolute;
-    width: 100vh;
-    left: calc((100% - 100vh) / 2);
-    top: 10vh;
-    height: 100vh;
-    padding: 0;
-    z-index: 1;
-    overflow: hidden;
-    background-color: transparent;
-    -webkit-clip-path: polygon(50% 0%, 0% 86.6%, 100% 86.6%);
-    clip-path: polygon(50% 0%, 0% 86.6%, 100% 86.6%);
-    transition: .5s ease;
-  }
-}
+

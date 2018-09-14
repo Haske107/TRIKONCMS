@@ -17,9 +17,11 @@ export class LandingPageComponent implements OnInit, OnChanges, AfterViewInit, O
   isIOS = false;
 
   @ViewChild('Player') Player: any;
+  @ViewChild('BACKGROUND') background: any;
 
   constructor(private router: Router) {
     this.isIOS = !!navigator.platform && /iPad|iPhone|iPod/i.test(navigator.platform);
+
   }
 
 
@@ -38,14 +40,13 @@ export class LandingPageComponent implements OnInit, OnChanges, AfterViewInit, O
   ngOnInit() {
 
 
-    setTimeout (() => {
-      this.Player.nativeElement.play();
-    }, 1000);
+
   }
 
   toggleLogIn() {
     this.LogInShow = !this.LogInShow;
   }
+
   setContact()  {
     this.Contact = !this.Contact;
     if(this.Contact) {
@@ -53,6 +54,7 @@ export class LandingPageComponent implements OnInit, OnChanges, AfterViewInit, O
       this.Demo = false;
     }
   }
+
   setAbout()  {
     this.About= !this.About;
     if(this.About) {
@@ -60,12 +62,19 @@ export class LandingPageComponent implements OnInit, OnChanges, AfterViewInit, O
       this.Demo = false;
     }
   }
+
   setDemo()  {
     this.Demo = !this.Demo;
     if(this.Demo) {
       this.Contact = false;
       this.About = false;
     }
+  }
+
+  removeAll() {
+    this.Demo = false;
+    this.About = false;
+    this. Contact = false;
   }
 
   ngOnChanges() {
@@ -76,5 +85,10 @@ export class LandingPageComponent implements OnInit, OnChanges, AfterViewInit, O
 
   }
 
+  hideAddressbar() {
+    document.body.style.minHeight = '1000px';
+    window.scrollTo(0, 1);
+    document.body.style.minHeight = window.innerHeight + 'px';
+  }
 
 }

@@ -5,6 +5,8 @@ import {last, map} from "rxjs/internal/operators";
 @Injectable({
   providedIn: 'root'
 })
+
+
 export class ContentService {
 
   BaseURL = 'http://45.48.226.49/content/';
