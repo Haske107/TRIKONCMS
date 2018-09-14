@@ -12,7 +12,7 @@ export const MAIN_ROUTES: Routes = [
   // Home Page Routes
   {path: '', pathMatch: 'full', component: LandingPageComponent},
   {path: 'Search', component: ProjectSearchPageComponent },
-  {path: 'Project/:projectname', component: ProjectProfilePageGuestComponent },
+  {path: 'Project/:projectname', component: ProjectProfilePageComponent },
   {path: 'Artists', component: ArtistSearchPageComponent},
   {path: 'artistprofile', component: ArtistProfilePageComponent },
   {path: 'clientsearch', component: ClientSearchPageComponent},

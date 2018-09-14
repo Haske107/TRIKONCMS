@@ -5,17 +5,32 @@
     left: 0;
     width: 100vw;
     height: 34vw;
-    top: 18vh;
+    top: 25vh;
   }
+  @media (max-height: 900px) and (min-height: 700px) {
 
 
-}
-@media all and (orientation:landscape) {
-  .Video{
-    position: absolute;
-    left: calc(50vw - 25vw);
-    width: 50vw;
-    height: 34vh;
-    top: 30vh;
+    .Video{
+      position: absolute;
+      left: 0;
+      width: 100vw;
+      height: 34vw;
+      top: 30vh;
+    }
+
   }
+  @media all and (orientation:landscape) {
+    .Video{
+      position: absolute;
+      left: calc(50vw - 25vw);
+      width: 50vw;
+      height: 34vh;
+      top: 30vh;
+    }
+
+  }
+
 }
+
+
+
