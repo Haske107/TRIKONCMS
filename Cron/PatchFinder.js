@@ -3,6 +3,7 @@ const FSTree = require('fs-tree-diff');
 const path = require('path');
 const fs = require('fs-extra');
 
+
 exports.getPatches =  function (A,B) {
   try {
     let Original = new FSTree();
@@ -11,8 +12,10 @@ exports.getPatches =  function (A,B) {
     Destination.addEntries(walkSync.entries(B));
     let ValidPatches = [];
     const Patches = Destination.calculatePatch(Original);
+
     for (let Patch of Patches) {
-      if(Patch[2].relativePath.substr(0,1) !== '$') ValidPatches.push(Patch);
+      ValidPatches.push(Patch);
+      //console.log(Patch);
     }
     return ValidPatches;
   } catch (error) {

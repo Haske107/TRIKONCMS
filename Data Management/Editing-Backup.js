@@ -4,16 +4,16 @@ const FSTree = require('fs-tree-diff');
 const fs = require('fs-extra');
 const path = require('path');
 const CronJob = require('cron').CronJob;
-const EditingDrives = ['/Users/Jeff/Desktop/Editing'];
-const _Archive = '/Users/Jeff/Desktop/Archive';
+const EditingDrives = ['C:\\Users\\Jeff\\Desktop\\New folder (2)'];
+const _Archive = 'C:\\Users\\Jeff\\Desktop\\New folder';
 
 // DEFINE CRON JOB
-const job = new CronJob('*/4 * * * * *', () => {
-  console.log("Starting Back Up Sequence: " + new Date);
+// const job = new CronJob('*/4 * * * * *', () => {
+//   console.log("Starting Back Up Sequence: " + new Date);
   backUpEditingDrive();
-  console.log("Back Up Sequence Complete");
-  }, function () {}, false
-);
+//   console.log("Back Up Sequence Complete");
+//   }, function () {}, false
+// );
 
 // DEFINE BACK UP
 function backUpEditingDrive() {
@@ -129,7 +129,7 @@ function backUpEditingDrive() {
   }
   }
 
-// BEGIN PROCESS
-job.start();
+// // BEGIN PROCESS
+// job.start();
 
 //UNIT TESTING

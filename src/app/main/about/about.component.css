@@ -1,23 +1,23 @@
 
   .text {
     position: absolute;
-    width: 60%;
-    height: 60vw;
-    left: 20%;
-    top: 15%;
+    width: 63vh;
+    height: 80vh;
+    left: calc((100vw - 63vh)/2);
+    top: 10vh;
     text-align: center;
     font-family: "Rajdhani", sans-serif;
-    background: url('../../../assets/About.png') no-repeat ;
-    background-size: cover;
+    background: url('../../../assets/aboutpage.png') no-repeat ;
+    background-size: contain;
     overflow-y: scroll;
   }
-
 
   ::-webkit-scrollbar {
     width: 10px;  /* remove scrollbar space */
     background: transparent;
     z-index: 1;/* optional: just make scrollbar invisible */
   }
+
   /* optional: show position indicator in red */
   ::-webkit-scrollbar-thumb {
     background: #852731;

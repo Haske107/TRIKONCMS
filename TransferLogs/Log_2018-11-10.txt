@@ -1,0 +1,34 @@
+
+
+BEGINNING EDITING BACK UP TRANSFER 
+April 19th     |Z:->Y:|  VERIFIED SYNCED
+Black Origins     |Z:->Y:|  VERIFIED SYNCED
+Dan Cassab     |Z:->Y:|  VERIFIED SYNCED
+Mercado        |Z:->Y:|  VERIFIED SYNCED
+Serial Code SYNC IN PROGRESS
+rmdir,VFX/Live Work/,[object Object]
+rmdir,VFX/Exports/,[object Object]
+rmdir,VFX/Assets/,[object Object]
+rmdir,VFX/,[object Object]
+mkdir,Media/VFX/,[object Object]
+mkdir,Media/VFX/Assets/,[object Object]
+mkdir,Media/VFX/Exports/,[object Object]
+mkdir,Media/VFX/Live Work/,[object Object]
+Serial Code SYNC COMPLETE
+
+
+BEGINNING LEFT TO RIGHT TRANSFER 
+April 19th     |Y:->X:|  VERIFIED SYNCED
+Black Origins     |Y:->X:|  VERIFIED SYNCED
+Dan Cassab     |Y:->X:|  VERIFIED SYNCED
+Mercado        |Y:->X:|  VERIFIED SYNCED
+Serial Code SYNC IN PROGRESS
+rmdir,VFX/Live Work/,[object Object]
+rmdir,VFX/Exports/,[object Object]
+rmdir,VFX/Assets/,[object Object]
+rmdir,VFX/,[object Object]
+mkdir,Media/VFX/,[object Object]
+mkdir,Media/VFX/Assets/,[object Object]
+mkdir,Media/VFX/Exports/,[object Object]
+mkdir,Media/VFX/Live Work/,[object Object]
+Serial Code SYNC COMPLETE

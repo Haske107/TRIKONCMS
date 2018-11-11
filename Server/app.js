@@ -60,7 +60,7 @@ var app = express();
 // // to use the forceSSL
 // // middleware
 // app.use(forceSSL());
-app.use(ipfilter(ips, {mode: 'allow'}));
+// app.use(ipfilter(ips, {mode: 'allow'}));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

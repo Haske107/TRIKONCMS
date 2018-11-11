@@ -30,7 +30,7 @@
   z-index: -1;
   transition: .3s;
   overflow: hidden;
-  background-image: url("../../../assets/WEBAPP2.jpg");
+  background-image: url("../../../assets/Gray1.jpg");
   background-size: cover;
 }
 
@@ -189,7 +189,7 @@ app-sign-in {
   cursor: pointer;
   border: none;
   outline: none;
-  background-image: url('../../../assets/TrikonLogo.png');
+  background-image: url('../../../assets/LogoBlack.png');
   background-size: contain;
   background-repeat: no-repeat;
 }

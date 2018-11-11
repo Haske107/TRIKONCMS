@@ -2,13 +2,13 @@
 
   .text {
     position: absolute;
-    width: 90vw;
+    width: 90vw ;
     height: 90vw;
     left: 5%;
     top: 15%;
     text-align: center;
     font-family: "Rajdhani", sans-serif;
-    background-image: url('../../../assets/About.png');
+    url('../../../assets/aboutpage.png')
     background-size: cover;
     background-repeat: no-repeat;
     overflow-y: scroll;
