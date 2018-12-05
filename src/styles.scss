@@ -3,6 +3,17 @@
 
 @import url('https://fonts.googleapis.com/css?family=Rajdhani:300,400,600,700');
 
+
+@import './src/app/fonts/fonts';
+@font-face {
+  font-family: 'Chromatica-Black';
+  src: $Chromatica-Black-woff2-font-path format('woff2'),
+  $Chromatica-Black-woff-font-path format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 button:focus {outline: 0}
 input:focus {outline:0}
 div:focus {outline: 0}

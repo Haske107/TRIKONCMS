@@ -1,53 +1,56 @@
 <!-- BACKGROUND -->
 <div class="background" >
-  <!-- ABOUT PAGE -->
-  <app-about class="about" [ngStyle]="!About ? {transform: 'translateX(200vw)'} : {transform: 'translateX(0)'}" >
+  <!--&lt;!&ndash; ABOUT PAGE &ndash;&gt;-->
+  <!--<app-about class="about" [ngStyle]="!About ? {transform: 'translateX(200vw)'} : {transform: 'translateX(0)'}" >-->
 
-  </app-about>
-  <!-- CONTACT PAGE -->
-  <app-contact class="contact"  [ngStyle]="!Contact ? {transform: 'translateY(200vh)'} : {transform: 'translateX(0)'}" >
+  <!--</app-about>-->
+  <!--&lt;!&ndash; CONTACT PAGE &ndash;&gt;-->
+  <!--<app-contact class="contact"  [ngStyle]="!Contact ? {transform: 'translateY(200vh)'} : {transform: 'translateX(0)'}" >-->
 
-  </app-contact>
-  <!-- DEMO PAGE -->
-  <app-demo class="demo"  [ngStyle]="!Demo ? {transform: 'translateX(-200vw)'} : {transform: 'translateX(0)'}" >
+  <!--</app-contact>-->
+  <!--&lt;!&ndash; DEMO PAGE &ndash;&gt;-->
+  <!--<app-demo class="demo"  [ngStyle]="!Demo ? {transform: 'translateX(-200vw)'} : {transform: 'translateX(0)'}" >-->
 
-  </app-demo>
+  <!--</app-demo>-->
+
+
+  <h3 class="Coming_Soon">Coming Soon January 2019</h3>
 </div>
 
 
 
 
 <!-- TABS -->
-<div class=" Tabs" >
-  <div class="tab row" [ngStyle]="Demo ? {color: '#FFE200' , 'padding-left': '26px'} :{} ">
-    <h4 class="label" (click)="setDemo()">
-      demo
-    </h4>
-  </div>
-  <div class="tab row" [ngStyle]="Contact ? {color: '#FFE200' , 'padding-left': '26px'} : Demo ?  {color: '#FFFFFF'} : {}">
-    <h4 class="label" (click)="setContact()" >
-      contact
-    </h4>
-  </div>
-  <div class="tab row" [ngStyle]="About ? {color: '#FFE200' , 'padding-left': '26px'} : Demo ?  {color: '#FFFFFF'} : {}">
-    <h4 class="label" (click)="setAbout()">
-      about
-    </h4>
-  </div>
-</div>
+<!--<div class=" Tabs" >-->
+  <!--<div class="tab row" [ngStyle]="Demo ? {color: '#FFE200' , 'padding-left': '26px'} :{} ">-->
+    <!--<h4 class="label" (click)="setDemo()">-->
+      <!--demo-->
+    <!--</h4>-->
+  <!--</div>-->
+  <!--<div class="tab row" [ngStyle]="Contact ? {color: '#FFE200' , 'padding-left': '26px'} : Demo ?  {color: '#FFFFFF'} : {}">-->
+    <!--<h4 class="label" (click)="setContact()" >-->
+      <!--contact-->
+    <!--</h4>-->
+  <!--</div>-->
+  <!--<div class="tab row" [ngStyle]="About ? {color: '#FFE200' , 'padding-left': '26px'} : Demo ?  {color: '#FFFFFF'} : {}">-->
+    <!--<h4 class="label" (click)="setAbout()">-->
+      <!--about-->
+    <!--</h4>-->
+  <!--</div>-->
+<!--</div>-->
 
 
 
 
 
-<!-- VIDEO -->
-<div class="VIDEO">
-  <div class="crop-wrapper"  [ngStyle]="Contact ? {transform: 'translateY(-150vh)'} : About ? {transform: 'translateY(-150vw)'} : Demo ? {transform: 'translateY(-150vh)'} : {transform: 'translateX(0)'}" >
-    <iframe src="https://player.vimeo.com/video/286718601?background=1" allow="autoplay" class="video" width="90vw" height="45vw" frameborder="0" #Player > </iframe>
-  </div>
-</div>
+<!--&lt;!&ndash; VIDEO &ndash;&gt;-->
+<!--<div class="VIDEO">-->
+  <!--<div class="crop-wrapper"  [ngStyle]="Contact ? {transform: 'translateY(-150vh)'} : About ? {transform: 'translateY(-150vw)'} : Demo ? {transform: 'translateY(-150vh)'} : {transform: 'translateX(0)'}" >-->
+    <!--<iframe src="https://player.vimeo.com/video/286718601?background=1" allow="autoplay" class="video" width="90vw" height="45vw" frameborder="0" #Player > </iframe>-->
+  <!--</div>-->
+<!--</div>-->
 
 
 
-<div (click)="removeAll()" class="Logo" [ngStyle]="!Demo ? {opacity: 1} : {opacity: 0}"></div>
-<div (click)="removeAll()" class="Logo1" [ngStyle]="Demo ?  {opacity: 1} : {opacity: 0}"></div>
+<!--<div (click)="removeAll()" class="Logo" [ngStyle]="!Demo ? {opacity: 1} : {opacity: 0}"></div>-->
+<!--<div (click)="removeAll()" class="Logo1" [ngStyle]="Demo ?  {opacity: 1} : {opacity: 0}"></div>-->

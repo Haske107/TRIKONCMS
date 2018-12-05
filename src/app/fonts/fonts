@@ -1,0 +1,3 @@
+$Chromatica-Black-woff-font-path: "./Chromatica-Black.woff";
+$Chromatica-Black-woff2-font-path: "./Chromatica-Black.woff2";
+$font-family-brand: 'Chromatica-Black';

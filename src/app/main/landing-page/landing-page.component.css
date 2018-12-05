@@ -11,7 +11,17 @@
   /*border: 1px solid rgba(255, 226, 0, 1);*/
 }
 
-
+.Coming_Soon  {
+  font-family: Chromatica-Black;
+  font-size: 40px;
+  font-weight: 700;
+  width: 100%;
+  text-align: center;
+  color: white;
+  position: absolute;
+  left: 0;
+  top: calc(50% - 24px);
+}
 .about  {
   position: absolute;
   width: calc(100vw);
@@ -43,7 +53,7 @@
   left: 0;
   overflow: hidden !important;
   z-index: 0;
-  background-image: url('../../../assets/Gray1.jpg');
+  background-image: url('../../../assets/Background.jpg');
   background-position-x: 100%;
   background-size: cover;
   transition: .3s ease;
