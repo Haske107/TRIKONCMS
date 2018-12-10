@@ -9,6 +9,11 @@
   src: url('./app/fonts/Chromatica-Black.woff2') format("opentype");
 }
 
+@font-face {
+  font-family: Chromatica-Thin;
+  src: url('./app/fonts/Chromatica-Thin.woff2') format("opentype");
+}
+
 button:focus {outline: 0}
 input:focus {outline:0}
 div:focus {outline: 0}

@@ -12,12 +12,12 @@
 }
 
 .Coming_Soon  {
-  font-family: 'Chromatica', sans-serif;
+  font-family: 'Chromatica-Thin', sans-serif;
   font-size: 40px;
   font-weight: 700;
   width: 100%;
   text-align: center;
-  color: white;
+  color: #ebf0e3;
   position: absolute;
   left: 0;
   top: calc(50% - 40px);
@@ -46,8 +46,12 @@
   z-index: -1;
   transition: .3s;
   overflow: hidden;
-  background-image: url("../../../assets/Gray1.jpg");
   background-size: cover;
+  background: #141414; /* Old browsers */
+  background: -moz-radial-gradient(center, ellipse cover, #141414 0%, #262626 100%); /* FF3.6-15 */
+  background: -webkit-radial-gradient(center, ellipse cover, #141414 0%,#262626 100%); /* Chrome10-25,Safari5.1-6 */
+  background: radial-gradient(ellipse at center, #141414 0%,#262626 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#141414', endColorstr='#262626',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
 /* BACKGROUND GRADIENT */

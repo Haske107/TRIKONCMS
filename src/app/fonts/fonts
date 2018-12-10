@@ -1,3 +1,8 @@
 $Chromatica-Black-woff-font-path: "./Chromatica-Black.woff";
 $Chromatica-Black-woff2-font-path: "./Chromatica-Black.woff2";
 $font-family-brand: 'Chromatica-Black';
+
+
+$Chromatica-Thin-woff-font-path: "./Chromatica-Thin.woff";
+$Chromatica-Thin-woff2-font-path: "./Chromatica-Thin.woff2";
+$font-family-brand: 'Chromatica-Thin';
