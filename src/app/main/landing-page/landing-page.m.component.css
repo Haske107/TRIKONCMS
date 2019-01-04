@@ -36,7 +36,7 @@
     position: absolute;
     width: 90%;
     height: calc(90vw/2.39);
-    top: calc(50%);
+    top: 124px;
     right: 5%;
   }
   /* ---------------------*/
