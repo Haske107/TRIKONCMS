@@ -35,7 +35,8 @@
   .video  {
     position: absolute;
     width: 90%;
-    top: calc(50% - (100%/2.39));
+    height: calc(90vw/2.39);
+    top: calc(50%);
     right: 5%;
   }
   /* ---------------------*/
