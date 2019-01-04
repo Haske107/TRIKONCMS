@@ -1,15 +1,5 @@
 /* COMPONENTS */
 
-.contact  {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
-  transition: .3s ;
-  /*border: 1px solid rgba(255, 226, 0, 1);*/
-}
 
 .Coming_Soon  {
   font-family: 'Chromatica-Thin', sans-serif;
@@ -20,14 +10,35 @@
   color: #ebf0e3;
   position: absolute;
   left: 0;
-  top: calc(50% - 40px);
+}
+.contact  {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  transition: .3s ;
+  /*border: 1px solid rgba(255, 226, 0, 1);*/
+}
+.whitelogo  {
+  position: absolute;
+  width: 30%;
+  top: 24px;
+  left: 35%;
 }
 .small  {
   font-weight: 300;
-
-  top: calc(50% );
-  font-size: 32px;
+  bottom: 10px;
+  font-size: 24px;
 }
+.video  {
+  position: absolute;
+  width: 70%;
+  top: calc(50% - (70%/2.39));
+  right: 15%;
+}
+
 .about  {
   position: absolute;
   width: calc(100vw);
@@ -63,7 +74,7 @@
   left: 0;
   overflow: hidden !important;
   z-index: 0;
-  background-image: url('../../../assets/Background.jpg');
+  background-image: url('../../../assets/Background-New.jpg');
   background-position-x: 100%;
   background-size: cover;
   transition: .3s ease;
@@ -128,13 +139,7 @@ app-sign-in {
   clip-path: polygon(50% 0%, 0% 86.6%, 100% 86.6%);
   transition: .5s ease;
 }
-      .video  {
-        position: absolute;
-        width: 100%;
-        height: 87%;
-        top: -1%;
-        right: 0;
-      }
+
 /* ---------------------*/
 
 
