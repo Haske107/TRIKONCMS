@@ -3,15 +3,15 @@ const CronJob = require('cron').CronJob;
 const fs = require('fs-extra');
 const path = require('path');
 
-let Active = 'C:\\Users\\Jeff\\Desktop\\Editing';
-let Archive = 'C:\\Users\\Jeff\\Desktop\\Backup';
+let Active = 'Z:';
+let Archive = 'Y:';
 
 
 
 
 console.log("Starting Archive Back Up Service");
 
-Job = new CronJob('* * */4 * * *', function() {
+// Job = new CronJob('* * */4 * * *', function() {
   let Logs = fs.readdirSync("Z:\\.Misc\\Back Up Transfer Logs");
   let value = 0;
   for (let log of Logs) {
@@ -27,13 +27,13 @@ Job = new CronJob('* * */4 * * *', function() {
   console.log("Beginning Editing to Left Back Up Sequence");
   fs.appendFileSync(Filename,  '\n\nBEGINNING EDITING BACK UP TRANSFER ' + new Date().toISOString() + ' \n');
 
-  ActiveProjectNames = fs.readdirSync(Active);
-  ArchiveProjectNames = fs.readdirSync(Archive);
 
   let i = 0;
-  for (i; i < 1; i++) {
-  for (let Project of ActiveProjectNames) {
-    if (Project.substr(0, 1) !== "." && Project !== "Mood1" ) {
+  for (i; i < 2; i++) {
+    ActiveProjectNames = fs.readdirSync(Active);
+    ArchiveProjectNames = fs.readdirSync(Archive);
+    for (let Project of ActiveProjectNames) {
+    if (Project !== ".DS_Store" && Project !== ".Misc" ) {
       let BackedUp = false;
       for (let ArchiveProject of ArchiveProjectNames) {
         if (Project === ArchiveProject) {
@@ -64,7 +64,7 @@ Job = new CronJob('* * */4 * * *', function() {
 
       for (let i = 0; i < ProjectPatches.length; i++) {
         console.log("Beginning " + Project + " Patch #" + (i + 1));
-        //Patcher.performPatch(ProjectPatches[i], Destination);
+        Patcher.performPatch(ProjectPatches[i], Destination);
         console.log("Completed " + Project + " Patch #" + (i + 1));
 
       }
@@ -87,5 +87,4 @@ Job = new CronJob('* * */4 * * *', function() {
 
 console.log("Back Up Left to Right Sequence Complete -----------------");
 Writer.close();
-}, null, true,null,null,true);
-
+// }, null, true,null,null,true);
